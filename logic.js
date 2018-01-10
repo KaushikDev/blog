@@ -29,8 +29,8 @@ const storageRef = firebase.storage().ref();
 				
 				firebaseRetrieveRef.on("child_added", snap =>{
 				var retrievedComment = snap.val();
-				console.log("retrieved comments are : "+retrievedComment);
-				$("#commentList").append("<li id='list"+i+"'><p>"+retrievedComment+"</p></li>");
+				console.log("retrieved comments are : "+retrievedComment.Message);
+				$("#commentList").append("<li id='list"+i+"'><p>"+retrievedComment.Message+"</p></li>");
 				i++;
 					});
 	//+++++++++++Storing Msgs++++++++++++++++++++++++++++++++
