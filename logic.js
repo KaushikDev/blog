@@ -30,7 +30,7 @@ const storageRef = firebase.storage().ref();
 				firebaseRetrieveRef.on("child_added", snap =>{
 				var retrievedComment = snap.val();
 				console.log("retrieved comments are : "+retrievedComment);
-				$("#commentBox").append("<li id='list"+i+"'><div style='width:100%;' ></div><div style='width:100%;background-color:#ECF0F1;margin-bottom:5px;'><p>"+retrievedComment.Comment+"</p></div></li>");
+				$("#commentList").append("<li id='list"+i+"'><div style='width:100%;' ></div><div style='width:100%;background-color:#ECF0F1;margin-bottom:5px;'><p>"+retrievedComment.Comment+"</p></div></li>");
 				i++;
 					});
 	//+++++++++++Storing Msgs++++++++++++++++++++++++++++++++
@@ -42,7 +42,7 @@ const storageRef = firebase.storage().ref();
 			  else{
 			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/");
 			 //firebaseStoreRef.push().set(newComment);
-			   firebaseStoreRef.push({Message:newComment});	  
+			   firebaseStoreRef.push({Comment:newComment});	  
 			   commentBox.value="";
 			  }
 			});
