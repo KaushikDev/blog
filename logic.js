@@ -11,6 +11,11 @@ var config = {
 //===============================================================================================
 $("document").ready(function(){
 
+	function fbshare(link){
+	window.open(link);
+	}
+	
+	
 const sendComment = document.getElementById("send");
 const commentBox = document.getElementById("commentBox");
 const nameBox = document.getElementById("nameBox");	
