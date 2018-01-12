@@ -13,6 +13,7 @@ $("document").ready(function(){
 
 const sendComment = document.getElementById("send");
 const commentBox = document.getElementById("commentBox");
+const nameBox = document.getElementById("nameBox");	
 const storageRef = firebase.storage().ref();
 	
 
@@ -28,21 +29,27 @@ const storageRef = firebase.storage().ref();
 				var firebaseRetrieveRef = firebase.database().ref().child("CommentsBoard");
 				
 				firebaseRetrieveRef.on("child_added", snap =>{
-				var retrievedComment = snap.val();
-				console.log("retrieved comments are : "+retrievedComment.Comment);
-				$("#commentList").append("<div><label  style='width:100%;'>A user says..</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedComment.Comment+"</p></div>");
+				var retrievedData = snap.val();
+				console.log("retrieved comment is : "+retrievedData.Comment);
+				console.log("retrieved name is : "+retrievedData.Name);	
+				$("#commentList").append("<div><label  style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p></div>");
 				i++;
 					});
 	//+++++++++++Storing Msgs++++++++++++++++++++++++++++++++
 		$("#send").on("click", function(){
 			 var newComment=commentBox.value;
+			 var newName=nameBox.value;
 			  if(newComment==""){
 			  alert("Empty comment doesn't make any sense, does it?? ");
 			  }
-			  else{
+			  else if(newName==""){
+			  alert("You forgot to enter your name..");
+			  }
+			   else {
 			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/");
 			 //firebaseStoreRef.push().set(newComment);
-			   firebaseStoreRef.push({Comment:newComment});	  
+			   firebaseStoreRef.push({Comment:newComment});
+			   firebaseStoreRef.push({Name:newName});		   
 			   commentBox.value="";
 			  }
 			});
