@@ -51,6 +51,7 @@ const storageRef = firebase.storage().ref();
 			   firebaseStoreRef.push({Comment:newComment, Name:newName});
 			  // firebaseStoreRef.push({Name:newName});		   
 			   commentBox.value="";
+				nameBox.value="";   
 			  }
 			});
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
