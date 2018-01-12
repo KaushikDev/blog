@@ -56,15 +56,22 @@ overflow-y:auto;
    
 #feedback{
 height:5%;
-	
+width:100%;	
 }	    
 #commentBox{
 background-color:transparent;
 color:black;
 border-radius:5px;
 font-size:auto;
-width:85%;
+width:100%;
 }
+#nameBox{
+background-color:transparent;
+color:black;
+border-radius:5px;
+font-size:auto;
+width:50%;
+}	    
 #send{
 background-color:transparent;
 color:limegreen;
@@ -88,7 +95,7 @@ border-radius:5px;
 		<div id="headline" class="row text-center">
 		<h1>Blog#1: CES 2018</h1><h5>10th January 2018</h5>
 		</div>	
-		<div id="blog" class="row text-center">
+		<div id="blog" class="row">
 		
 			<p>
 			Hi. I am sure you are excited about the CES 2018. I am!!.<br>
@@ -111,7 +118,9 @@ And VIVO beating giants like Apple and Samsung in introducing first finger print
 	
 		
 		<div id="feedback" class="row text-center">
-			<input type="text" style="background-color:black;color:white;" id="commentBox" placeholder="Have a feedback? Comment here..."/><button id="send" class="btn btn-sm"><i class="fa fa-arrow-circle-right fa-2x" ></i></button>
+			<input type="text" style="background-color:black;color:white;" id="commentBox" placeholder="Have a feedback? Comment here..."/>
+			<input type="text" style="background-color:black;color:white;width:" id="nameBox" placeholder="And your name..."/>
+			<button id="send" class="btn btn-sm"><i class="fa fa-arrow-circle-right fa-2x" ></i></button>
 			
 		</div>	
 			
