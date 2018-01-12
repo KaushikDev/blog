@@ -48,8 +48,8 @@ const storageRef = firebase.storage().ref();
 			   else {
 			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/");
 			 //firebaseStoreRef.push().set(newComment);
-			   firebaseStoreRef.push({Comment:newComment});
-			   firebaseStoreRef.push({Name:newName});		   
+			   firebaseStoreRef.push({Comment:newComment, Name:newName});
+			  // firebaseStoreRef.push({Name:newName});		   
 			   commentBox.value="";
 			  }
 			});
