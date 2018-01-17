@@ -1,0 +1,155 @@
+<html>
+ <head>
+ <title></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+   <script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+   <script src="jquery-3.2.1.min.js"></script>
+   
+ </head>
+ <body>
+    <style>
+body{
+background-image: url("hammond-outdoor-kitchens-wood-bg.jpg");
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+color:white;
+}	
+	    
+#imageUser{
+height:100%;	
+width:height;
+border-radius:50%;
+display:block;
+margin:auto;
+border-width:2px;
+border-color:white;	
+}
+#header{
+background-color:transparent;
+width:auto;
+height:15%;
+}
+#blog{
+background-color:transparent;
+width:auto;
+height:90%;
+overflow-y:auto;
+}
+#footer{
+background-color:transparent;	
+width:auto;
+height:10%;
+}
+#comments{
+width:auto;
+height:25%;
+overflow-y:auto;
+	
+}
+   
+#feedback{
+height:12%;
+}	    
+#commentBox{
+background-color:transparent;
+color:black;
+border-radius:5px;
+font-size:auto;
+width:100%;
+}
+#nameBox{
+background-color:transparent;
+color:black;
+border-radius:5px;
+font-size:auto;
+width:85%;
+}	    
+#send{
+background-color:transparent;
+color:limegreen;
+height:auto;
+border-radius:5px;
+}
+   </style>
+	<div id="main" class="container">
+
+	
+		<div id="header" class="row text-center">
+			<div class="col-xs-4">
+			</div>	
+			<div  class="col-xs-4">
+			<img src="piyush.jpg" id="imageUser" class="img-responsive">
+			</div>
+			<div class="col-xs-4">
+			</div>
+			
+		</div>
+		<div id="headline" class="row text-center">
+		<h1>Blog#1: CES 2018</h1><h5>10th January 2018</h5>
+		</div>	
+		<div id="blog" class="row">
+		
+			<p>
+			Hi. I am sure you are excited about the CES 2018. I am!!.<br><br>
+			Or, if you have been living under a rock, CES is Consumer Electronics Show held every year.
+			And this year is being organised in Las Vegas from 09thJan-12thJan.
+			<br><br>
+			The show features almost every player from tech world to display and showcase their new innovations and 				products.<br><br>
+			The stars of the Show this year, so far have been Samsungs's 146 inch micro OLED Wall TV , NVIDIA's 65inch 				BFGD(Big Format Gaming Display) with 120Hz sync, a treat to eyes for gaming enthusiasts and gamers. Razer also 				sported their new stealth like ultrabook powered by a phone. Yes, you read that right!! A phone powering an 				ultrabook. 
+		        <br><br>Not to leave out ACER who managed to introduce the 8 mm thick(or thin?) ultrabook, world's first.
+			And VIVO beating giants like Apple and Samsung in introducing first finger print unlock feature embedded in 				display. !!
+			
+			</p>
+			<h5>Update : 12th January 2018</h5>
+			<p>
+			So, a lot has happened over the course of last few days in CES 2018. Sony's new 2018 Wireless earbuds gets Water resistance and 
+			Google Assistant. Also, Sony launched two new Bravia 4K TV equipped with Android TV, Google Assistant and Impressive sound. The pricing of 
+			these new models, A8F OLED and X900F LCD, has not been revealed.	
+			<br><br>
+			Another tech giant, Philips introduced SmartSleep Headband, promising a better sleep at $399.
+				Here's a link for <a href="https://www.ces.tech/" target="_blank">all CES 2018 updates</a>. 	
+			<br><br>			
+			There's a lot more going on. I will be sharing more as we go forward. Share with me what excited you most or what would you like to see next year.
+			<br>Later.	
+			</p>
+		</div>
+	
+		
+		<div id="feedback" class="row text-center">
+			<input type="text" style="background-color:black;color:white;" id="commentBox" placeholder="Have a feedback? Comment here..."/>
+			<input type="text" style="background-color:black;color:white;" id="nameBox" placeholder="And your name..."/>
+			<button id="send" class="btn btn-sm"><i class="fa fa-arrow-circle-right fa-2x" ></i></button>
+			
+		</div>	
+			
+		<div id="comments" class="row" style="margin-top:2px;">
+			
+			<li id="commentList" style="list-style:none;"></li>
+	 		
+		</div>
+		
+		<div id="footer" class="row text-center">
+			
+			<div>
+			<a id="fb" class="btn btn-default text-center" style="background-color:transparent;border-color:transparent;" href="https://www.facebook.com/sharer/sharer.php?u=https://KaushikDev.github.io/iBlogged" target="_blank"><i class="fa fa-facebook" aria-hidden="true" style="color:white;font-size:15px;font-weight:bold;"></i></a>
+               
+			<a id="whatsapp" class="btn btn-default text-center" style="background-color:transparent;border-color:transparent;" href="whatsapp://send?text=https://KaushikDev.github.io/iBlogged"><i class="fa fa-whatsapp" aria-hidden="true" style="color:white;font-size:15px;font-weight:bold;"></i></a>
+        	
+			<a id="tweet" class="btn btn-default text-center" style="background-color:transparent;border-color:transparent;" href="https://twitter.com/home?status=https://KaushikDev.github.io/iBlogged" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="color:white;font-size:15px;font-weight:bold;"></i></a> 
+			</div>
+			<p style="color:white;"><i class="fa fa-copyright" aria-hidden="true" style="color:white;font-size:15px;"></i>KaushikCodeArts : App by Piyush Kaushik</p>
+
+		</div>
+	
+
+</div>
+<script src="logic.js"></script>
+
+	 
+ </body>
+ </html>
