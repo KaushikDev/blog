@@ -19,7 +19,7 @@ const nameBox = document.getElementById("nameBox");
 const replyBox = document.getElementById("replyBox");
 const replyNameBox = document.getElementById("replyNameBox");	
 const storageRef = firebase.storage().ref();
-	
+const replyId;	
 	
  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 	initApp();
@@ -62,7 +62,7 @@ const storageRef = firebase.storage().ref();
 			  }
 			});
 	//+++++++++++++Storing Replies++++++++++++++++++++++++++++++++++++++++++++
-/*	$("#replySend").on("click", function storeReply(this.id){
+	$("#replySend").on("click", function storeReply(this.id){
 			 var newReply=replyBox.value;
 			 var newReplyName=replyNameBox.value;
 			  if(newReply==""){
@@ -72,18 +72,18 @@ const storageRef = firebase.storage().ref();
 			  alert("You forgot to enter your name..");
 			  }
 			   else {
-			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/");
+			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/replyID/");
 			 //firebaseStoreRef.push().set(newReply);
 			   firebaseStoreRef.push({Reply:newReply, Replier:newReplyName});
 			  // firebaseStoreRef.push({Name:newReplyName});		   
 			   replyBox.value="";
 				replyNameBox.value="";   
 			  }
-			});          */
+			});          
 	//++++This will happen on click event of a reply button++++  
 	storeReply = function(clickedID){
 		console.log("The clicked reply button's id is : "+clickedID);
-		var replyID = clickedID;
+		replyID = clickedID;
 		}
 
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
