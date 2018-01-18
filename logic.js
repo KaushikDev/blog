@@ -8,6 +8,11 @@ var config = {
   };
   firebase.initializeApp(config);
 
+function storeReply(clickedID){
+		console.log(clickedID);
+		//return clickedID;
+		}
+
 //===============================================================================================
 $("document").ready(function(){
 
