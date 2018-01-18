@@ -72,7 +72,7 @@ var replyId;
 			  alert("You forgot to enter your name..");
 			  }
 			   else {
-			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"");
+			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
 			 //firebaseStoreRef.push().set(newReply);
 			   firebaseStoreRef.push({Reply:newReply, Replier:newReplyName});
 			  // firebaseStoreRef.push({Name:newReplyName});		   
