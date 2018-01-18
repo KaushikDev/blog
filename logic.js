@@ -40,7 +40,7 @@ const storageRef = firebase.storage().ref();
 				console.log("retrieved name is : "+retrievedData.Name);	
 				console.log("retrieved key is : "+retrievedKey);
 				
-				$("#commentList").append("<div><label style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p><button id="+"'"+"reply"+i+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm'>"+"Reply"+"</button></div>");
+				$("#commentList").append("<div><label style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p><button id="+"'"+retrievedKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");
 				i++;
 					});
 	//+++++++++++Storing Comments++++++++++++++++++++++++++++++++
@@ -64,7 +64,7 @@ const storageRef = firebase.storage().ref();
 			  }
 			});
 	//+++++++++++++Storing Replies++++++++++++++++++++++++++++++++++++++++++++
-/*	$("#replySend").on("click", function(){
+/*	$("#replySend").on("click", function storeReply(this.id){
 			 var newReply=replyBox.value;
 			 var newReplyName=replyNameBox.value;
 			  if(newReply==""){
@@ -82,6 +82,11 @@ const storageRef = firebase.storage().ref();
 				replyNameBox.value="";   
 			  }
 			});          */
+	//++++This will happen on click event of a reply button++++  
+		function storeReply(repliedID){
+		alert(repliedID);
+		
+		}
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 	    
 		}
