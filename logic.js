@@ -16,7 +16,9 @@ $("document").ready(function(){
 	
 const sendComment = document.getElementById("send");
 const commentBox = document.getElementById("commentBox");
-const nameBox = document.getElementById("nameBox");	
+const nameBox = document.getElementById("nameBox");
+const replyBox = document.getElementById("replyBox");
+const replyNameBox = document.getElementById("replyNameBox");	
 const storageRef = firebase.storage().ref();
 	
 
@@ -38,7 +40,7 @@ const storageRef = firebase.storage().ref();
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p><button id="+"'"+"reply"+i+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm'>"+"Reply"+"</button></div>");
 				i++;
 					});
-	//+++++++++++Storing Msgs++++++++++++++++++++++++++++++++
+	//+++++++++++Storing Comments++++++++++++++++++++++++++++++++
 		$("#send").on("click", function(){
 			 var newComment=commentBox.value;
 			 var newName=nameBox.value;
@@ -57,7 +59,27 @@ const storageRef = firebase.storage().ref();
 				nameBox.value="";   
 			  }
 			});
-	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//+++++++++++++Storing Replies++++++++++++++++++++++++++++++++++++++++++++
+	$("#replySend").on("click", function(){
+			 var newReply=replyBox.value;
+			 var newReplyName=replyNameBox.value;
+			  if(newReply==""){
+			  alert("Empty reply doesn't make any sense, does it?? ");
+			  }
+			  else if(newReplyName==""){
+			  alert("You forgot to enter your name..");
+			  }
+			   else {
+			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/");
+			 //firebaseStoreRef.push().set(newReply);
+			   firebaseStoreRef.push({Reply:newReply, Replier:newReplyName});
+			  // firebaseStoreRef.push({Name:newReplyName});		   
+			   replyBox.value="";
+				replyNameBox.value="";   
+			  }
+			});
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+	    
 		}
     	
 			  
