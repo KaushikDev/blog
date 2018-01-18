@@ -21,6 +21,7 @@ const replyBox = document.getElementById("replyBox");
 const replyNameBox = document.getElementById("replyNameBox");	
 const storageRef = firebase.storage().ref();
 	
+const clickedReplyID;	
 
 
  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
@@ -83,8 +84,9 @@ const storageRef = firebase.storage().ref();
 			  }
 			});          */
 	//++++This will happen on click event of a reply button++++  
-		function storeReply(repliedID){
-		console.log(repliedID);
+		function storeReply(clickedID){
+		console.log(clickedID);
+		clickedReplyID = clickedID;	
 		
 		}
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
