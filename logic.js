@@ -84,7 +84,7 @@ const storageRef = firebase.storage().ref();
 			});          */
 	//++++This will happen on click event of a reply button++++  
 		function storeReply(repliedID){
-		alert(repliedID);
+		console.log(repliedID);
 		
 		}
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
