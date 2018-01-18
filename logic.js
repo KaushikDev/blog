@@ -62,7 +62,7 @@ var replyId;
 			  }
 			});
 	//+++++++++++++Storing Replies++++++++++++++++++++++++++++++++++++++++++++
-	$("#replySend").on("click", function storeReply(this.id){
+	$("#replySend").on("click", function(){
 			 var newReply=replyBox.value;
 			 var newReplyName=replyNameBox.value;
 			  if(newReply==""){
