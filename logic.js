@@ -37,7 +37,7 @@ var replyId;
 				console.log("retrieved comment is : "+retrievedData.Comment);
 				console.log("retrieved name is : "+retrievedData.Name);	
 				console.log("retrieved key is : "+retrievedKey);
-				
+				console.log("retrieved replier name is : "+retrievedData.Replier);
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p><button id="+"'"+retrievedKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");
 				i++;
 					});
