@@ -37,6 +37,8 @@ const storageRef = firebase.storage().ref();
 				var retrievedData = snap.val();
 				console.log("retrieved comment is : "+retrievedData.Comment);
 				console.log("retrieved name is : "+retrievedData.Name);	
+				console.log("retrieved key is : "+retrievedData.key);
+				
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p><button id="+"'"+"reply"+i+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm'>"+"Reply"+"</button></div>");
 				i++;
 					});
@@ -44,6 +46,7 @@ const storageRef = firebase.storage().ref();
 		$("#send").on("click", function(){
 			 var newComment=commentBox.value;
 			 var newName=nameBox.value;
+
 			  if(newComment==""){
 			  alert("Empty comment doesn't make any sense, does it?? ");
 			  }
@@ -60,7 +63,7 @@ const storageRef = firebase.storage().ref();
 			  }
 			});
 	//+++++++++++++Storing Replies++++++++++++++++++++++++++++++++++++++++++++
-	$("#replySend").on("click", function(){
+/*	$("#replySend").on("click", function(){
 			 var newReply=replyBox.value;
 			 var newReplyName=replyNameBox.value;
 			  if(newReply==""){
@@ -77,7 +80,7 @@ const storageRef = firebase.storage().ref();
 			   replyBox.value="";
 				replyNameBox.value="";   
 			  }
-			});
+			});          */
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 	    
 		}
