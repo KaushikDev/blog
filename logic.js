@@ -8,11 +8,7 @@ var config = {
   };
   firebase.initializeApp(config);
 
-var repliedID = function storeReply(clickedID){
-		console.log("The clicked reply button's id is : "+clickedID);
-		return clickedID;
-		}
-
+var storeReply; 
 //===============================================================================================
 $("document").ready(function(){
 
@@ -85,11 +81,11 @@ const storageRef = firebase.storage().ref();
 			  }
 			});          */
 	//++++This will happen on click event of a reply button++++  
-	/*	function storeReply(clickedID){
-		console.log(clickedID);
-		//return clickedID;
-		}	
-	*/
+	storeReply = function(clickedID){
+		console.log("The clicked reply button's id is : "+clickedID);
+		var replyID = clickedID;
+		}
+
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 	    
 		}
