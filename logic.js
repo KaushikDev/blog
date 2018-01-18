@@ -38,7 +38,7 @@ const storageRef = firebase.storage().ref();
 				$("#commentList").append("<div>
 <label  style='width:100%;'>"+retrievedData.Name+" says.."+"</label>
 <p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p>
-<button id='"reply"+i+' style='background-color:red;border-radius:5px' class='btn btn-sm'>"Reply"</button>
+<button id="+"'"+"reply"+i+"'"+"style='background-color:red;border-radius:5px' class='btn btn-sm'>"+"Reply"+"</button>
 </div>");
 				i++;
 					});
