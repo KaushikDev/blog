@@ -35,7 +35,7 @@ const storageRef = firebase.storage().ref();
 				var retrievedData = snap.val();
 				console.log("retrieved comment is : "+retrievedData.Comment);
 				console.log("retrieved name is : "+retrievedData.Name);	
-				$("#commentList").append("<div><label  style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p></div>");
+				$("#commentList").append("<div><label  style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p><button id='reply' style='width:100%;' class='btn btn-sm'></button></div>");
 				i++;
 					});
 	//+++++++++++Storing Msgs++++++++++++++++++++++++++++++++
