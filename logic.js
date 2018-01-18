@@ -39,7 +39,7 @@ var replyId;
 				console.log("retrieved key is : "+retrievedKey);
 				while(retrievedData.child("Replies")){
 					var retrievedChildData = retrievedData.child("Replies").val();
-					console.log(""retrived replier is :"+retrievedChildData.Replier);
+					console.log("retrived replier is :"+retrievedChildData.Replier);
 				console.log()
 				}	
 				console.log("retrieved replier name is : "+retrievedData.child().Replier);
