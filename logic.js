@@ -11,9 +11,7 @@ var config = {
 //===============================================================================================
 $("document").ready(function(){
 
-	
-	
-	
+		
 const sendComment = document.getElementById("send");
 const commentBox = document.getElementById("commentBox");
 const nameBox = document.getElementById("nameBox");
@@ -21,21 +19,13 @@ const replyBox = document.getElementById("replyBox");
 const replyNameBox = document.getElementById("replyNameBox");	
 const storageRef = firebase.storage().ref();
 	
-const clickedReplyID = function storeReply(clickedID){
-		console.log(clickedID);
-		return clickedID;
-		};	
-
-
+	
  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 	initApp();
  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     function initApp(){
   	
-	    
-	    console.log(clickedReplyID);
-	    
     //+++++++++++Retrieving Msgs++++++++++++++++++++++++++++++++
 				var i=1;	
 				var firebaseRetrieveRef = firebase.database().ref().child("CommentsBoard");
@@ -90,7 +80,11 @@ const clickedReplyID = function storeReply(clickedID){
 			  }
 			});          */
 	//++++This will happen on click event of a reply button++++  
-		
+		function storeReply(clickedID){
+		console.log(clickedID);
+		//return clickedID;
+		}	
+
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 	    
 		}
