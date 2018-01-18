@@ -57,27 +57,52 @@ overflow-y:auto;
 #feedback{
 height:12%;
 }	    
-#commentBox{
+#replyBox, #commentBox{
 background-color:transparent;
 color:black;
 border-radius:5px;
 font-size:auto;
 width:100%;
 }
-#nameBox{
+#replyNameBox, #nameBox{
 background-color:transparent;
 color:black;
 border-radius:5px;
 font-size:auto;
 width:85%;
 }	    
-#send{
+#replySend, #send{
 background-color:transparent;
 color:limegreen;
 height:auto;
 border-radius:5px;
 }
    </style>
+<!-- Reply Modal -->
+  <div class="modal fade" id="contact" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Contact me at : </h4>
+        </div>
+        <div class="modal-body">
+          <input type="text" style="background-color:black;color:white;" id="replyBox" placeholder="Type in your reply here..."/>
+	  <input type="text" style="background-color:black;color:white;" id="replyNameBox" placeholder="And your name..."/>
+	  <button id="replySend" class="btn btn-sm"><i class="fa fa-arrow-circle-right fa-2x" ></i></button>
+			
+		 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> 
+      </div>
+      
+    </div>
+  </div>	 
+<!--End of Reply Modal -->	 
 	<div id="main" class="container">
 
 	
