@@ -37,7 +37,7 @@ var replyId;
 				console.log("retrieved comment is : "+retrievedData.Comment);
 				console.log("retrieved name is : "+retrievedData.Name);	
 				console.log("retrieved key is : "+retrievedKey);
-				while(snap.child("Replies")){
+				if(snap.child("Replies")){
 					var retrievedChildData = snap.child("Replies").val();
 					console.log("retrived replier is :"+retrievedChildData.Replier);
 				console.log()
