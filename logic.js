@@ -41,7 +41,7 @@ var replyId;
 				
 				
 				var newRef = firebase.database().ref().child("Replies");
-				newRef.on("child	_added", snapChild =>{
+				newRef.on("child_added", snapChild =>{
 				var retrievedChildData = snapChild.val();
 				console.log("retrieved replier is :"+retrievedChildData.Replier);
 				});
