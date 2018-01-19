@@ -37,7 +37,17 @@ var replyId;
 				console.log("retrieved comment is : "+retrievedData.Comment);
 				console.log("retrieved name is : "+retrievedData.Name);	
 				console.log("retrieved key is : "+retrievedKey);
-				if(retrievedData.child("Replies").exists()){
+				
+				
+				
+				var newRef = firebase.database().ref().child("Replies");
+				newRef.on("child	_added", snapChild =>{
+				var retrievedChildData = snapChild.val();
+				console.log("retrieved replier is :"+retrievedChildData.Replier);
+				});
+				
+				
+			/*	if(retrievedData.child("Replies").exists()){
 					var retrievedChildData = retrievedData.child("Replies").val();
 					console.log("retrieved replier is :"+retrievedChildData.Replier);
 				}
@@ -46,7 +56,8 @@ var replyId;
 					}
 				
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p><button id="+"'"+retrievedKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");
-				i++;
+				*/
+				i++; 
 					});
 	//+++++++++++Storing Comments++++++++++++++++++++++++++++++++
 		$("#send").on("click", function(){
