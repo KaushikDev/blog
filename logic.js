@@ -37,8 +37,8 @@ var replyId;
 				console.log("retrieved comment is : "+retrievedData.Comment);
 				console.log("retrieved name is : "+retrievedData.Name);	
 				console.log("retrieved key is : "+retrievedKey);
-				if(snap.child("CommentsBoard/"+retrievedKey+"/Replies/").exists()){
-					var retrievedChildData = snap.child("CommentsBoard/"+retrievedKey+"/Replies/").val();
+				if(snap.child("CommentsBoard/"+retrievedKey).exists()){
+					var retrievedChildData = snap.child("CommentsBoard/"+retrievedKey).val();
 					console.log("retrieved replier is :"+retrievedChildData.Replier);
 				}
 					else{
