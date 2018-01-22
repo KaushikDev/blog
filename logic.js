@@ -47,9 +47,9 @@ var replyId;
 		//		});
 		                  
 				if(snap.child("Replies").exists()){
-				   var retrievedChildData = snap.child("Replies").val();
-				   console.log("There is a reply that exists");	
-				   console.log("retrieved replier is :"+retrievedChildData.Replier);
+				 console.log("There is a reply that exists");	
+				 var retrievedChildDataReplier = snap.child("Replies/Replier").val();
+				 console.log("retrieved replier is :"+retrievedChildDataReplier);
 				   }
 				else{
 				console.log("There is no reply");
