@@ -48,6 +48,7 @@ var replyId;
 					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
 					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
 					console.log("retrieved key is : "+retrievedRepliesKey);
+				    });		
 				   }
 				else{
 				console.log("There is no reply");
