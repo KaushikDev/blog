@@ -52,7 +52,7 @@ var replyId;
 				 console.log("The retrieved Child key is : "+retrievedChildDataKey);	
 				 var retrievedChildDataReplier = snap.child("Replies").val();
 				 console.log("retrieved replier is :"+retrievedChildDataReplier.Replier);
-					var leadsRef = database.ref("Replies");
+					var leadsRef = firebase.database().ref("Replies");
 						leadsRef.on('value', function(snapshot) {
     						snapshot.forEach(function(childSnapshot) {
   						    var childData = childSnapshot.val();
