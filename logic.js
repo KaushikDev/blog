@@ -118,11 +118,10 @@ var replyId;
 				replyNameBox.value="";  
 				   
 				   var firebaseRetrieveRef1 = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-				firebaseRetrieveRef.on("child_added", snap1 =>{
+				firebaseRetrieveRef1.on("child_added", snap1 =>{
 				var retrievedData1 = snap1.val();
 				var retrievedKey1 = snap1.key;	
-				console.log("retrieved comment is : "+retrievedData1.Comment);
-				console.log("retrieved name is : "+retrievedData1.Name);	
+				
 				console.log("retrieved key is : "+retrievedKey1);
 				});
 			  }
