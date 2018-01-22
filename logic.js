@@ -101,7 +101,8 @@ var replyId;
 			  alert("You forgot to enter your name..");
 			  }
 			   else {
-			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
+			  //var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
+			var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID);	   
 			 //firebaseStoreRef.push().set(newReply);
 			   firebaseStoreRef.push({Reply:newReply, Replier:newReplyName});
 			  // firebaseStoreRef.push({Name:newReplyName});		   
