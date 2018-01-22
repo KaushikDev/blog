@@ -50,8 +50,8 @@ var replyId;
 				 console.log("There is a reply that exists");	
 				 var retrievedChildDataKey = snap.child("Replies").key;	
 				 console.log("The retrieved Child key is : "+retrievedChildDataKey);	
-				 var retrievedChildDataReplier = snap.child("Replies").child("Replier").val();
-				 console.log("retrieved replier is :"+retrievedChildDataReplier);
+				 var retrievedChildDataReplier = snap.child("Replies").val();
+				 console.log("retrieved replier is :"+retrievedChildDataReplier.Replier);
 				   }
 				else{
 				console.log("There is no reply");
