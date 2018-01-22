@@ -19,7 +19,7 @@ const nameBox = document.getElementById("nameBox");
 const replyBox = document.getElementById("replyBox");
 const replyNameBox = document.getElementById("replyNameBox");	
 const storageRef = firebase.storage().ref();
-var replyId;	
+var replyID;	
 	
  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 	initApp();
