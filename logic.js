@@ -40,12 +40,14 @@ var replyId;
 				
 				
 				
-				var newRef = firebase.database().ref().child("Replies");
-				newRef.on("child_added", snapChild =>{
-				var retrievedChildData = snapChild.val();
-				console.log("retrieved replier is :"+retrievedChildData.Replier);
-				});
-				
+		//		var newRef = firebase.database().ref().child("Replies");
+		//		newRef.on("child_added", snapChild =>{
+		//		var retrievedChildData = snapChild.val();
+		//		console.log("retrieved replier is :"+retrievedChildData.Replier);
+		//		});
+		
+				var retrievedChildData = retrievedData.child().val();
+				console.log("retrieved replier is :"+retrievedChildData.Replier);	
 				
 			/*	if(retrievedData.child("Replies").exists()){
 					var retrievedChildData = retrievedData.child("Replies").val();
