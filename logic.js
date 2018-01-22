@@ -108,22 +108,22 @@ var replyId;
 			  }
 			   else {
 			  //var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-			var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	
-				   console.log(firebaseStoreRef);
+			var firebaseStoreRef1 = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	
+				   
 			 //firebaseStoreRef.push().set(newReply);
-			   firebaseStoreRef.push({Reply:newReply, Replier:newReplyName});
+			   firebaseStoreRef1.push({Reply:newReply, Replier:newReplyName});
 			  // firebaseStoreRef.push({Name:newReplyName});		   
 			   replyBox.value="";
 				replyNameBox.value="";  
 				   
-				/*   var firebaseRetrieveRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-				firebaseRetrieveRef.on("child_added", snap =>{
-				var retrievedData = snap.val();
-				var retrievedKey = snap.key;	
-				console.log("retrieved comment is : "+retrievedData.Comment);
-				console.log("retrieved name is : "+retrievedData.Name);	
-				console.log("retrieved key is : "+retrievedKey);
-				});*/
+				   var firebaseRetrieveRef1 = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
+				firebaseRetrieveRef.on("child_added", snap1 =>{
+				var retrievedData1 = snap1.val();
+				var retrievedKey1 = snap1.key;	
+				console.log("retrieved comment is : "+retrievedData1.Comment);
+				console.log("retrieved name is : "+retrievedData1.Name);	
+				console.log("retrieved key is : "+retrievedKey1);
+				});
 			  }
 			});          
 	//++++This will happen on click event of a reply button++++  
