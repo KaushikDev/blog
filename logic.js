@@ -46,7 +46,7 @@ var replyId;
 		//		console.log("retrieved replier is :"+retrievedChildData.Replier);
 		//		});
 		
-				var retrievedChildData = retrievedData.child().val();
+				var retrievedChildData = retrievedData.child("Replies").val();
 				console.log("retrieved replier is :"+retrievedChildData.Replier);	
 				
 			/*	if(retrievedData.child("Replies").exists()){
