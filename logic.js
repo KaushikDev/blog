@@ -29,52 +29,33 @@ var replyId;
   	
     //+++++++++++Retrieving Msgs++++++++++++++++++++++++++++++++
 				var i=1;	
-				var firebaseRetrieveRef = firebase.database().ref().child("CommentsBoard");
+				var firebaseRetrieveCommentsRef = firebase.database().ref().child("CommentsBoard");
 				
-				firebaseRetrieveRef.on("child_added", snap =>{
-				var retrievedData = snap.val();
-				var retrievedKey = snap.key;	
-				console.log("retrieved comment is : "+retrievedData.Comment);
-				console.log("retrieved name is : "+retrievedData.Name);	
-				console.log("retrieved key is : "+retrievedKey);
+				firebaseRetrieveCommentsRef.on("child_added", snapComments =>{
+				var retrievedCommentData = snapComments.val();
+				var retrievedCommentKey = snapComments.key;	
+				console.log("retrieved comment is : "+retrievedCommentData.Comment);
+				console.log("retrieved name is : "+retrievedCommentData.Name);	
+				console.log("retrieved key is : "+retrievedCommentKey);
 				
 				
-				
-		//		var newRef = firebase.database().ref().child("Replies");
-		//		newRef.on("child_added", snapChild =>{
-		//		var retrievedChildData = snapChild.val();
-		//		console.log("retrieved replier is :"+retrievedChildData.Replier);
-		//		});
-		                  
 				if(snap.child("Replies").exists()){
 				 console.log("There is a reply that exists");	
-				 var retrievedChildDataKey = snap.child().key;	
-				 console.log("The retrieved Child key is : "+retrievedChildDataKey);	
-				 var retrievedChildDataReplier = snap.child("Replies").val();
-				 console.log("retrieved replier is :"+retrievedChildDataReplier.Replier);
-					
-    					/*	snapshot.forEach(function(childSnapshot) {
-  						    var childData = childSnapshot.val();
-							console.log("Inside leads ref, the replier name is : "+childData.Replier);
-  							  });
-							  */
-						
+					var firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
+					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
+					var retrievedRepliesData = snapReplies.val();
+					var retrievedRepliesKey = snapReplies.key;	
+					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
+					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
+					console.log("retrieved key is : "+retrievedRepliesKey);
 				   }
 				else{
 				console.log("There is no reply");
 				}	
 					
-				alert(retrievedData.child("Replies").exists());
-				if(retrievedData.child("Replies").exists()){
-					
-					var retrievedChildData = retrievedData.child("Replies").val();
-					console.log("retrieved replier is :"+retrievedChildData.Replier);
-				}
-					else{
-					console.log("No snapshot found !!");
-					}
 				
-				$("#commentList").append("<div><label style='width:100%;'>"+retrievedData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedData.Comment+"</p><button id="+"'"+retrievedKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");
+			
+				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");
 				
 				i++; 
 					});
@@ -110,23 +91,12 @@ var replyId;
 			  }
 			   else {
 			  //var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-			var firebaseStoreRef1 = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	
-				   
+			var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	   
 			 //firebaseStoreRef.push().set(newReply);
-			   firebaseStoreRef1.push({Reply:newReply, Replier:newReplyName});
+			   firebaseStoreRef.push({Reply:newReply, Replier:newReplyName});
 			  // firebaseStoreRef.push({Name:newReplyName});		   
 			   replyBox.value="";
-				replyNameBox.value="";  
-				   
-				   var firebaseRetrieveRef1 = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-				firebaseRetrieveRef1.on("child_added", snap1 =>{
-				var retrievedData1 = snap1.val();
-				var retrievedKey1 = snap1.key;	
-				
-				//console.log("retrieved key is : "+retrievedKey1);
-				console.log("retrieved key is : "+retrievedData1.Replier);
-					
-				});
+				replyNameBox.value="";   
 			  }
 			});          
 	//++++This will happen on click event of a reply button++++  
