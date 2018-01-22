@@ -122,7 +122,9 @@ var replyId;
 				var retrievedData1 = snap1.val();
 				var retrievedKey1 = snap1.key;	
 				
-				console.log("retrieved key is : "+retrievedKey1);
+				//console.log("retrieved key is : "+retrievedKey1);
+				console.log("retrieved key is : "+retrievedData1.Replier);
+					
 				});
 			  }
 			});          
