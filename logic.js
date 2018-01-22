@@ -64,7 +64,7 @@ var replyId;
 				console.log("There is no reply");
 				}	
 					
-				
+				alert(retrievedData.child("Replies").exists());
 				if(retrievedData.child("Replies").exists()){
 					
 					var retrievedChildData = retrievedData.child("Replies").val();
