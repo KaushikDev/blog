@@ -48,7 +48,7 @@ var replyId;
 		                  
 				if(snap.child("Replies").exists()){
 				 console.log("There is a reply that exists");	
-				 var retrievedChildDataReplier = snap.child("Replies/Replier").val();
+				 var retrievedChildDataReplier = snap.child("Replies/Replier/").val();
 				 console.log("retrieved replier is :"+retrievedChildDataReplier);
 				   }
 				else{
