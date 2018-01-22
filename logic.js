@@ -45,9 +45,16 @@ var replyId;
 		//		var retrievedChildData = snapChild.val();
 		//		console.log("retrieved replier is :"+retrievedChildData.Replier);
 		//		});
-		
-				var retrievedChildData = snap.child("Replies").val();
-				console.log("retrieved replier is :"+retrievedChildData.Replier);	
+		                  
+				if(snap.child("Replies").exists()){
+				   var retrievedChildData = snap.child("Replies").val();
+				   console.log("There is a reply that exists");	
+				   console.log("retrieved replier is :"+retrievedChildData.Replier);
+				   }
+				else{
+				console.log("There is no reply");
+				}	
+					
 				
 			/*	if(retrievedData.child("Replies").exists()){
 					var retrievedChildData = retrievedData.child("Replies").val();
