@@ -39,7 +39,7 @@ var replyId;
 				console.log("retrieved key is : "+retrievedCommentKey);
 				
 				
-				if(snap.child("Replies").exists()){
+				if(snapComments.child("Replies").exists()){
 				 console.log("There is a reply that exists");	
 					var firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
 					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
