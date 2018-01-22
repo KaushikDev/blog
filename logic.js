@@ -53,10 +53,11 @@ var replyId;
 				 var retrievedChildDataReplier = snap.child("Replies").val();
 				 console.log("retrieved replier is :"+retrievedChildDataReplier.Replier);
 					
-    						snapshot.forEach(function(childSnapshot) {
+    					/*	snapshot.forEach(function(childSnapshot) {
   						    var childData = childSnapshot.val();
 							console.log("Inside leads ref, the replier name is : "+childData.Replier);
   							  });
+							  */
 						
 				   }
 				else{
