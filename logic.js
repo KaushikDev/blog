@@ -38,7 +38,7 @@ var replyID;
 				console.log("retrieved name is : "+retrievedCommentData.Name);	
 				console.log("retrieved key is : "+retrievedCommentKey);
 				
-				
+		/*		
 				if(snapComments.child("Replies").exists()){
 				 console.log("There is a reply that exists");	
 					var firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
@@ -54,7 +54,7 @@ var replyID;
 				console.log("There is no reply");
 				}	
 					
-				
+		*/		
 			
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");
 				
@@ -97,7 +97,19 @@ var replyID;
 			   firebaseStoreRef.push({Reply:newReply, Replier:newReplyName});
 			  // firebaseStoreRef.push({Name:newReplyName});		   
 			   replyBox.value="";
-				replyNameBox.value="";   
+			   replyNameBox.value="";   
+				   
+		//---Retrieving Replies start
+				   var firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
+					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
+					var retrievedRepliesData = snapReplies.val();
+					var retrievedRepliesKey = snapReplies.key;	
+					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
+					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
+					console.log("retrieved key is : "+retrievedRepliesKey);
+		//---Retrieving replies ends		   
+				   
+				   
 			  }
 			});          
 	//++++This will happen on click event of a reply button++++  
