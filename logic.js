@@ -55,15 +55,13 @@ var retrievedRepliesKey;
 				if(snapComments.child("Replies").exists()){
 				 console.log("There is a reply that exists");	
 					var firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
-					var k=1;
-					console.log("k value is : "+k);	
+					firebaseRetrieveRepliesRef.once("value", snapReplies =>{
 					retrievedRepliesData = snapReplies.val();
 					retrievedRepliesKey = snapReplies.key;	
 					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
 					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
 					console.log("retrieved key is : "+retrievedRepliesKey);
-					k++;	
+						
 				    });		
 				   }
 				else{
@@ -117,14 +115,14 @@ var retrievedRepliesKey;
 			   replyNameBox.value="";   
 				   
 		//---Retrieving Replies start
-				   firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
+			/*	   firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
 					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
 					retrievedRepliesData = snapReplies.val();
 					retrievedRepliesKey = snapReplies.key;	
 					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
 					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
 					console.log("retrieved key is : "+retrievedRepliesKey);
-					});		
+					});		*/
 		//---Retrieving replies ends		   
 				   
 				   
