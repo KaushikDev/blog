@@ -9,6 +9,8 @@ var config = {
   firebase.initializeApp(config);
 
 var storeReply; 
+
+
 //===============================================================================================
 $("document").ready(function(){
 
@@ -20,6 +22,17 @@ const replyBox = document.getElementById("replyBox");
 const replyNameBox = document.getElementById("replyNameBox");	
 const storageRef = firebase.storage().ref();
 var replyID;	
+var firebaseRetrieveCommentsRef;	
+var firebaseStoreCommentsRef;
+var firebaseStoreRepliesRef;
+var firebaseRetrieveRepliesRef;	
+var retrievedCommentData;
+var retrievedCommentKey;
+var retrievedRepliesData;
+var retrievedRepliesKey;	
+	
+	
+	
 	
  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 	initApp();
@@ -29,11 +42,11 @@ var replyID;
   	
     //+++++++++++Retrieving Msgs++++++++++++++++++++++++++++++++
 				var i=1;	
-				var firebaseRetrieveCommentsRef = firebase.database().ref().child("CommentsBoard");
+				firebaseRetrieveCommentsRef = firebase.database().ref().child("CommentsBoard");
 				
 				firebaseRetrieveCommentsRef.on("child_added", snapComments =>{
-				var retrievedCommentData = snapComments.val();
-				var retrievedCommentKey = snapComments.key;	
+				retrievedCommentData = snapComments.val();
+				retrievedCommentKey = snapComments.key;	
 				console.log("retrieved comment is : "+retrievedCommentData.Comment);
 				console.log("retrieved name is : "+retrievedCommentData.Name);	
 				console.log("retrieved key is : "+retrievedCommentKey);
@@ -56,6 +69,7 @@ var replyID;
 					
 		*/		
 			
+					
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");
 				
 				i++; 
@@ -72,9 +86,9 @@ var replyID;
 			  alert("You forgot to enter your name..");
 			  }
 			   else {
-			  var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/");
+			  firebaseStoreCommentsRef = firebase.database().ref().child("CommentsBoard/");
 			 //firebaseStoreRef.push().set(newComment);
-			   firebaseStoreRef.push({Comment:newComment, Name:newName});
+			   firebaseStoreCommentsRef.push({Comment:newComment, Name:newName});
 			  // firebaseStoreRef.push({Name:newName});		   
 			   commentBox.value="";
 				nameBox.value="";   
@@ -92,18 +106,18 @@ var replyID;
 			  }
 			   else {
 			  //var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-			var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	   
+			firebaseStoreRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	   
 			 //firebaseStoreRef.push().set(newReply);
-			   firebaseStoreRef.push({Reply:newReply, Replier:newReplyName});
+			   firebaseStoreRepliesRef.push({Reply:newReply, Replier:newReplyName});
 			  // firebaseStoreRef.push({Name:newReplyName});		   
 			   replyBox.value="";
 			   replyNameBox.value="";   
 				   
 		//---Retrieving Replies start
-				   var firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
+				   firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
 					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
-					var retrievedRepliesData = snapReplies.val();
-					var retrievedRepliesKey = snapReplies.key;	
+					retrievedRepliesData = snapReplies.val();
+					retrievedRepliesKey = snapReplies.key;	
 					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
 					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
 					console.log("retrieved key is : "+retrievedRepliesKey);
