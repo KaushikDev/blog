@@ -52,26 +52,32 @@ var retrievedRepliesKey;
 				console.log("retrieved key is : "+retrievedCommentKey);
 				
 				
-			//	if(snapComments.child("Replies").exists()){
-			//	 console.log("There is a reply that exists");	
-					firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-					firebaseRetrieveRepliesRef.once("value", snapReplies =>{
-					retrievedRepliesData = snapReplies.val();
-					retrievedRepliesKey = snapReplies.key;	
-					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
-					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
-					console.log("retrieved key is : "+retrievedRepliesKey);
-						
-				    });		
-			//	   }
-			//	else{
-			//	console.log("There is no reply");
-			//	}	
+				if(snapComments.child("Replies").exists()){
+				 console.log("There is a reply that exists");	
+					
+					firebaseRetrieveCommentsRef.on("value", function(snapComments) {
+  					snapComments.forEach(function(childSnapshot) {
+  					// key will be "ada" the first time and "alan" the second time
+  					var key = childSnapshot.key;
+   					// childData will be the actual contents of the child
+					var childData = childSnapshot.val();
+					console.log("child key is : "+key);
+					console.log("child reply is : "+childData.Reply);
+					console.log("child replier is : "+childData.Replier);	
+ 					 });
+				}, function(error) {
+				  console.error(error);
+				});
+				   }
+				else{
+				console.log("There is no reply");
+				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
+				}	
 					
 				
 			
 					
-				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");
+				
 				
 				i++; 
 					});
