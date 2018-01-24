@@ -52,8 +52,8 @@ var retrievedRepliesKey;
 				console.log("retrieved key is : "+retrievedCommentKey);
 				
 				
-				if(snapComments.child("Replies").exists()){
-				 console.log("There is a reply that exists");	
+			//	if(snapComments.child("Replies").exists()){
+			//	 console.log("There is a reply that exists");	
 					firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
 					firebaseRetrieveRepliesRef.once("value", snapReplies =>{
 					retrievedRepliesData = snapReplies.val();
@@ -63,10 +63,10 @@ var retrievedRepliesKey;
 					console.log("retrieved key is : "+retrievedRepliesKey);
 						
 				    });		
-				   }
-				else{
-				console.log("There is no reply");
-				}	
+			//	   }
+			//	else{
+			//	console.log("There is no reply");
+			//	}	
 					
 				
 			
