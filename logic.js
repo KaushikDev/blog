@@ -41,7 +41,7 @@ var retrievedRepliesKey;
     function initApp(){
   	
     //+++++++++++Retrieving Msgs++++++++++++++++++++++++++++++++
-				var i=1;	
+					
 				firebaseRetrieveCommentsRef = firebase.database().ref().child("CommentsBoard");
 				
 				firebaseRetrieveCommentsRef.on("child_added", snapComments =>{
@@ -50,37 +50,11 @@ var retrievedRepliesKey;
 				console.log("retrieved comment is : "+retrievedCommentData.Comment);
 				console.log("retrieved name is : "+retrievedCommentData.Name);	
 				console.log("retrieved key is : "+retrievedCommentKey);
-				
-				
-				if(snapComments.child("Replies").exists()){
-				 console.log("There is a reply that exists");	
-					//firebaseRetrieveRepliesRef = firebase.database().ref().child("Replies");
-					firebaseRetrieveRepliesRef = snapComments.child("Replies");
-					firebaseRetrieveRepliesRef.on("value", function(snapReplies) {
-  					snapReplies.forEach(function(childSnapshot) {
-  					// key will be "ada" the first time and "alan" the second time
-  					var key = childSnapshot.key;
-   					// childData will be the actual contents of the child
-					var childData = childSnapshot.val();
-					console.log("child key is : "+key);
-					console.log("child reply is : "+childData.Reply);
-					console.log("child replier is : "+childData.Replier);	
- 					 });
-				}, function(error) {
-				  console.error(error);
-				});
-				   }
-				else{
-				console.log("There is no reply");
+				console.log("RetrievedCommentData is : "+retrievedCommentData);	
+				console.log(JSON.stringify(retrievedCommentData));
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
-				}	
-					
+								
 				
-			
-					
-				
-				
-				i++; 
 					});
 	//+++++++++++Storing Comments++++++++++++++++++++++++++++++++
 		$("#send").on("click", function(){
