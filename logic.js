@@ -51,23 +51,26 @@ var retrievedRepliesKey;
 				console.log("retrieved name is : "+retrievedCommentData.Name);	
 				console.log("retrieved key is : "+retrievedCommentKey);
 				
-		/*		
+				
 				if(snapComments.child("Replies").exists()){
 				 console.log("There is a reply that exists");	
 					var firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
 					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
-					var retrievedRepliesData = snapReplies.val();
-					var retrievedRepliesKey = snapReplies.key;	
+					var k=1;
+					console.log("k value is : "+k);	
+					retrievedRepliesData = snapReplies.val();
+					retrievedRepliesKey = snapReplies.key;	
 					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
 					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
 					console.log("retrieved key is : "+retrievedRepliesKey);
+					k++;	
 				    });		
 				   }
 				else{
 				console.log("There is no reply");
 				}	
 					
-		*/		
+				
 			
 					
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");
