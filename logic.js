@@ -56,7 +56,7 @@ var retrievedRepliesKey;
 				 console.log("There is a reply that exists");	
 					firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
 					firebaseRetrieveRepliesRef.on("value", function(snapReplies) {
-  					snapComments.forEach(function(childSnapshot) {
+  					snapReplies.forEach(function(childSnapshot) {
   					// key will be "ada" the first time and "alan" the second time
   					var key = childSnapshot.key;
    					// childData will be the actual contents of the child
