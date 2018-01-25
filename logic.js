@@ -54,9 +54,11 @@ var retrievedRepliesKey;
 					
 				   var numChilds = snapComments.child("Replies").numChildren();	
 				   console.log("The number of children replies has is : "+numChilds);	
-				console.log(JSON.stringify(retrievedCommentData));
+				
 				var object = JSON.stringify(retrievedCommentData);
-				//object.Replies[0]
+				console.log("Object is in stringify : " + object);	
+				console.log("Object is in toJSON : " + object.toJSON);
+					//object.Replies[0]
 				 for(var i=1;i<=numChilds;i++){
 				 var replierVar = object.Replies[i].Replier;
 				 var replyVar = object.Replies[i].Reply;	 
