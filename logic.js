@@ -57,6 +57,12 @@ var retrievedRepliesKey;
 				console.log(JSON.stringify(retrievedCommentData));
 				var object = JSON.stringify(retrievedCommentData);
 				//object.Replies[0]
+				 for(var i=0;i<numChilds;i++){
+				 var replierVar = object.Replies[i].Replier;
+				 var replyVar = object.Replies[i].Reply;	 
+				  console.log(i+" replier is " + replierVar);
+				  console.log(i+" reply is " + replyVar);	 
+				 }	
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
 								
 				
