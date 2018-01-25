@@ -56,8 +56,10 @@ var retrievedRepliesKey;
 				   console.log("The number of children replies has is : "+numChilds);	
 				
 				var object = JSON.stringify(retrievedCommentData);
-				console.log("Object is in stringify : " + object);	
-				
+				console.log("Object is in stringify : " + object);
+					
+				var objectJSON = JSON.parse(object);
+				console.log("Object is in JSON : " + objectJSON);
 					//object.Replies[0]
 				 for(var i=1;i<=numChilds;i++){
 				 var replierVar = object.Replies[i].Replier;
