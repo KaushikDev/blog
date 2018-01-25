@@ -51,6 +51,8 @@ var retrievedRepliesKey;
 				console.log("retrieved name is : "+retrievedCommentData.Name);	
 				console.log("retrieved key is : "+retrievedCommentKey);
 				console.log("RetrievedCommentData is : "+retrievedCommentData);
+				console.log("RetrievedCommentData in JSON is : "+retrievedCommentData.toJSON());
+				console.log("snapComments in JSON is : "+snapComments.toJSON());
 					
 				   var numChilds = snapComments.child("Replies").numChildren();	
 				   console.log("The number of children replies has is : "+numChilds);	
