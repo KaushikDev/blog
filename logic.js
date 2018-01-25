@@ -57,7 +57,7 @@ var retrievedRepliesKey;
 				console.log(JSON.stringify(retrievedCommentData));
 				var object = JSON.stringify(retrievedCommentData);
 				//object.Replies[0]
-				 for(var i=0;i<numChilds;i++){
+				 for(var i=1;i<=numChilds;i++){
 				 var replierVar = object.Replies[i].Replier;
 				 var replyVar = object.Replies[i].Reply;	 
 				  console.log(i+" replier is " + replierVar);
