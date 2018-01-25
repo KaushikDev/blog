@@ -52,8 +52,9 @@ var retrievedRepliesKey;
 				console.log("retrieved key is : "+retrievedCommentKey);
 				console.log("RetrievedCommentData is : "+retrievedCommentData);	
 				console.log(JSON.stringify(retrievedCommentData));
-				var object = JSON.stringify(retrievedCommentData);
-				
+				//var object = JSON.stringify(retrievedCommentData);
+				var object = retrievedCommentData.toJSON();
+					console.log("After using toJSON method : "+object);
 					function parseJson(object){
   					  object.Replies.forEach(function(key) {
     					  console.log(key.Reply);
