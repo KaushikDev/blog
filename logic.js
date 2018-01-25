@@ -57,11 +57,11 @@ var retrievedRepliesKey;
 				
 				var object = JSON.stringify(retrievedCommentData);
 				console.log("Object is in stringify : " + object);	
-				console.log("Object is in toJSON : " + object.toJSON);
+				
 					//object.Replies[0]
-				 for(var i=1;i<=numChilds;i++){
-				 var replierVar = object.Replies[i].Replier;
-				 var replyVar = object.Replies[i].Reply;	 
+				 for(var i=0;i<numChilds;i++){
+				 var replierVar = object["Replies"][i]["Replier"];
+				 var replyVar = object["Replies"][i]["Reply"];	 
 				  console.log(i+" replier is " + replierVar);
 				  console.log(i+" reply is " + replyVar);	 
 				 }	
