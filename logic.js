@@ -52,6 +52,16 @@ var retrievedRepliesKey;
 				console.log("retrieved key is : "+retrievedCommentKey);
 				console.log("RetrievedCommentData is : "+retrievedCommentData);	
 				console.log(JSON.stringify(retrievedCommentData));
+				var object = JSON.stringify(retrievedCommentData);
+				
+					function parseJson(object){
+  					  object.Replies.forEach(function(key) {
+    					  console.log(key.Reply);
+					  console.log(key.Replier);	  
+ 					   });
+					}
+
+					parseJson(object);	
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
 								
 				
