@@ -30,9 +30,10 @@ var retrievedCommentData;
 var retrievedCommentKey;
 var retrievedRepliesData;
 var retrievedRepliesKey;	
-	
-	
-	
+var childDatakey;
+var repliesData;
+var childDataSnapshot;
+var numChilds;
 	
  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 	initApp();
@@ -51,24 +52,25 @@ var retrievedRepliesKey;
 				console.log("retrieved commenter name is : "+retrievedCommentData.Name);	
 				console.log("retrieved comment key is : "+retrievedCommentKey);
 			
-				/*	
-				var numChilds = snapComments.child("Replies").numChildren();	
+					
+				numChilds = snapComments.child("Replies").numChildren();	
 				console.log("The number of children replies has is : "+numChilds);	
 				
-				var object = JSON.stringify(retrievedCommentData);
-				console.log("Object is in stringify : " + object);
-				*/	
-				
-				var repliesData = snapComments.child("Replies");
-				 repliesData.forEach(function(childSnapshot) {
-    				  
-				        var key = childSnapshot.key;
-					var childData = childSnapshot.val();
-					console.log("the key from child snapshot is " + key);
-					console.log("the reply from child snapshot is " + childData.Reply);
-					console.log("the replier from child snapshot is " + childData.Replier);    
-  });	
+					repliesData = snapComments.child("Replies");
+					if(repliesData.exists()){
+					 repliesData.forEach(function(childSnapshot) {
+						childDatakey = childSnapshot.key;
+						childDataSnapshot = childSnapshot.val();
+						console.log("the key from child snapshot is " + childDatakey);
+						console.log("the reply from child snapshot is " + childDataSnapshot.Reply);
+						console.log("the replier from child snapshot is " + childDataSnapshot.Replier);    
+					 });
+					
+					}
+				else {
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
+				}	
+				
 								
 				
 					});
