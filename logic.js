@@ -51,22 +51,14 @@ var retrievedRepliesKey;
 				console.log("retrieved commenter name is : "+retrievedCommentData.Name);	
 				console.log("retrieved comment key is : "+retrievedCommentKey);
 			
-					
-				   var numChilds = snapComments.child("Replies").numChildren();	
-				   console.log("The number of children replies has is : "+numChilds);	
+				/*	
+				var numChilds = snapComments.child("Replies").numChildren();	
+				console.log("The number of children replies has is : "+numChilds);	
 				
 				var object = JSON.stringify(retrievedCommentData);
 				console.log("Object is in stringify : " + object);
-					
-				
-				firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
-					retrievedRepliesData = snapReplies.val();
-					retrievedRepliesKey = snapReplies.key;	
-					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
-					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
-					console.log("retrieved Replies key is : "+retrievedRepliesKey);
-					});	
+				*/	
+									
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
 								
 				
@@ -131,7 +123,22 @@ var retrievedRepliesKey;
 		}
 
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
-	    
+	//+++++++++++Taking datasnapshot of each child++++++++++++++++++++++++    
+	var query = firebase.database().ref("CommentsBoard").orderByKey();
+query.once("value")
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      // key will be "ada" the first time and "alan" the second time
+      var key = childSnapshot.key;
+      // childData will be the actual contents of the child
+      var childData = childSnapshot.val();
+	console.log("the key from child snapshot is " + key);
+	console.log("the reply from child snapshot is " + cihldData.Reply);
+	console.log("the replier from child snapshot is " + cihldData.Replier);    
+  });
+});
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+	
 		}
     	
 			  
