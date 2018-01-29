@@ -50,9 +50,7 @@ var retrievedRepliesKey;
 				console.log("retrieved comment is : "+retrievedCommentData.Comment);
 				console.log("retrieved name is : "+retrievedCommentData.Name);	
 				console.log("retrieved key is : "+retrievedCommentKey);
-				console.log("RetrievedCommentData is : "+retrievedCommentData);
-				
-				console.log("snapComments in JSON is : "+snapComments.toJSON());
+			
 					
 				   var numChilds = snapComments.child("Replies").numChildren();	
 				   console.log("The number of children replies has is : "+numChilds);	
@@ -60,15 +58,15 @@ var retrievedRepliesKey;
 				var object = JSON.stringify(retrievedCommentData);
 				console.log("Object is in stringify : " + object);
 					
-				var objectJSON = JSON.parse(object);
-				console.log("Object is in JSON : " + objectJSON);
-					//object.Replies[0]
-				 for(var i=1;i<=numChilds;i++){
-				 var replierVar = object.Replies.Replier;
-				 var replyVar = object.Replies.Reply;	 
-				  console.log(i+" replier is " + replierVar);
-				  console.log(i+" reply is " + replyVar);	 
-				 }	
+				
+				firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
+					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
+					retrievedRepliesData = snapReplies.val();
+					retrievedRepliesKey = snapReplies.key;	
+					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
+					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
+					console.log("retrieved key is : "+retrievedRepliesKey);
+					});	
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
 								
 				
