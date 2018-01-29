@@ -64,8 +64,8 @@ var retrievedRepliesKey;
 				console.log("Object is in JSON : " + objectJSON);
 					//object.Replies[0]
 				 for(var i=1;i<=numChilds;i++){
-				 var replierVar = object.Replies[i].Replier;
-				 var replyVar = object.Replies[i].Replier;	 
+				 var replierVar = object.Replies.Replier;
+				 var replyVar = object.Replies.Reply;	 
 				  console.log(i+" replier is " + replierVar);
 				  console.log(i+" reply is " + replyVar);	 
 				 }	
