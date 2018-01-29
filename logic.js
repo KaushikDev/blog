@@ -58,7 +58,16 @@ var retrievedRepliesKey;
 				var object = JSON.stringify(retrievedCommentData);
 				console.log("Object is in stringify : " + object);
 				*/	
-									
+				
+				var repliesData = snapComments.child("Replies");
+				 repliesData.forEach(function(childSnapshot) {
+    				  
+				        var key = childSnapshot.key;
+					var childData = childSnapshot.val();
+					console.log("the key from child snapshot is " + key);
+					console.log("the reply from child snapshot is " + childData.Reply);
+					console.log("the replier from child snapshot is " + childData.Replier);    
+  });	
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
 								
 				
@@ -124,7 +133,7 @@ var retrievedRepliesKey;
 
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 	//+++++++++++Taking datasnapshot of each child++++++++++++++++++++++++    
-	var query = firebase.database().ref("CommentsBoard").orderByKey();
+/*	var query = firebase.database().ref("CommentsBoard").orderByKey();
 query.once("value")
   .then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
@@ -136,7 +145,7 @@ query.once("value")
 	console.log("the reply from child snapshot is " + childData.Reply);
 	console.log("the replier from child snapshot is " + childData.Replier);    
   });
-});
+});           */
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 	
 		}
