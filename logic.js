@@ -66,7 +66,7 @@ var numChilds;
 						console.log("the key from child snapshot is " + childDatakey);
 						console.log("the reply from child snapshot is " + childDataSnapshot.Reply);
 						console.log("the replier from child snapshot is " + childDataSnapshot.Replier); 
-						 matrix.push(childDataSnapshot.Reply, childDataSnapshot.Replier);
+						 matrix.push([childDataSnapshot.Reply, childDataSnapshot.Replier]);
 					 });
 					
 					console.log(matrix);
