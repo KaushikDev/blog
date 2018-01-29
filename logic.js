@@ -76,7 +76,7 @@ var numChilds;
 					console.log("Matrix at 1,0 is "+ matrix[1][0]);	
 					console.log("Matrix at 1,1 is "+ matrix[1][1]);	
 						
-						for(var i=0;i<numChild;i++){
+						for(var i=0;i<numChilds;i++){
 							var string = "@"+matrix[i][0]+": "+matrix[i][1];
 							retrievedReplies.push(string);
 						}
