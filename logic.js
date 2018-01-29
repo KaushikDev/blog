@@ -58,14 +58,18 @@ var numChilds;
 				
 					repliesData = snapComments.child("Replies");
 					if(repliesData.exists()){
-					 repliesData.forEach(function(childSnapshot) {
+						var matrix = [];
+					 
+					repliesData.forEach(function(childSnapshot) {
 						childDatakey = childSnapshot.key;
 						childDataSnapshot = childSnapshot.val();
 						console.log("the key from child snapshot is " + childDatakey);
 						console.log("the reply from child snapshot is " + childDataSnapshot.Reply);
-						console.log("the replier from child snapshot is " + childDataSnapshot.Replier);    
+						console.log("the replier from child snapshot is " + childDataSnapshot.Replier); 
+						 matrix.push(childDataSnapshot.Reply, childDataSnapshot.Replier);
 					 });
 					
+					console.log(matrix);
 					}
 				else {
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
