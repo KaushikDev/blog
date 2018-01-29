@@ -70,8 +70,10 @@ var numChilds;
 					 });
 					
 					console.log(matrix);
-					console.log("Matrix at 00,01 is "+ matrix[0,0][0,1]);
-					console.log("Matrix at 10,11 is "+ matrix[0,1][1,1]);	
+					console.log("Matrix at 0,0 is "+ matrix[0][0]);
+					console.log("Matrix at 0,1 is "+ matrix[0][1]);
+					console.log("Matrix at 1,0 is "+ matrix[1][0]);	
+					console.log("Matrix at 1,1 is "+ matrix[1][1]);	
 					}
 				else {
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
