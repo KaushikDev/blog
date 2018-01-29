@@ -59,6 +59,7 @@ var numChilds;
 					repliesData = snapComments.child("Replies");
 					if(repliesData.exists()){
 						var matrix = [];
+						var retrievedReplies = [];
 					 
 					repliesData.forEach(function(childSnapshot) {
 						childDatakey = childSnapshot.key;
@@ -66,7 +67,7 @@ var numChilds;
 						console.log("the key from child snapshot is " + childDatakey);
 						console.log("the reply from child snapshot is " + childDataSnapshot.Reply);
 						console.log("the replier from child snapshot is " + childDataSnapshot.Replier); 
-						 matrix.push([childDataSnapshot.Reply, childDataSnapshot.Replier]);
+						 matrix.push([childDataSnapshot.Replier, childDataSnapshot.Reply]);
 					 });
 					
 					console.log(matrix);
@@ -74,6 +75,15 @@ var numChilds;
 					console.log("Matrix at 0,1 is "+ matrix[0][1]);
 					console.log("Matrix at 1,0 is "+ matrix[1][0]);	
 					console.log("Matrix at 1,1 is "+ matrix[1][1]);	
+						
+						for(var i=0;i<numChild;i++){
+							var string = "@"+matrix[i][0]+": "+matrix[i][1];
+							retrievedReplies.push(string);
+						}
+						
+					console.log(retrievedReplies);	
+						
+					
 					}
 				else {
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;border-radius:5px' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
