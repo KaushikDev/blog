@@ -133,8 +133,8 @@ query.once("value")
       // childData will be the actual contents of the child
       var childData = childSnapshot.val();
 	console.log("the key from child snapshot is " + key);
-	console.log("the reply from child snapshot is " + cihldData.Reply);
-	console.log("the replier from child snapshot is " + cihldData.Replier);    
+	console.log("the reply from child snapshot is " + childData.Reply);
+	console.log("the replier from child snapshot is " + childData.Replier);    
   });
 });
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
