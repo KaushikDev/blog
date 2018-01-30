@@ -72,11 +72,7 @@ var numChilds;
 					 });
 					
 					console.log(matrix);
-					console.log("Matrix at 0,0 is "+ matrix[0][0]);
-					console.log("Matrix at 0,1 is "+ matrix[0][1]);
-					console.log("Matrix at 1,0 is "+ matrix[1][0]);	
-					console.log("Matrix at 1,1 is "+ matrix[1][1]);	
-						
+										
 						
 						for(var i=0;i<numChilds;i++){
 							var string = matrix[i][0]+" replied: "+matrix[i][1];
