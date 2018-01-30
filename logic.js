@@ -60,7 +60,8 @@ var numChilds;
 					if(repliesData.exists()){
 						var matrix = [];
 						var retrievedReplies = [];
-					 
+					        var htmlStr = "";
+						
 					repliesData.forEach(function(childSnapshot) {
 						childDatakey = childSnapshot.key;
 						childDataSnapshot = childSnapshot.val();
@@ -76,14 +77,16 @@ var numChilds;
 					console.log("Matrix at 1,0 is "+ matrix[1][0]);	
 					console.log("Matrix at 1,1 is "+ matrix[1][1]);	
 						
+						
 						for(var i=0;i<numChilds;i++){
 							var string = matrix[i][0]+" replied: "+matrix[i][1];
 							retrievedReplies.push(string);
+							htmlStr = htmlStr+ "<div><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedReplies[i]+"</p></div>";
 						}
 						
 					console.log(retrievedReplies);	
-						
-					
+					console.log(htmlStr);	
+					$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:transparent;color:yellow;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'><i class='fa fa-reply' fa-2x></i></button></div>"+htmlStr);	
 					}
 				else {
 				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:transparent;color:yellow;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'><i class='fa fa-reply' fa-2x></i></button></div>");	
