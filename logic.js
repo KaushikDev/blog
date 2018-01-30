@@ -49,10 +49,8 @@ var numChilds;
 				retrievedCommentData = snapComments.val();
 				retrievedCommentKey = snapComments.key;	
 				console.log("retrieved comment is : "+retrievedCommentData.Comment);
-				console.log("retrieved commenter name is : "+retrievedCommentData.Name);	
 				console.log("retrieved comment key is : "+retrievedCommentKey);
 			
-					
 				numChilds = snapComments.child("Replies").numChildren();	
 				console.log("The number of children replies has is : "+numChilds);	
 				
@@ -67,17 +65,14 @@ var numChilds;
 						childDataSnapshot = childSnapshot.val();
 						console.log("the key from child snapshot is " + childDatakey);
 						console.log("the reply from child snapshot is " + childDataSnapshot.Reply);
-						console.log("the replier from child snapshot is " + childDataSnapshot.Replier); 
+					
 						 matrix.push([childDataSnapshot.Replier, childDataSnapshot.Reply]);
 					 });
 					
-					console.log(matrix);
-										
-						
-						for(var i=0;i<numChilds;i++){
+					for(var i=0;i<numChilds;i++){
 							var string = matrix[i][0]+" replied: "+matrix[i][1];
 							retrievedReplies.push(string);
-							htmlStr = htmlStr+ "<div><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedReplies[i]+"</p></div>";
+							htmlStr = htmlStr+ "<div><label style='width:50%;'>"+matrix[i][0]+" replies.."+"</label><p style='width:100%;background-color:#808080;font-style:;'>"+matrix[i][1]+"</p></div>";
 						}
 						
 					console.log(retrievedReplies);	
@@ -130,18 +125,7 @@ var numChilds;
 			   replyBox.value="";
 			   replyNameBox.value="";   
 				   
-		//---Retrieving Replies start
-			/*	   firebaseRetrieveRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-					firebaseRetrieveRepliesRef.on("child_added", snapReplies =>{
-					retrievedRepliesData = snapReplies.val();
-					retrievedRepliesKey = snapReplies.key;	
-					console.log("retrieved reply is : "+retrievedRepliesData.Reply);
-					console.log("retrieved replier is : "+retrievedRepliesData.Replier);	
-					console.log("retrieved key is : "+retrievedRepliesKey);
-					});		*/
-		//---Retrieving replies ends		   
-				   
-				   
+				window.location.reload();	   
 			  }
 			});          
 	//++++This will happen on click event of a reply button++++  
@@ -151,24 +135,8 @@ var numChilds;
 		}
 
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
-	//+++++++++++Taking datasnapshot of each child++++++++++++++++++++++++    
-/*	var query = firebase.database().ref("CommentsBoard").orderByKey();
-query.once("value")
-  .then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      // key will be "ada" the first time and "alan" the second time
-      var key = childSnapshot.key;
-      // childData will be the actual contents of the child
-      var childData = childSnapshot.val();
-	console.log("the key from child snapshot is " + key);
-	console.log("the reply from child snapshot is " + childData.Reply);
-	console.log("the replier from child snapshot is " + childData.Replier);    
-  });
-});           */
-	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+   
 	
 		}
     	
-			  
-
  });
