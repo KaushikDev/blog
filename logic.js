@@ -72,7 +72,7 @@ var numChilds;
 					for(var i=0;i<numChilds;i++){
 							var string = matrix[i][0]+" replied: "+matrix[i][1];
 							retrievedReplies.push(string);
-							htmlStr = htmlStr+ "<div><p style='width:100%;background-color:#808080;'>"+string+"</p></div>";
+							htmlStr = htmlStr+ "<p style='width:100%;'>"+string+"</p>";
 						}
 						
 					console.log(retrievedReplies);	
