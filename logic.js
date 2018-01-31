@@ -77,10 +77,10 @@ var numChilds;
 						
 					console.log(retrievedReplies);	
 					console.log(htmlStr);	
-					$("#commentList").append("<div style='background-color:black;border-style:solid;border-color:white;border-width:2px;border-radius:5px'><div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>"+htmlStr+"</div>");	
+					$("#commentList").append("<div style='background-color:black;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button>"+htmlStr+"</div>");	
 					}
 				else {
-				$("#commentList").append("<div style='background-color:black;border-style:solid;border-color:white;border-width:2px;border-radius:5px'><div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div></div>");	
+				$("#commentList").append("<div style='background-color:black;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
 				}	
 				
 								
