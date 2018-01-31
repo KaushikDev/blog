@@ -77,10 +77,10 @@ var numChilds;
 						
 					console.log(retrievedReplies);	
 					console.log(htmlStr);	
-					$("#commentList").append("<div style='background-color:black;border-color:white;border-width:2px;'><div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:transparent;color:yellow;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'><i class='fa fa-reply' fa-2x></i></button></div>"+htmlStr+"</div>");	
+					$("#commentList").append("<div style='background-color:black;border-style:solid;border-color:white;border-width:2px;'><div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:transparent;color:yellow;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'><i class='fa fa-reply' fa-2x></i></button></div>"+htmlStr+"</div>");	
 					}
 				else {
-				$("#commentList").append("<div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:transparent;color:yellow;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'><i class='fa fa-reply' fa-2x></i></button></div>");	
+				$("#commentList").append("<div style='background-color:black;border-style:solid;border-color:white;border-width:2px;'><div><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;background-color:#808080;font-style:italic;'>"+retrievedCommentData.Comment+"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:transparent;color:yellow;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'><i class='fa fa-reply' fa-2x></i></button></div></div>");	
 				}	
 				
 								
