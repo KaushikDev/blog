@@ -90,7 +90,14 @@ var numChilds;
 		$("#send").on("click", function(){
 			 var newComment=commentBox.value;
 			 var newName=nameBox.value;
-
+				
+			
+			//++++++++Trying timestamp when comment is registered+++++
+			var dt = new Date();
+			var utcDate = dt.toUTCString();
+			alert(utcDate);
+			//+++++++Till here++++++++++++
+			
 			  if(newComment==""){
 			  alert("Empty comment doesn't make any sense, does it?? ");
 			  }
