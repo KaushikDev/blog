@@ -50,6 +50,7 @@ var numChilds;
 				retrievedCommentKey = snapComments.key;	
 				console.log("retrieved comment is : "+retrievedCommentData.Comment);
 				console.log("retrieved comment key is : "+retrievedCommentKey);
+				console.log("retrieved timestamp is : "+retrievedCommentData.Timestamp)	
 			
 				numChilds = snapComments.child("Replies").numChildren();	
 				console.log("The number of children replies has is : "+numChilds);	
@@ -80,7 +81,7 @@ var numChilds;
 					$("#commentList").append("<div style='background-color:transparent;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button>"+htmlStr+"</div>");	
 					}
 				else {
-				$("#commentList").append("<div style='background-color:transparent;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'><label style='width:100%;'>"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
+				$("#commentList").append("<div style='background-color:transparent;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'><label style='width:100%;'>@ "+retrievedCommentData.Timestamp+" "+retrievedCommentData.Name+" said.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
 				}	
 				
 								
@@ -88,17 +89,17 @@ var numChilds;
 					});
 	//+++++++++++Storing Comments++++++++++++++++++++++++++++++++
 		$("#send").on("click", function(){
-			 var newComment=commentBox.value;
-			 var newName=nameBox.value;
-				
 			
 			//++++++++Trying timestamp when comment is registered+++++
 			var dt = new Date();
-			var utcDate = dt.toUTCString();
-			alert(utcDate);
+			var ts = dt.toLocaleString();
+			alert(ts);
 			//+++++++Till here++++++++++++
 			
-			  if(newComment==""){
+			 var newComment=commentBox.value;
+			 var newName=nameBox.value;
+			
+			if(newComment==""){
 			  alert("Empty comment doesn't make any sense, does it?? ");
 			  }
 			  else if(newName==""){
@@ -107,7 +108,7 @@ var numChilds;
 			   else {
 			  firebaseStoreCommentsRef = firebase.database().ref().child("CommentsBoard/");
 			 //firebaseStoreRef.push().set(newComment);
-			   firebaseStoreCommentsRef.push({Comment:newComment, Name:newName});
+			   firebaseStoreCommentsRef.push({Comment:newComment, Name:newName, Timestamp:ts});
 			  // firebaseStoreRef.push({Name:newName});		   
 			   commentBox.value="";
 				nameBox.value="";   
