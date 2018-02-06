@@ -50,7 +50,7 @@ var numChilds;
 				retrievedCommentKey = snapComments.key;	
 				console.log("retrieved comment is : "+retrievedCommentData.Comment);
 				console.log("retrieved comment key is : "+retrievedCommentKey);
-				console.log("retrieved timestamp is : "+retrievedCommentData.Timestamp)	
+				console.log("retrieved timestamp is : "+retrievedCommentData.TimestampC)	
 			
 				numChilds = snapComments.child("Replies").numChildren();	
 				console.log("The number of children replies has is : "+numChilds);	
@@ -67,21 +67,21 @@ var numChilds;
 						console.log("the key from child snapshot is " + childDatakey);
 						console.log("the reply from child snapshot is " + childDataSnapshot.Reply);
 					
-						 matrix.push([childDataSnapshot.Replier, childDataSnapshot.Reply]);
+						 matrix.push([childDataSnapshot.Replier, childDataSnapshot.Reply, childDataSnapshot.TimestampR]);
 					 });
 					
 					for(var i=0;i<numChilds;i++){
-							var string = matrix[i][0]+" replied: \""+matrix[i][1]+"\"";
+							var string = "["+matrix[i][2]+"] "+matrix[i][0]+" replied: \""+matrix[i][1]+"\"";
 							retrievedReplies.push(string);
 							htmlStr = htmlStr+ "<p style='width:100%;'>"+string+"</p>";
 						}
 						
 					console.log(retrievedReplies);	
 					console.log(htmlStr);	
-					$("#commentList").append("<div style='background-color:transparent;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'><label style='width:100%;'>["+retrievedCommentData.Timestamp+"]"+retrievedCommentData.Name+" says.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button>"+htmlStr+"</div>");	
+					$("#commentList").append("<div style='background-color:transparent;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'><label style='width:100%;'>["+retrievedCommentData.TimestampC+"] "+retrievedCommentData.Name+" said.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button>"+htmlStr+"</div>");	
 					}
 				else {
-				$("#commentList").append("<div style='background-color:transparent;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'><label style='width:100%;'>["+retrievedCommentData.Timestamp+"] "+retrievedCommentData.Name+" said.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
+				$("#commentList").append("<div style='background-color:transparent;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'><label style='width:100%;'>["+retrievedCommentData.TimestampC+"]  "+retrievedCommentData.Name+" said.."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" style='background-color:red;color:white;width:auto;height:auto;' data-toggle='modal' data-target='#replyModal' class='btn btn-sm' onClick='storeReply(this.id)'>"+"Reply"+"</button></div>");	
 				}	
 				
 								
@@ -91,9 +91,9 @@ var numChilds;
 		$("#send").on("click", function(){
 			
 			//++++++++Trying timestamp when comment is registered+++++
-			var dt = new Date();
-			var ts = dt.toLocaleString();
-			alert(ts);
+			var dtc = new Date();
+			var tsc = dtc.toLocaleString();
+			alert(tsc);
 			//+++++++Till here++++++++++++
 			
 			 var newComment=commentBox.value;
@@ -108,7 +108,7 @@ var numChilds;
 			   else {
 			  firebaseStoreCommentsRef = firebase.database().ref().child("CommentsBoard/");
 			 //firebaseStoreRef.push().set(newComment);
-			   firebaseStoreCommentsRef.push({Comment:newComment, Name:newName, Timestamp:ts});
+			   firebaseStoreCommentsRef.push({Comment:newComment, Name:newName, TimestampC:tsc});
 			  // firebaseStoreRef.push({Name:newName});		   
 			   commentBox.value="";
 				nameBox.value="";   
@@ -116,6 +116,11 @@ var numChilds;
 			});
 	//+++++++++++++Storing Replies++++++++++++++++++++++++++++++++++++++++++++
 	$("#replySend").on("click", function(){
+			//++++++++Trying timestamp when reply is registered+++++
+			var dtr = new Date();
+			var tsr = dtr.toLocaleString();
+			alert(tsr);
+			//+++++++Till here++++++++++++
 			 var newReply=replyBox.value;
 			 var newReplyName=replyNameBox.value;
 			  if(newReply==""){
@@ -128,7 +133,7 @@ var numChilds;
 			  //var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
 			firebaseStoreRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	   
 			 //firebaseStoreRef.push().set(newReply);
-			   firebaseStoreRepliesRef.push({Reply:newReply, Replier:newReplyName});
+			   firebaseStoreRepliesRef.push({Reply:newReply, Replier:newReplyName, TimestampR:tsr});
 			  // firebaseStoreRef.push({Name:newReplyName});		   
 			   replyBox.value="";
 			   replyNameBox.value="";   
