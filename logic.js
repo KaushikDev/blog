@@ -93,7 +93,7 @@ var numChilds;
 			//++++++++Trying timestamp when comment is registered+++++
 			var dtc = new Date();
 			var tsc = dtc.toLocaleString();
-			alert(tsc);
+			//alert(tsc);
 			//+++++++Till here++++++++++++
 			
 			 var newComment=commentBox.value;
@@ -119,7 +119,7 @@ var numChilds;
 			//++++++++Trying timestamp when reply is registered+++++
 			var dtr = new Date();
 			var tsr = dtr.toLocaleString();
-			alert(tsr);
+			//alert(tsr);
 			//+++++++Till here++++++++++++
 			 var newReply=replyBox.value;
 			 var newReplyName=replyNameBox.value;
