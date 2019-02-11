@@ -13,76 +13,69 @@
  <body>
     <style>
 body{
-background-image: url("hammond-outdoor-kitchens-wood-bg.jpg");
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
-color:white;
+background-color:#f1f1f1;
+color:black;
+font-size:15px;
 }	
+
+.card{
+ background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0,0.2);
+  transition: 0.3s;
+  width: 80%;
+  border-radius: 5px;
+   margin: 10 auto;
+   float: none;
+   margin-bottom: 1px;
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0,0.5);
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 1px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+}
 	    
-#imageUser{
-height:100%;	
-width:height;
-border-radius:50%;
-display:block;
-margin:auto;
-border-width:2px;
-border-color:white;	
-border-style:solid;	
+img {
+  border-radius: 5px 5px 0 0;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  margin: 0 auto;
 }
-#header{
-background-color:transparent;
-width:auto;
-height:20%;
-}
-#blog{
-background-color:transparent;
-width:auto;
-height:auto;
-/*overflow-y:auto;*/
-}
-#footer{
-background-color:transparent;	
-width:auto;
-height:10%;
-}
-#comments{
-width:auto;
-height:auto;
-/*overflow-y:auto;*/
-}
-   
-#feedback{
-height:12%;
-}	    
-#replyBox, #commentBox{
-background-color:transparent;
-color:black;
-border-radius:5px;
-font-size:auto;
+
+    
+#replySend{
 width:100%;
-}
-#replyNameBox, #nameBox{
-background-color:transparent;
-color:black;
-border-radius:5px;
-font-size:auto;
-width:85%;
-}	    
-#replySend, #send{
-background-color:transparent;
-color:limegreen;
-height:auto;
 border-radius:5px;
 }
-	    
-#otherBlogs
+
+    
+#portfolioButton
 {
 color:black;
 width:auto;	
 border-radius:5px;
-}	    
+}	
+
+input{
+width:100%;
+}
+  
+.shareButton{
+	border-color:transparent;background-color:transparent;font-size:30px;color:black;
+	}  
+	
+	
    </style>
 <!-- Reply Modal -->
   <div class="modal fade" id="replyModal" role="dialog">
@@ -95,14 +88,14 @@ border-radius:5px;
           <h4 class="modal-title" style="color:black;">Thanks for replying.. </h4>
         </div>
         <div class="modal-body">
-          <input type="text" style="background-color:black;color:white;" id="replyBox" placeholder="Type in your reply here..."/>
-	  <input type="text" style="background-color:black;color:white;" id="replyNameBox" placeholder="And your name..."/>
-	  <!--  <button id="replySend" class="btn btn-sm"><i class="fa fa-arrow-circle-right fa-2x"></i></button> -->
+          <input type="text" id="replyBox" placeholder="Type in your reply here..."/>
+	     <input type="text" id="replyNameBox" placeholder="And your name..."/>
+	  
 			
 		 
         </div>
         <div class="modal-footer">
-          <button id="replySend" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-arrow-circle-right fa-2x"></i></button>
+          <button id="replySend" type="button" class="btn btn-success" data-dismiss="modal">Post Reply</button>
         </div> 
       </div>
       
@@ -132,34 +125,32 @@ border-radius:5px;
   </div>	 
 <!--End of BlogList Modal -->	 
 	<div id="main" class="container">
-
 	
-		<div id="header" class="row text-center">
-			<div class="col-xs-4">
-			</div>	
-			<div  class="col-xs-4">
-			<img src="piyush.jpg" id="imageUser" class="img-responsive">
-			</div>
-			<div class="col-xs-4">
-			</div>
-			
-		</div>
-		<div id="headline" class="row text-center">
+		<!--header------------------>
+		<div class="card row">
+		<div class="col-xs-12 text-center">
+		<img id="imageUser" src="piyush.jpg" alt="PiyushPicture" class="img-responsive">
 		<p style="font-style:italic;">"There are 3 things that keeps me going; Coffee, Pizza and Javascript."--Piyush Kaushik</p>
-			<div class="row text-center">
-		<button id="otherBlogs" type="button" class="btn btn-default" data-dismiss="modal"  data-toggle="modal" data-target="#blogListModal"><i class="fa fa-address-book-o" aria-hidden="true"></i> Other blogs</button>	
+			
+		<a id="portfolioButton" class="btn btn-default" href="https://kaushikdev.github.io/portfolio" target="_blank"><i class="fa fa-address-book-o" aria-hidden="true"></i> Portfolio</a>	
+	
+		<h1>CES 2018</h1>
+		<h5>10th January 2018</h5>
+	   
 		</div>
-		<h1>CES 2018</h1><h5>10th January 2018</h5>
-		</div>	
-		<div id="blog" class="row">
-		<div style='background-color:transparent;border-style:solid;border-color:white;border-width:2px;border-radius:5px;margin-bottom:2px;'>
-			<p>
+		</div>
+	<!--header ends------------------>
+		
+	<!--blog------------------>
+	<div class="card row">
+		<div class="col-xs-12">
+		<p>
 			Hi. I am sure you are excited about the CES 2018. I am!!.<br><br>
 			Or, if you have been living under a rock, CES is Consumer Electronics Show held every year.
 			And this year is being organised in Las Vegas from 09thJan-12thJan.
 			<br><br>
-			The show features almost every player from tech world to display and showcase their new innovations and 				products.<br><br>
-			The stars of the Show this year, so far have been Samsungs's 146 inch micro OLED Wall TV , NVIDIA's 65inch 				BFGD(Big Format Gaming Display) with 120Hz sync, a treat to eyes for gaming enthusiasts and gamers. Razer also 				sported their new stealth like ultrabook powered by a phone. Yes, you read that right!! A phone powering an 				ultrabook. 
+			The show features almost every player from tech world to display and showcase their new innovations and products.<br><br>
+			The stars of the Show this year, so far have been Samsungs's 146 inch micro OLED Wall TV , NVIDIA's 65inch BFGD(Big Format Gaming Display) with 120Hz sync, a treat to eyes for gaming enthusiasts and gamers. Razer also sported their new stealth like ultrabook powered by a phone. Yes, you read that right!! A phone powering an 				ultrabook. 
 		        <br><br>Not to leave out ACER who managed to introduce the 8 mm thick(or thin?) ultrabook, world's first.
 			And VIVO beating giants like Apple and Samsung in introducing first finger print unlock feature embedded in 				display. !!
 			
@@ -176,35 +167,54 @@ border-radius:5px;
 			There's a lot more going on. I will be sharing more as we go forward. Share with me what excited you most or what would you like to see next year.
 			<br>Later.	
 			</p>
-			</div>
+		
 		</div>
+		
+			<input type="text" id="commentBox" placeholder="Have a feedback? Comment here..."/>
+			<input type="text" id="nameBox" placeholder="And your name..."/>
+			<button id="send" class="btn btn-info">Post Comment</button>
+		
+	</div>
+	<!--blog ends------------------>
+
+
+
 	
 		
-		<div id="feedback" class="row text-center">
-			<input type="text" style="background-color:black;color:white;" id="commentBox" placeholder="Have a feedback? Comment here..."/>
-			<input type="text" style="background-color:black;color:white;" id="nameBox" placeholder="And your name..."/>
-			<button id="send" class="btn btn-sm"><i class="fa fa-arrow-circle-right fa-2x" ></i></button>
-		</div>	
+
 		
 			
 		
 			
-		<div id="comments" class="row" style="margin-top:2px;">
-			
+		<div id="comments" class="row" style="margin-top:20px;">
+		<h3 class="text-center"><b>Comments Section</b></h3>	
 		<li id="commentList" style="list-style:none;"></li>
 	 		
 		</div>
 		
-		<div id="footer" class="row text-center">
+		<div class="row text-center">
+			<div style="margin: 25px 0;">
+					<a id="fb" class="btn btn-default shareButton" href="https://www.facebook.com/sharer/sharer.php?u=https://KaushikDev.github.io/iBlogged" target="_blank">
+				<i class="fa fa-facebook"></i>
+			</a>
+			<a id="wa" class="btn btn-default shareButton" href="whatsapp://send?text=https://KaushikDev.github.io/iBlogged">
+				<i class="fa fa-whatsapp"></i>
+			</a>
+			<a id="tw" class="btn btn-default shareButton" href="https://twitter.com/home?status=https://KaushikDev.github.io/iBlogged&hashtags=#PiyushKaushikBlog" target="_blank">
+				<i class="fa fa-twitter" ></i>
+			</a>
+			<a id="li" class="btn btn-default shareButton" href="
+https://www.linkedin.com/shareArticle?url=https://KaushikDev.github.io/iBlogged&title=PiyushKaushikBlog" target="_blank">
+				<i class="fa fa-linkedin" ></i>
+			</a>
+			<a id="ma" class="btn btn-default shareButton" href="mailto:?subject=Piyush Kaushik Blog.&amp;body=https://KaushikDev.github.io/iBlogged" target="_blank">
+				<i class="fa fa-envelope-o" ></i>
+			</a>
 			
-			<div>
-			<a id="fb" class="btn btn-default text-center" style="background-color:transparent;border-color:transparent;" href="https://www.facebook.com/sharer/sharer.php?u=https://KaushikDev.github.io/iBlogged" target="_blank"><i class="fa fa-facebook" aria-hidden="true" style="color:white;font-size:15px;font-weight:bold;"></i></a>
-               
-			<a id="whatsapp" class="btn btn-default text-center" style="background-color:transparent;border-color:transparent;" href="whatsapp://send?text=https://KaushikDev.github.io/iBlogged"><i class="fa fa-whatsapp" aria-hidden="true" style="color:white;font-size:15px;font-weight:bold;"></i></a>
-        	
-			<a id="tweet" class="btn btn-default text-center" style="background-color:transparent;border-color:transparent;" href="https://twitter.com/home?status=https://KaushikDev.github.io/iBlogged" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="color:white;font-size:15px;font-weight:bold;"></i></a> 
 			</div>
-			<a href="https://kaushikdev.github.io/portfolio/" target="_blank" style="color:white;"><i class="fa fa-copyright" aria-hidden="true" style="color:white;font-size:15px;"></i>KaushikCodeArts 2018</a>
+			
+			
+			<p style="color:black"><i class="fa fa-copyright"></i>KaushikCodeArts 2019</p>
 
 		</div>
 	
