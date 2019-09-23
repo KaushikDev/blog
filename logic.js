@@ -14,12 +14,13 @@ var storeReply;
 //===============================================================================================
 $("document").ready(function(){
 
-		
+const scrollToTopBtn = document.getElementById("back-to-top-btn");		
 const sendComment = document.getElementById("send");
 const commentBox = document.getElementById("commentBox");
 const nameBox = document.getElementById("nameBox");
 const replyBox = document.getElementById("replyBox");
 const replyNameBox = document.getElementById("replyNameBox");	
+const replyForm = document.getElementById("form-reply-input");
 const storageRef = firebase.storage().ref();
 var replyID;	
 var firebaseRetrieveCommentsRef;	
@@ -78,11 +79,18 @@ var numChilds;
 						
 					console.log(retrievedReplies);	
 					console.log(htmlStr);	
-					$("#commentList").append("<div class='card row'><div class='col-xs-12'><label style='width:100%;'>On ["+retrievedCommentData.TimestampC+"], "+retrievedCommentData.Name+" said..."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p></div>"+htmlStr+"<button id="+"'"+retrievedCommentKey+"'"+" class='btn' data-toggle='modal' data-target='#replyModal' class='btn' onClick='storeReply(this.id)'>"+"Reply To This Conversation"+"</button></div>");	
+					
+					$("#commentList").append("<div class='comments'><label>On ["+retrievedCommentData.TimestampC+"], "+retrievedCommentData.Name+" said..."+"</label><p>\""+retrievedCommentData.Comment+"\"</p>"+htmlStr+"<button id="+"'"+retrievedCommentKey+"'"+" class='comment-reply-btn' onClick='storeReply(this.id)'>"+"Reply To This Conversation"+"</button><hr></div>");
+
+
 					}
 				else {
-				$("#commentList").append("<div class='card row'><div class='col-xs-12'><label style='width:100%;'>On ["+retrievedCommentData.TimestampC+"],  "+retrievedCommentData.Name+" said..."+"</label><p style='width:100%;font-style:italic;'>\""+retrievedCommentData.Comment+"\"</p></div><button id="+"'"+retrievedCommentKey+"'"+" class='btn' data-toggle='modal' data-target='#replyModal' class='btn' onClick='storeReply(this.id)'>"+"Reply To This Conversation"+"</button></div>");	
-				}	
+				
+				$("#commentList").append("<div class='comments'><label>On ["+retrievedCommentData.TimestampC+"],  "+retrievedCommentData.Name+" said..."+"</label><p>\""+retrievedCommentData.Comment+"\"</p><button id="+"'"+retrievedCommentKey+"'"+" class='comment-reply-btn' onClick='storeReply(this.id)'>"+"Reply To This Conversation"+"</button><hr></div>");
+				
+			
+			
+			}	
 				
 								
 				
@@ -98,58 +106,100 @@ var numChilds;
 			
 			 var newComment=commentBox.value;
 			 var newName=nameBox.value;
+
+			if(newName==""){
+				if (localStorage.getItem("name") === null) {
+						localStorage.setItem("name", "Anonymous");
+						newName = localStorage.getItem("name");
+				}
+
+				else{
+					newName = localStorage.getItem("name");
+				}
+			}
+
+			else{
+				localStorage.setItem("name", newName);
+			}
 			
 			if(newComment==""){
-			  alert("Empty comment doesn't make any sense, does it?? ");
-			  }
-			  else if(newName==""){
-			  alert("You forgot to enter your name..");
-			  }
-			   else {
+			  alert("Please type your comment. ");
+			}
+			
+			else {
 			  firebaseStoreCommentsRef = firebase.database().ref().child("CommentsBoard/");
-			 //firebaseStoreRef.push().set(newComment);
-			   firebaseStoreCommentsRef.push({Comment:newComment, Name:newName, TimestampC:tsc});
-			  // firebaseStoreRef.push({Name:newName});		   
-			   commentBox.value="";
-				nameBox.value="";   
-			  }
+			  firebaseStoreCommentsRef.push({Comment:newComment, Name:newName, TimestampC:tsc});
+			  commentBox.value="";
+			  nameBox.value="";   
+			}
 			});
 	//+++++++++++++Storing Replies++++++++++++++++++++++++++++++++++++++++++++
 	$("#replySend").on("click", function(){
 			//++++++++Trying timestamp when reply is registered+++++
 			var dtr = new Date();
 			var tsr = dtr.toLocaleString();
-			//alert(tsr);
-			//+++++++Till here++++++++++++
+		//-------------------//
+			
 			 var newReply=replyBox.value;
-			 var newReplyName=replyNameBox.value;
+			//  var newReplyName=replyNameBox.value;
+			var newReplyName = localStorage.getItem("name");
+
+
 			  if(newReply==""){
-			  alert("Empty reply doesn't make any sense, does it?? ");
+			  alert("Please type your reply.");
 			  }
-			  else if(newReplyName==""){
-			  alert("You forgot to enter your name..");
-			  }
-			   else {
-			  //var firebaseStoreRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");
-			firebaseStoreRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	   
-			 //firebaseStoreRef.push().set(newReply);
+			
+			else {
+			  
+			   firebaseStoreRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	   
 			   firebaseStoreRepliesRef.push({Reply:newReply, Replier:newReplyName, TimestampR:tsr});
-			  // firebaseStoreRef.push({Name:newReplyName});		   
 			   replyBox.value="";
-			   replyNameBox.value="";   
-				   
-				window.location.reload();	   
+			   window.location.reload();	   
 			  }
-			});          
-	//++++This will happen on click event of a reply button++++  
-	storeReply = function(clickedID){
-		console.log("The clicked reply button's id is : "+clickedID);
-		replyID = clickedID;
+			});    
+
+		//++++This will happen on click event of a reply button++++  
+		storeReply = function(clickedID){
+			console.log("The clicked reply button's id is : "+clickedID);
+			replyID = clickedID;
+			replyForm.style.visibility = "visible";
 		}
 
+
+		$("#cancelReply").on("click", function(){
+			
+			replyForm.style.visibility = "hidden";
+			
+			});  
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
-   
-	
-		}
+   		}
+
+
+			// Back To TOP FEATURE
+			function checkScroll(){
+				let y = window.scrollY;
+				if(y>500){
+					scrollToTopBtn.className = "back-to-top show";
+				}
+				else {
+					scrollToTopBtn.className = "back-to-top hide";
+				}
+			}
+
+			window.addEventListener("scroll", checkScroll);
+			function takeMeToTheTop(){
+				//c is number of pixels we are from the top
+				const c = document.documentElement.scrollTop || document.body.scrollTop ;
+				if(c > 0){
+					window.requestAnimationFrame(takeMeToTheTop);
+					window.scrollTo(0, c-c/50); //the y coordinate controls the speed of scrolling back to top
+				}
+			}
+
+			scrollToTopBtn.onclick =  function(e){
+				e.preventDefault();
+				takeMeToTheTop();
+			}
+			//BACK TO TOP FEATURE
     	
  });

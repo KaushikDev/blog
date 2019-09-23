@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LWD_Challenges</title>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+	  <script src="https://kit.fontawesome.com/16b76cc9d0.js"></script>
+     <link rel="stylesheet" href="style.css"> 
+     <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+
+        <div id="main" class="container">
+        
+          <div id="social-media">
+            <a class="social-media-icons" id="profile-link" href="https://github.com/KaushikDev/" target="_blank"><i class="fab fa-github"></i></a>
+      
+            <a class="social-media-icons" href="https://www.freecodecamp.org/kaushikdev02" target="_blank"><i class="fab fa-free-code-camp"></i></a>
+      
+            <a class="social-media-icons" href="https://codepen.io/Kaushik02/" target="_blank"><i class="fab fa-codepen"></i></a>
+            
+            <a class="social-media-icons" href="https://www.linkedin.com/in/piyush-kaushik-61166a22/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      
+            <a class="social-media-icons" href="https://twitter.com/kaushik_said" target="_blank"><i
+                class="fab fa-twitter"></i></a>
+            
+            <a class="social-media-icons"
+              href="mailto:piyush.kaushik02@gmail.com?subject=Portfolio-Feedback&body=Hi Piyush,"><i
+                class="far fa-envelope"></i></a>
+          </div>
+      
+          <section id="header-area">
+      
+            <div class="blogger-intro blogger-items">
+                <p id="blogger-tagline"><em>"I love javascript and writing informative blog posts about it gives me a sense of satisfaction. I also enjoy writing about my challenges and struggles as a beginner front end developer"</em> <strong>Piyush Kaushik</strong></p>
+            </div>
+      
+            <div class="blogger-profile blogger-items">
+                <img class="blogger-intro-items" id="blogger-img" src="piyushBW.jpg" alt="PiyushPicture" class="img-responsive">
+                
+                <!-- <h2 class="blogger-intro-items" id="blogger-name">Piyush Kaushik</h2> -->
+            </div>
+      
+            
+      
+          </section>
+
+          <!-- BLOG SHOULD BE WRITTEN BELOW -->
+          <section id="blog">
+            <h1 class="main-heading">Lorem Ipsum</h1>
+
+            <h2 class="sub-heading">What is Lorem Ipsum?</h2>
+            <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+            <h2 class="sub-heading">Where does it come from?</h2>
+            <p class="text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+            <h2 class="sub-heading">Why do we use it?</h2>
+            <p class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+            <h2 class="sub-heading">Where can I get some?</h2>
+            <p class="text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+          </section>
+          <!-- BLOG SHOULD BE WRITTEN ABOVE -->
+       
+          <section id="comment-input-area">
+            <form id="form-comment-input">
+                    <input class="input-items input-comment" type="text" id="commentBox" placeholder="Have a feedback? Comment here" />
+                    <input class="input-items" type="text" id="nameBox" placeholder="Your name or we will call you 'Anonymous'" />
+                    <button class="input-items btn" id="send">Post Comment</button>
+            </form>
+        </section>
+            
+      
+          <section id="comments-retrieved-area">
+                
+    <li id="commentList"></li>
+            </section>
+       
+        
+        <section id="footer-area">
+
+          <div id="copyright">
+            <a class="copyright-items" href="https://kaushikdev.github.io/portfolio" target="_blank">Developer Portfolio</a>
+            
+            <p class="copyright-items">&copy;</i>2019. Piyush Kaushik. All rights reserved.</p>
+          </div>
+    
+          
+    
+          <div id="newsletter">
+            <p class="newsletter-items">Interested in weekly newsletter? Let us know below.</p>
+          
+            <form class="newsletter-items" id="form" action="https://twitter.us16.list-manage.com/subscribe/post" method="POST">
+            <input type="hidden" name="u" value="6b7e34e3339b52dfb3f2ad3f4">
+            <input type="hidden" name="id" value="048d6cbe5c">
+                
+                <input class="newsletter-subscribe-items" type="email" name="MERGE0" id="MERGE0" placeholder="Email ID">
+              
+                <input class="newsletter-subscribe-items" id="submitButton" type="submit" value="Send me weekly newsletter" onClick="return postThanks()">
+            </form>	
+          </div>
+        </section>
+
+        <div id='form-reply-input'><input class='input-items input-reply' type='text' id='replyBox' placeholder='Reply to this conversation' /><button class='input-items btn' id='replySend'>Post Reply</button><button class='input-items btn' id='cancelReply'>Cancel</button></div>
+
+
+        <a id="back-to-top-btn" class="back-to-top hide"> 
+          <i class="fas fa-angle-up"></i>
+          <p><strong>TOP</strong></p>
+        </a>
+
+        
+      </div>
+    <script src="logic.js"></script>
+</body>
+</html>
