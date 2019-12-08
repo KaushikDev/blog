@@ -44,15 +44,15 @@ var numChilds;
   	
     //+++++++++++Retrieving Msgs++++++++++++++++++++++++++++++++
 					
-				firebaseRetrieveCommentsRef = firebase.database().ref().child("CommentsBoard");
+				firebaseRetrieveCommentsRef = firebase.database().ref().child("CommentsBoard/LWD_Challenges");
 				
 				firebaseRetrieveCommentsRef.on("child_added", snapComments =>{
 				retrievedCommentData = snapComments.val();
 				retrievedCommentKey = snapComments.key;	
-	
+					
 			
 				numChilds = snapComments.child("Replies").numChildren();	
-				
+					
 				
 					repliesData = snapComments.child("Replies");
 					if(repliesData.exists()){
@@ -73,7 +73,8 @@ var numChilds;
 							retrievedReplies.push(string);
 							htmlStr = htmlStr+ "<p>"+string+"</p>";
 						}
-					
+						
+				
 					
 					$("#commentList").append("<div class='comments'><label>On ["+retrievedCommentData.TimestampC+"], "+retrievedCommentData.Name+" said..."+"</label><p>\""+retrievedCommentData.Comment+"\"</p>"+htmlStr+"<button id="+"'"+retrievedCommentKey+"'"+" class='comment-reply-btn' onClick='storeReply(this.id)'>"+"Reply To This Conversation"+"</button><hr></div>");
 
@@ -122,7 +123,7 @@ var numChilds;
 			}
 			
 			else {
-			  firebaseStoreCommentsRef = firebase.database().ref().child("CommentsBoard/");
+			  firebaseStoreCommentsRef = firebase.database().ref().child("CommentsBoard/LWD_Challenges");
 			  firebaseStoreCommentsRef.push({Comment:newComment, Name:newName, TimestampC:tsc});
 			  commentBox.value="";
 			  nameBox.value="";   
@@ -146,7 +147,7 @@ var numChilds;
 			
 			else {
 			  
-			   firebaseStoreRepliesRef = firebase.database().ref().child("CommentsBoard/"+replyID+"/Replies");	   
+			   firebaseStoreRepliesRef = firebase.database().ref().child("CommentsBoard/LWD_Challenges"+replyID+"/Replies");	   
 			   firebaseStoreRepliesRef.push({Reply:newReply, Replier:newReplyName, TimestampR:tsr});
 			   replyBox.value="";
 			   window.location.reload();	   
@@ -155,6 +156,7 @@ var numChilds;
 
 		//++++This will happen on click event of a reply button++++  
 		storeReply = function(clickedID){
+		
 			replyID = clickedID;
 			replyForm.style.visibility = "visible";
 		}

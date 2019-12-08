@@ -10,7 +10,7 @@
 
     --comment-input-background-color : #fff;
     --comment-input-font-size : 1.5em;
-    --form-background-color : rgba(0, 0,0, 0.75);
+    --form-background-color : #aa0;
     --post-button-background : #fff;
     --post-button-color : #aa2;
 
@@ -66,8 +66,8 @@
     background: var(--form-background-color);
     width: 80%;
     margin: 30px auto;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 1px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,9 +76,9 @@
 
 .input-items{
     height : auto;
-    width: 98%;
+    width: 99%;
     border: none;
-    margin: 2px;   
+    margin: 1px;   
     font-size:  var(--comment-input-font-size);
 }
 
@@ -193,14 +193,14 @@ hr{
 
 /* Media Queries */
 
-@media screen and (min-width: 300px) and (max-width: 728px){
+@media screen and (min-width: 300px) and (max-width: 768px){
   /* ===social media css begins=== */
 #social-media {
-    background: rgba(255, 255, 255, 0.50);
+    background: var(--social-media-background);
     border-radius: 5px;
     top:30%;
     left: 0;
-    width: 50px;
+    width: auto;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -210,7 +210,7 @@ hr{
   
   .social-media-icons {
     align-self: center;
-    margin: 15px;
+    margin: 7px;
     color: var(--social-media-icons-color);
     font-size: var(--social-media-icons-font-size);
   }
@@ -298,7 +298,7 @@ hr{
 .text{
     font-size: 1em;
     color: var(--blog-text-color);
-    width: 99%;
+    width: 80%;
     margin: 10px 10px; 
 }
 
@@ -317,8 +317,8 @@ hr{
     background: var(--form-background-color);
     width: 90%;
     margin: 30px auto;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 1px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -327,9 +327,9 @@ hr{
 
 .input-items{
     height : auto;
-    width: 98%;
+    width: 99%;
     border: none;
-    margin: 2px;   
+    margin: 1px;   
     font-size:  1em;
 }
 
@@ -460,15 +460,15 @@ hr{
   }
   
   
-  @media screen and (min-width: 729px) and (max-width: 1280px){
+  @media screen and (min-width: 769px) and (max-width: 1280px){
 
    /* ===social media css begins=== */
 #social-media {
-    background: var( --social-media-background);
+    background: var(--social-media-background);
     border-radius: 5px;
     top:30%;
     left: 0;
-    width: 50px;
+    width: auto;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -478,7 +478,7 @@ hr{
   
   .social-media-icons {
     align-self: center;
-    margin: 15px;
+    margin: 10px;
     color: var(--social-media-icons-color);
     font-size: var(--social-media-icons-font-size);
   }
@@ -530,8 +530,8 @@ hr{
     background: var(--form-background-color);
     width: 90%;
     margin: 30px auto;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 1px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -540,9 +540,9 @@ hr{
 
 .input-items{
     height : auto;
-    width: 98%;
+    width: 99%;
     border: none;
-    margin: 2px;   
+    margin: 1px;   
     font-size:  var(--comment-input-font-size);
 }
 
