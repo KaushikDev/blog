@@ -1,121 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LWD_Challenges</title>
-    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-    <script src="jquery-3.2.1.min.js"></script>
-	  <script src="https://kit.fontawesome.com/16b76cc9d0.js"></script>
-     <link rel="stylesheet" href="style.css"> 
-     <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LWD_Challenges</title>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/16b76cc9d0.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    
-
-        <div id="main" class="container">
-        
-          <div id="social-media">
-            <a class="social-media-icons" id="profile-link" href="https://github.com/KaushikDev/" target="_blank"><i class="fab fa-github"></i></a>
-      
-            <a class="social-media-icons" href="https://www.freecodecamp.org/kaushikdev02" target="_blank"><i class="fab fa-free-code-camp"></i></a>
-      
-            <a class="social-media-icons" href="https://codepen.io/Kaushik02/" target="_blank"><i class="fab fa-codepen"></i></a>
-            
-            <a class="social-media-icons" href="https://www.linkedin.com/in/piyush-kaushik-61166a22/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      
-            <a class="social-media-icons" href="https://twitter.com/kaushik_said" target="_blank"><i
-                class="fab fa-twitter"></i></a>
-            
-            <a class="social-media-icons"
-              href="mailto:piyush.kaushik02@gmail.com?subject=Portfolio-Feedback&body=Hi Piyush,"><i
-                class="far fa-envelope"></i></a>
-          </div>
-      
-          <section id="header-area">
-      
-            <div class="blogger-intro blogger-items">
-                <p id="blogger-tagline"><em>"I love javascript and writing informative blog posts about it gives me a sense of satisfaction. I also enjoy writing about my challenges and struggles as a beginner front end developer"</em> <strong>Piyush Kaushik</strong></p>
-            </div>
-      
-            <div class="blogger-profile blogger-items">
-                <img class="blogger-intro-items" id="blogger-img" src="piyushBW.jpg" alt="PiyushPicture" class="img-responsive">
-                
-                <!-- <h2 class="blogger-intro-items" id="blogger-name">Piyush Kaushik</h2> -->
-            </div>
-      
-            
-      
-          </section>
-
-          <!-- BLOG SHOULD BE WRITTEN BELOW -->
-          <section id="blog">
-            <h1 class="main-heading">Lorem Ipsum</h1>
-
-            <h2 class="sub-heading">What is Lorem Ipsum?</h2>
-            <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-            <h2 class="sub-heading">Where does it come from?</h2>
-            <p class="text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-
-            <h2 class="sub-heading">Why do we use it?</h2>
-            <p class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-
-            <h2 class="sub-heading">Where can I get some?</h2>
-            <p class="text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-          </section>
-          <!-- BLOG SHOULD BE WRITTEN ABOVE -->
-       
-          <section id="comment-input-area">
-            <form id="form-comment-input">
-                    <input class="input-items input-comment" type="text" id="commentBox" placeholder="Have a feedback? Comment here" />
-                    <input class="input-items" type="text" id="nameBox" placeholder="Your name or we will call you 'Anonymous'" />
-                    <button class="input-items btn" id="send">Post Comment</button>
-            </form>
-        </section>
-            
-      
-          <section id="comments-retrieved-area">
-                
-    <li id="commentList"></li>
-            </section>
-       
-        
-        <section id="footer-area">
-
-          <div id="copyright">
-            <a class="copyright-items" href="https://kaushikdev.github.io/portfolio" target="_blank">Developer Portfolio</a>
-            
-            <p class="copyright-items">&copy;</i>2019. Piyush Kaushik. All rights reserved.</p>
-          </div>
-    
-          
-    
-          <div id="newsletter">
-            <p class="newsletter-items">Interested in weekly newsletter? Let us know below.</p>
-          
-            <form class="newsletter-items" id="form" action="https://twitter.us16.list-manage.com/subscribe/post" method="POST">
-            <input type="hidden" name="u" value="6b7e34e3339b52dfb3f2ad3f4">
-            <input type="hidden" name="id" value="048d6cbe5c">
-                
-                <input class="newsletter-subscribe-items" type="email" name="MERGE0" id="MERGE0" placeholder="Email ID">
-              
-                <input class="newsletter-subscribe-items" id="submitButton" type="submit" value="Send me weekly newsletter" onClick="return postThanks()">
-            </form>	
-          </div>
-        </section>
-
-        <div id='form-reply-input'><input class='input-items input-reply' type='text' id='replyBox' placeholder='Reply to this conversation' /><button class='input-items btn' id='replySend'>Post Reply</button><button class='input-items btn' id='cancelReply'>Cancel</button></div>
 
 
-        <a id="back-to-top-btn" class="back-to-top hide"> 
-          <i class="fas fa-angle-up"></i>
-          <p><strong>TOP</strong></p>
-        </a>
+  <div id="main" class="container">
 
-        
+    <div id="social-media">
+      <a class="social-media-icons" id="profile-link" href="https://github.com/KaushikDev/" target="_blank"><i
+          class="fab fa-github"></i></a>
+
+      <a class="social-media-icons" href="https://www.freecodecamp.org/kaushikdev02" target="_blank"><i
+          class="fab fa-free-code-camp"></i></a>
+
+      <a class="social-media-icons" href="https://codepen.io/Kaushik02/" target="_blank"><i
+          class="fab fa-codepen"></i></a>
+
+      <a class="social-media-icons" href="https://www.linkedin.com/in/piyush-kaushik-61166a22/" target="_blank"><i
+          class="fab fa-linkedin-in"></i></a>
+
+      <a class="social-media-icons" href="https://twitter.com/kaushik_said" target="_blank"><i
+          class="fab fa-twitter"></i></a>
+
+      <a class="social-media-icons"
+        href="mailto:piyush.kaushik02@gmail.com?subject=Portfolio-Feedback&body=Hi Piyush,"><i
+          class="far fa-envelope"></i></a>
+    </div>
+
+    <section id="header-area">
+
+      <div class="blogger-intro blogger-items">
+        <p id="blogger-tagline"><em>"I love web development(particularly javascript) and writing informative blog posts
+            about it gives me a sense of satisfaction. I also enjoy writing about my challenges and struggles as a
+            beginner front end web developer."</em> <strong>Piyush Kaushik</strong></p>
       </div>
-    <script src="LWD_Challenges.js"></script>
+
+      <div class="blogger-profile blogger-items">
+        <img class="blogger-intro-items" id="blogger-img" src="piyushBW.jpg" alt="PiyushPicture" class="img-responsive">
+
+        <!-- <h2 class="blogger-intro-items" id="blogger-name">Piyush Kaushik</h2> -->
+      </div>
+    </section>
+
+    <!-- BLOG SHOULD BE WRITTEN BELOW -->
+    <section id="blog">
+      <h1 class="main-heading">LWD : The Challenges</h1>
+
+      <h2 class="sub-heading">Introduction</h2>
+      <p class="text">LWD is a little acronym I made which stands for 'Learning Web Development' or 'Learn Web
+        Development' based upon how its used. With that clear now, we will now talk in this article what are the common
+        challenges one face, or atleast I faced and still do, when I decided to LWD. This article is strictly written
+        with the perspective of LWD on a path of self learning.</p>
+
+      <h2 class="sub-heading">Why and How LWD happened(for me)?[OPTIONAL: CAN SKIP]</h2>
+      <p class="text">I started just recently in March 2019 when I decided that I am so done with my testing job(a
+        manual testing job) and I saw no growth happening personally and career wise. It was a time of depression and
+        anxiety for me. One day I sat with my partner(wife) and we played a game. We wrote down some career options on
+        small chits of paper and fold and mixed them. All career options were related to my hobbies and interests and
+        even if I had very little interest in any of them, we wrote it down. Aim was to pick a chit randomly. The first
+        career option to appear thrice would be given a go. Now, I would agree that sounds a bit cheesy but all during
+        this 'game of career' I was really rooting for web development as out of all it had my most interest. And it
+        happened, first job option that was picked thrice was 'Web Development'. So, that's that.</p>
+
+      <h2 class="sub-heading">Resource Juggling</h2>
+      <p class="text">I saw youtube videos and tried to read articles on web about basics of web development. I was
+        juggling with youtube videos, reading blogs, listening podcasts and trying to identify the good resource. I even
+        got to udemy and tried to look for best starting course. I was really struggling to identify what to learn and
+        from where. Should I do HTML, CSS or JS? Because one thing led to another and to understand a tutorial I had to
+        constantly search for what was being referred to. It was, believe me, a lot tougher than I thought. I really had
+        no starting point and I was completely lost. I even thought of going back to my old career but didn't somehow.
+        Days were passing by and I was getting depressed day by day. But I wasn't doing one thing that should've been
+        done straightaway.</p>
+
+      <h2 class="sub-heading">Eye Opener</h2>
+      <p class="text">As suggested in many articles/blog posts/tutorials, a web dev needs to have social accounts(on
+        LinkedIn, Twitter atleast). Scrolling through my twitter feed one day, I saw a mention about freeCodeCamp and
+        how it is supporting beginners just like me, at no cost at all. I made an account on it and decided to give it a
+        go. I don't know about others but this is what I was looking for. Each lesson is atmost 5 minute read and few
+        lines of code. Yes, I was writing some code. It gave me a huge boost. The curriculum is designed to take you one
+        step at a time. Unlike others, or atleast what I have seen. This is in no way an endorsement of freeCodeCamp. It
+        worked for me, something else might work for you.</p>
+
+      <h2 class="sub-heading">Conclusion</h2>
+      <p class="text">If I summarize, the biggest challenges were, 1. Deciding what you want to do. 2. How to start
+        doing it. 3. Patience. I am still the beginner, but almost 10 months now, I am a lot more confident and have
+        made many simple web apps. Patience is really the key here and I can't stress enough on it. So if you're just
+        starting out just like me, have patience. Things will start to fall into place one day. That's my story so far
+        and in this series of blogs, I will continue to share more on struggles and challenges but mostly on javascript
+        and other web related stuff. You can subscribe if you feel like to get notified. I wish you best in your
+        journey.</p>
+    </section>
+    <!-- BLOG SHOULD BE WRITTEN ABOVE -->
+
+    <section id="share">
+      <p><i class="fas fa-bullhorn"></i> Share this page :</p>
+      <div id="share-blog">
+        <a id="fb" class="share-blog-items" href="https://www.facebook.com/sharer/sharer.php?u=https://kaushikdev.github.io/blog/LWD_Challenges.html" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a id="whatsapp" class="share-blog-items" href="whatsapp://send?text=https://kaushikdev.github.io/blog/LWD_Challenges.html"><i class="fab fa-whatsapp-square"></i></a>
+                <a id="tweet" class="share-blog-items"
+					href="https://twitter.com/share?url=https://kaushikdev.github.io/blog/LWD_Challenges.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
+					target="_blank"><i class="fab fa-twitter-square"></i></a>
+			
+				<a class="share-blog-items" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://kaushikdev.github.io/blog/LWD_Challenges.html"
+				target="_blank"><i class="fab fa-linkedin"></i></a>
+				</div>
+      </div>
+    </section>
+
+    <section id="comment-input-area">
+      <form id="form-comment-input">
+        <input class="input-items input-comment" type="text" id="commentBox"
+          placeholder="Have a feedback? Comment here" />
+        <input class="input-items" type="text" id="nameBox" placeholder="Your name or we will call you 'Anonymous'" />
+        <button class="input-items btn" id="send">Post Comment</button>
+      </form>
+    </section>
+
+
+    <section id="comments-retrieved-area">
+
+      <li id="commentList"></li>
+    </section>
+
+
+    <section id="footer-area">
+
+      <div id="copyright">
+        <a class="copyright-items" href="https://kaushikdev.github.io/portfolio" target="_blank">Developer Portfolio</a>
+
+        <p class="copyright-items">&copy;</i>2019. Piyush Kaushik. All rights reserved.</p>
+      </div>
+
+
+
+      <div id="newsletter">
+        <p class="newsletter-items">Interested in weekly newsletter? Let us know below.</p>
+
+        <form class="newsletter-items" id="form" action="https://twitter.us16.list-manage.com/subscribe/post"
+          method="POST">
+          <input type="hidden" name="u" value="6b7e34e3339b52dfb3f2ad3f4">
+          <input type="hidden" name="id" value="048d6cbe5c">
+
+          <input class="newsletter-subscribe-items" type="email" name="MERGE0" id="MERGE0" placeholder="Email ID">
+
+          <input class="newsletter-subscribe-items" id="submitButton" type="submit" value="Send me weekly newsletter"
+            onClick="return postThanks()">
+        </form>
+      </div>
+    </section>
+
+    <div id='form-reply-input'><input class='input-items input-reply' type='text' id='replyBox'
+        placeholder='Reply to this conversation' /><button class='input-items btn' id='replySend'>Post
+        Reply</button><button class='input-items btn' id='cancelReply'>Cancel</button></div>
+
+
+    <a id="back-to-top-btn" class="back-to-top hide">
+      <i class="fas fa-angle-up"></i>
+      <p><strong>TOP</strong></p>
+    </a>
+
+
+  </div>
+  <script src="LWD_Challenges.js"></script>
 </body>
+
 </html>

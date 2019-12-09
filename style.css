@@ -10,6 +10,9 @@
   --social-media-icons-font-size: 1em;
   --social-media-icons-color: #aa0;
 
+  --share-blog-items-font-size: 1.5em;
+  --share-blog-items-color: #aa0;
+
   --blogger-name-font-size: 1em;
   --blogger-name-color: #aa2;
 
@@ -142,7 +145,32 @@
 }
 
 /* ===blogs area css ends=== */
+ /* ===share blog css begins=== */
+ #share{
+  background: transparent;
+  font-family: var(--blog-font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#share-blog {
+  background: transparent;
+  border-radius: 5px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
+.share-blog-items {
+  align-self: center;
+  margin: 15px;
+  color: var(--share-blog-items-color);
+  font-size: var(--share-blog-items-font-size);
+}
+/* ===share blog css ends=== */
 /* ===footer area css begins=== */
 #footer-area {
   background: var(--footer-area-background);
@@ -312,16 +340,7 @@
     align-items: center;
   }
 
-  /* #blogs-grid-container {
-    align-self: center;
-    width: auto;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fit, 350px);
-    grid-auto-flow: row;
-    gap: 10px;
-  } */
+
 
   .blog-tile {
     width: 100%;
@@ -341,7 +360,32 @@
   }
 
   /* ===blogs area css ends=== */
+ /* ===share blog css begins=== */
+ #share{
+  background: transparent;
+  font-family: var(--blog-font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#share-blog {
+  background: transparent;
+  border-radius: 5px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
+.share-blog-items {
+  align-self: center;
+  margin: 7px;
+  color: var(--share-blog-items-color);
+  font-size: var(--share-blog-items-font-size);
+}
+/* ===share blog css ends=== */
   /* ===footer area css begins=== */
   #footer-area {
     background: var(--footer-area-background);
@@ -449,7 +493,32 @@
   }
 
   /* ===blogs area css ends=== */
+ /* ===share blog css begins=== */
+ #share{
+  background: transparent;
+  font-family: var(--blog-font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#share-blog {
+  background: transparent;
+  border-radius: 5px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
+.share-blog-items {
+  align-self: center;
+  margin: 10px;
+  color: var(--share-blog-items-color);
+  font-size: var(--share-blog-items-font-size);
+}
+/* ===share blog css ends=== */
   /* ===footer area css begins=== */
   #footer-area {
     background: var(--footer-area-background);

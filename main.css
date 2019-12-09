@@ -302,7 +302,32 @@ hr{
     margin: 10px 10px; 
 }
 
-
+  /* ===share blog css begins=== */
+  #share{
+    background: transparent;
+    font-family: var(--blog-font-family);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #share-blog {
+    background: transparent;
+    border-radius: 5px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .share-blog-items {
+    align-self: center;
+    margin: 7px;
+    color: var(--share-blog-items-color);
+    font-size: var(--share-blog-items-font-size);
+  }
+  /* ===share blog css ends=== */
 /* Comment Input CSS */
 
 #comment-input-area{
@@ -515,7 +540,32 @@ hr{
     margin: 10px 10px; 
 }
 
+ /* ===share blog css begins=== */
+ #share{
+  background: transparent;
+  font-family: var(--blog-font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#share-blog {
+  background: transparent;
+  border-radius: 5px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
+.share-blog-items {
+  align-self: center;
+  margin: 10px;
+  color: var(--share-blog-items-color);
+  font-size: var(--share-blog-items-font-size);
+}
+/* ===share blog css ends=== */
 /* Comment Input CSS */
 
 #comment-input-area{
