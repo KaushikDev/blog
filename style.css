@@ -52,6 +52,8 @@
   color: var(--social-media-icons-color);
   font-size: var(--social-media-icons-font-size);
 }
+
+
 /* ===social media css ends=== */
 
 /* ===header area css begins=== */
@@ -63,6 +65,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.blogs-home{
+  font-size: 2em;
+  color: #fff;
 }
 
 .blogger-profile {
