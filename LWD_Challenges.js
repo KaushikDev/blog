@@ -15,26 +15,22 @@ var storeReply;
 $("document").ready(function(){
 
 const scrollToTopBtn = document.getElementById("back-to-top-btn");		
-const sendComment = document.getElementById("send");
 const commentBox = document.getElementById("commentBox");
 const nameBox = document.getElementById("nameBox");
 const replyBox = document.getElementById("replyBox");
-const replyNameBox = document.getElementById("replyNameBox");	
 const replyForm = document.getElementById("form-reply-input");
-const storageRef = firebase.storage().ref();
 var replyID;	
 var firebaseRetrieveCommentsRef;	
 var firebaseStoreCommentsRef;
 var firebaseStoreRepliesRef;
-var firebaseRetrieveRepliesRef;	
 var retrievedCommentData;
 var retrievedCommentKey;
-var retrievedRepliesData;
-var retrievedRepliesKey;	
-var childDatakey;
 var repliesData;
 var childDataSnapshot;
 var numChilds;
+
+//Add Blogs Name here. //Change the value of BLOG_NAME.
+const BLOG_NAME = "LWD_Challenges";
 	
  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 	initApp();
@@ -44,7 +40,7 @@ var numChilds;
   	
     //+++++++++++Retrieving Msgs++++++++++++++++++++++++++++++++
 					
-				firebaseRetrieveCommentsRef = firebase.database().ref().child("CommentsBoard/LWD_Challenges");
+				firebaseRetrieveCommentsRef = firebase.database().ref().child("CommentsBoard/"+BLOG_NAME);
 				
 				firebaseRetrieveCommentsRef.on("child_added", snapComments =>{
 				retrievedCommentData = snapComments.val();
@@ -123,7 +119,7 @@ var numChilds;
 			}
 			
 			else {
-			  firebaseStoreCommentsRef = firebase.database().ref().child("CommentsBoard/LWD_Challenges");
+			  firebaseStoreCommentsRef = firebase.database().ref().child("CommentsBoard/"+BLOG_NAME);
 			  firebaseStoreCommentsRef.push({Comment:newComment, Name:newName, TimestampC:tsc});
 			  commentBox.value="";
 			  nameBox.value="";   
@@ -137,7 +133,6 @@ var numChilds;
 		//-------------------//
 			
 			 var newReply=replyBox.value;
-			//  var newReplyName=replyNameBox.value;
 			var newReplyName = localStorage.getItem("name");
 
 
@@ -147,7 +142,7 @@ var numChilds;
 			
 			else {
 			  
-			   firebaseStoreRepliesRef = firebase.database().ref().child("CommentsBoard/LWD_Challenges"+replyID+"/Replies");	   
+			   firebaseStoreRepliesRef = firebase.database().ref().child("CommentsBoard/"+BLOG_NAME+"/"+replyID+"/Replies");	   
 			   firebaseStoreRepliesRef.push({Reply:newReply, Replier:newReplyName, TimestampR:tsr});
 			   replyBox.value="";
 			   window.location.reload();	   
