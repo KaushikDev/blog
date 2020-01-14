@@ -1,126 +1,174 @@
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Learning Web Development : A Blog Series by Piyush Kaushik</title>
+    <link rel="stylesheet" href="./assets/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
 
-<head>
-	<title>Blog by Piyush Kaushik</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-	<script src="jquery-3.2.1.min.js"></script>
-	<script src="https://kit.fontawesome.com/16b76cc9d0.js"></script>
-	<link rel="stylesheet" href="style.css">
+  <body>
+    <div class="container">
+      <header>
+        <div id="brand-logo-div">
+          <img
+            id="brand-logo-img"
+            src="./assets/images/BrandLogo.png"
+            alt="Brand Logo"
+          />
+        </div>
 
+        <div>
+          <p id="blog-series-title">
+            LEARNING WEB DEVELOPMENT : A BLOG SERIES
+          </p>
+        </div>
+      </header>
 
-</head>
+      <section id="blog-section">
+        <div id="grid-container">
+          <a
+          class="grid-item"
+          href="./BlogPosts/1_Challenges.html"
+          target="_blank"
+        >
+          <div></div>
+          <p>
+            Learning Web Development :<br />
+            The Challenges
+          </p>
+        </a>
+        <a
+        class="grid-item"
+        href="./BlogPosts/2_Challenges.html"
+        target="_blank"
+      >
+        <div></div>
+        <p>
+          Learning Web Development :<br />
+          Blog2
+        </p>
+      </a>
+      <a
+      class="grid-item"
+      href="./BlogPosts/3_Blog3.html"
+      target="_blank"
+    >
+      <div></div>
+      <p>
+        Learning Web Development :<br />
+        Blog3
+      </p>
+    </a>
+    <a
+    class="grid-item"
+    href="./BlogPosts/4_Blog4.html"
+    target="_blank"
+  >
+    <div></div>
+    <p>
+      Learning Web Development :<br />
+      Blog4
+    </p>
+  </a>
+     
+        </div>
+           
+      </section>
 
-<body>
+      <footer>
+        <div id="about">
+          <h1 class="footer-items">ABOUT THE AUTHOR</h1>
+          <p class="footer-items">"Hi I am <strong>Piyush Kaushik</strong> a.k.a  <em>kaushikDev</em>. I love web development and writing informative blog posts about it gives me a sense of satisfaction. I also enjoy writing about my challenges and struggles as a beginner web developer."
+            <br>
+          You are welcome to check my portfolio below.
+          </p>
+          <a
+          class="footer-items"
+          href="https://kaushikdev.github.io/portfolio"
+          target="_blank"
+          >PORTFOLIO</a
+        >
+        </div>
+        
+        <div id="contact">
+          <h1 class="footer-items">SAY HELLO</h1>
+          <div class="footer-items">
+            <a
+              class="social-media-icons"
+              href="https://github.com/KaushikDev/"
+              target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://www.linkedin.com/in/piyush-kaushik-61166a22/"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://twitter.com/kaushikDev_"
+              target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="mailto:piyush.kaushik02@gmail.com?subject=Portfolio-Feedback&body=Hi Piyush,"
+              ><i class="far fa-envelope"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://www.youtube.com/channel/UC3uwdZ9kqFhz5CrDyGNsOZQ/"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+          <p class="footer-items">
+            PIYUSH KAUSHIK &copy;2020. ALL RIGHTS RESERVED.
+          </p>
+        </div>
+        
+      </footer>
+    </div>
 
-	<div id="main" class="container">
+    <a id="back-to-top-btn" class="back-to-top hide">
+      <i class="fas fa-arrow-up"></i>
+    </a>
 
-		<div id="social-media">
-			<a class="social-media-icons" id="profile-link" href="https://github.com/KaushikDev/" target="_blank"><i
-					class="fab fa-github"></i></a>
+    <div id="share-blog"><i class="fas fa-bookmark"></i>
+      SHARE THE PAGE
+      <a
+        class="share-blog-items"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://kaushikdev.github.io/blog"
+        target="_blank"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a
+        class="share-blog-items"
+        href="https://twitter.com/share?url=https://kaushikdev.github.io/blog&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
+        target="_blank"
+        ><i class="fab fa-twitter"></i
+      ></a>
 
-			<!-- <a class="social-media-icons" href="https://www.freecodecamp.org/kaushikDev_" target="_blank"><i
-					class="fab fa-free-code-camp"></i></a>
+      <a
+        class="share-blog-items"
+        href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://kaushikdev.github.io/blog"
+        target="_blank"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a
+        class="share-blog-items"
+        href="whatsapp://send?text=https://kaushikdev.github.io/blog"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </div>
 
-			<a class="social-media-icons" href="https://codepen.io/kaushikDev_" target="_blank"><i
-					class="fab fa-codepen"></i></a> -->
-
-			<a class="social-media-icons" href="https://www.linkedin.com/in/piyush-kaushik-61166a22/" target="_blank"><i
-					class="fab fa-linkedin-in"></i></a>
-
-			<a class="social-media-icons" href="https://twitter.com/kaushikDev_" target="_blank"><i
-					class="fab fa-twitter"></i></a>
-
-			<a class="social-media-icons"
-				href="mailto:piyush.kaushik02@gmail.com?subject=Portfolio-Feedback&body=Hi Piyush,"><i
-					class="far fa-envelope"></i></a>
-
-					<a class="social-media-icons"
-					href="https://www.youtube.com/channel/UC3uwdZ9kqFhz5CrDyGNsOZQ/" target="_blank"><i class="fab fa-youtube"></i></a>		
-		</div>
-
-		<section id="header-area">
-
-			<div class="blogger-intro blogger-items">
-				<p id="blogger-tagline"><em>"I love web development(particularly javascript) and writing informative
-						blog posts about it gives me a sense of satisfaction. I also enjoy writing about my challenges
-						and struggles as a beginner front end web developer."</em> <strong>Piyush Kaushik</strong></p>
-			</div>
-
-			<div class="blogger-profile blogger-items">
-				<img class="blogger-intro-items" id="blogger-img" src="piyushBW.jpg" alt="PiyushPicture"
-					class="img-responsive">
-
-				<!-- <h2 class="blogger-intro-items" id="blogger-name">Piyush Kaushik</h2> -->
-			</div>
-
-
-
-		</section>
-
-
-
-		<section id="blogs-area">
-			<div id="blogs-grid-container">
-				<a class="blog-tile" href="LWD_Challenges.html" target="_blank">Learning Web Development : The
-					Challenges</a>
-
-			</div>
-		</section>
-
-
-		<section id="share">
-			<p><i class="fas fa-bullhorn"></i> Share this page :</p>
-			<div id="share-blog">
-				<a id="fb" class="share-blog-items"
-					href="https://www.facebook.com/sharer/sharer.php?u=https://kaushikdev.github.io/blog"
-					target="_blank"><i class="fab fa-facebook"></i></a>
-				<a id="whatsapp" class="share-blog-items"
-					href="whatsapp://send?text=https://kaushikdev.github.io/blog"><i
-						class="fab fa-whatsapp-square"></i></a>
-				<a id="tweet" class="share-blog-items"
-					href="https://twitter.com/share?url=https://kaushikdev.github.io/blog&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
-					target="_blank"><i class="fab fa-twitter-square"></i></a>
-			
-				<a class="share-blog-items" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://kaushikdev.github.io/blog"
-				target="_blank"><i class="fab fa-linkedin"></i></a>
-	</div>
-		</section>
-
-	<section id="footer-area">
-
-		<div id="copyright">
-			<a class="copyright-items" href="https://kaushikdev.github.io/portfolio" target="_blank">Developer
-				Portfolio</a>
-
-			<p class="copyright-items">&copy;</i>2019. Piyush Kaushik. All rights reserved.</p>
-		</div>
-
-
-
-		<div id="newsletter">
-			<p class="newsletter-items">Interested in weekly newsletter? Let us know below.</p>
-
-			<form class="newsletter-items" id="form" action="https://twitter.us16.list-manage.com/subscribe/post"
-				method="POST">
-				<input type="hidden" name="u" value="6b7e34e3339b52dfb3f2ad3f4">
-				<input type="hidden" name="id" value="048d6cbe5c">
-
-				<input class="newsletter-subscribe-items" type="email" name="MERGE0" id="MERGE0" placeholder="Email ID">
-
-				<input class="newsletter-subscribe-items" id="submitButton" type="submit"
-					value="Send me weekly newsletter" onClick="return postThanks()">
-			</form>
-		</div>
-	</section>
-
-	<a id="back-to-top-btn" class="back-to-top hide">
-		<i class="fas fa-angle-up"></i>
-		<p><strong>TOP</strong></p>
-	</a>
-
-	</div>
-
-
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

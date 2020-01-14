@@ -1,0 +1,194 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Learning Web Development : A Blog Series by Piyush Kaushik</title>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src=".././jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href=".././assets/font-awesome/css/all.css" />
+    <link rel="stylesheet" href=".././main.css" />
+    <link rel="stylesheet" href=".././style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div id="brand-logo-div">
+          <img
+            id="brand-logo-img"
+            src=".././assets/images/BrandLogo.png"
+            alt="Brand Logo"
+          />
+        </div>
+
+        <div>
+          <p id="blog-series-title">
+            LEARNING WEB DEVELOPMENT : A BLOG SERIES
+          </p>
+        </div>  
+      </header>
+
+      <section id="blog-container">
+        
+        <!-- Write blog posts below. You won't need to add css if you dont make change(add) to the markup -->
+        <div id="blog-post">
+          <h1 class="main-heading">LWD : The Challenges</h1>
+    
+          <h2 class="sub-heading">Introduction</h2>
+          <p class="text">LWD is a little acronym I made which stands for 'Learning Web Development' or 'Learn Web
+            Development' based upon how its used. With that clear now, we will now talk in this article what are the common
+            challenges one face, or atleast I faced and still do, when I decided to LWD. This article is strictly written
+            with the perspective of LWD on a path of self learning.</p>
+    
+            
+          <h2 class="sub-heading">Resource Juggling</h2>
+          <p class="text">I saw youtube videos and tried to read articles on web about basics of web development. I was
+            juggling with youtube videos, reading blogs, listening podcasts and trying to identify the good resource. I even
+            got to udemy and tried to look for best starting course. I was really struggling to identify what to learn and
+            from where. Should I do HTML, CSS or JS? Because one thing led to another and to understand a tutorial I had to
+            constantly search for what was being referred to. It was, believe me, a lot tougher than I thought. I really had
+            no starting point and I was completely lost. I even thought of going back to my old career but didn't somehow.
+            Days were passing by and I was getting depressed day by day. But I wasn't doing one thing that should've been
+            done straightaway.</p>
+    
+          <h2 class="sub-heading">Eye Opener</h2>
+          <p class="text">As suggested in many articles/blog posts/tutorials, a web dev needs to have social accounts(on
+            LinkedIn, Twitter atleast). Scrolling through my twitter feed one day, I saw a mention about freeCodeCamp and
+            how it is supporting beginners just like me, at no cost at all. I made an account on it and decided to give it a
+            go. I don't know about others but this is what I was looking for. Each lesson is atmost 5 minute read and few
+            lines of code. Yes, I was writing some code. It gave me a huge boost. The curriculum is designed to take you one
+            step at a time. Unlike others, or atleast what I have seen. This is in no way an endorsement of freeCodeCamp. It
+            worked for me, something else might work for you.</p>
+    
+          <h2 class="sub-heading">Conclusion</h2>
+          <p class="text">If I summarize, the biggest challenges were, 1. Deciding what you want to do. 2. How to start
+            doing it. 3. Patience. I am still the beginner, but almost 10 months now, I am a lot more confident and have
+            made many simple web apps. Patience is really the key here and I can't stress enough on it. So if you're just
+            starting out just like me, have patience. Things will start to fall into place one day. That's my story so far
+            and in this series of blogs, I will continue to share more on struggles and challenges but mostly on javascript
+            and other web related stuff. You can subscribe if you feel like to get notified. I wish you best in your
+            journey.</p>
+        </div>
+        <!-- Write blog posts above. You won't need to add css if you dont make change(add) to the markup -->
+        <div id="blog-post-comment">
+          <form id="blog-comment-form">
+            <input class="input-items" type="text" id="commentBox"
+              placeholder="Have a feedback? Comment here" />
+            <input class="input-items" type="text" id="nameBox" placeholder="Your name or we will call you 'Anonymous'" />
+            <button class="input-items btn" id="post">Post Comment</button>
+          </form>
+        </div>
+
+        <div id="comments-retrieved-area">
+          <ul id="commentsList">
+
+          </ul>
+          
+        </div>
+        
+      </section>
+
+    
+    
+    
+      
+
+      <footer>
+        <div id="about">
+          <h1 class="footer-items">ABOUT THE AUTHOR</h1>
+          <p class="footer-items">"Hi I am <strong>Piyush Kaushik</strong> a.k.a  <em>kaushikDev</em>. I love web development and writing informative blog posts about it gives me a sense of satisfaction. I also enjoy writing about my challenges and struggles as a beginner web developer."
+            <br>
+          You are welcome to check my portfolio below.
+          </p>
+          <a
+          class="footer-items"
+          href="https://kaushikdev.github.io/portfolio"
+          target="_blank"
+          >PORTFOLIO</a
+        >
+        </div>
+        
+        <div id="contact">
+          <h1 class="footer-items">SAY HELLO</h1>
+          <div class="footer-items">
+            <a
+              class="social-media-icons"
+              href="https://github.com/KaushikDev/"
+              target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://www.linkedin.com/in/piyush-kaushik-61166a22/"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://twitter.com/kaushikDev_"
+              target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="mailto:piyush.kaushik02@gmail.com?subject=Portfolio-Feedback&body=Hi Piyush,"
+              ><i class="far fa-envelope"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://www.youtube.com/channel/UC3uwdZ9kqFhz5CrDyGNsOZQ/"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+          <p class="footer-items">
+            PIYUSH KAUSHIK &copy;2020. ALL RIGHTS RESERVED.
+          </p>
+        </div>
+        
+      </footer>
+    </div>
+
+    <a id="back-to-top-btn" class="back-to-top hide">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <div id="share-blog"><i class="fas fa-bookmark"></i>
+      SHARE THE PAGE
+      <a
+        class="share-blog-items"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://kaushikdev.github.io/blog/1_Challenges.html"
+        target="_blank"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a
+        class="share-blog-items"
+        href="https://twitter.com/share?url=https://kaushikdev.github.io/blog/1_Challenges.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
+        target="_blank"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <a
+        class="share-blog-items"
+        href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://kaushikdev.github.io/blog/1_Challenges.html"
+        target="_blank"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a
+        class="share-blog-items"
+        href="whatsapp://send?text=https://kaushikdev.github.io/blog/1_Challenges.html"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </div>
+
+    <a id="blogs-home" href="https://kaushikdev.github.io/blog/" target="_blank"><i
+      class="fas fa-home"></i></a>
+
+    <script src=".././main.js" blogName="1_Challenges"></script>
+  </body>
+</html>
