@@ -254,12 +254,12 @@
     
     /* blogs-home CSS */
     #blogs-home{
-        top:0;
+        top:1em;
         right: 0;
         width: auto;
         position: fixed;
         color: #ddd;
-        font-size: 1em;
+        font-size: 0.75em;
         transition: all 0.25s ease-in-out;
        }
     
