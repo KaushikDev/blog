@@ -1,0 +1,178 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Learning Web Development : A Blog Series by Piyush Kaushik</title>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src=".././assets/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href=".././assets/font-awesome/css/all.css" />
+    <link rel="stylesheet" href=".././assets/css/main.css" />
+    <link rel="stylesheet" href=".././assets/css/style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div id="brand-logo-div">
+          <img
+            id="brand-logo-img"
+            src=".././assets/images/BrandLogo.png"
+            alt="Brand Logo"
+          />
+        </div>
+
+        <div>
+          <p id="blog-series-title">
+            LEARNING WEB DEVELOPMENT : A BLOG SERIES
+          </p>
+        </div>  
+
+        <div>
+          <a id="blogs-home" href="https://kaushikdev.github.io/blog/" target="_blank"><i
+            class="fas fa-home"></i></a>
+        </div>
+      </header>
+
+      <section id="blog-container">
+        
+        <!-- Write blog posts below. You won't need to add css if you dont make change(add) to the markup -->
+        <div id="blog-post">
+          <h1 class="main-heading">Using Variables</h1>
+    
+          <h2 class="sub-heading">Introduction</h2>
+          <p class="text">Hello World! In this blog we will learn how to write our first program in javascript. We could use an IDE(Integrated Development Environment) too like "Visual Studio Code" to write out first program, but for the sake of simplicity we are going to use Chrome's console. So let's begin.</p>
+    
+            
+          <h2 class="sub-heading">Navigating to Chrome's console</h2>
+          <p class="text">Open the Chrome browser on your desktop/mac and right click and select 'Inspect'. You could use the function key f12 to do the same. Navigate to 'Console' and there you are. Now we'll begin typing our very first program.</p>
+    
+          <h2 class="sub-heading">Coding First Program</h2>
+          <p class="text">In console window, type the following : </p><code>console.log("Hello World!");</code>
+          <p>As soon as you hit enter key, you will see the output generated as "Hello World". There you have it. Your very first javascript program. It's a great way to start. Try out with different strings. (A piece of text is generaly called a string in javascript.)</p>
+    
+          <h2 class="sub-heading">What's next?</h2>
+          <p class="text">My next few blogs will concentrate on exploring javascript basics and web development in general. We will write code along the way. This is to make sure that whoever is incomplete beginner or has never coded before would feel comfortable in coding. Happy Coding.</p>
+        </div>
+        <!-- Write blog posts above. You won't need to add css if you dont make change(add) to the markup -->
+        <div id="blog-post-comment">
+          <form id="blog-comment-form">
+            <input class="input-items" type="text" id="commentBox"
+              placeholder="Have a feedback? Comment here" />
+            <input class="input-items" type="text" id="nameBox" placeholder="Your name or we will call you 'Anonymous'" />
+            <button class="input-items btn" id="post">Post Comment</button>
+          </form>
+        </div>
+
+        <div id="comments-retrieved-area">
+          <ul id="commentsList">
+
+          </ul>
+          
+        </div>
+        <!-- UPDATE THESE LINK TO GET THE CORRECT URL FOR THE PAGE -->
+        <div id="share-blog">
+          SHARE THE PAGE
+          <a
+            class="share-blog-items"
+            href="https://www.facebook.com/sharer/sharer.php?u=https://blog.kaushikdev.com/BlogPosts/0002_UsingVariables.html"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="share-blog-items"
+            href="https://twitter.com/share?url=https://blog.kaushikdev.com/BlogPosts/0002_UsingVariables.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
+            target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+    
+          <a
+            class="share-blog-items"
+            href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.kaushikdev.com/BlogPosts/0002_UsingVariables.html"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            class="share-blog-items"
+            href="whatsapp://send?text=https://blog.kaushikdev.com/BlogPosts/0002_UsingVariables.html"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+      </section>
+
+    
+    
+    
+      
+
+      <footer>
+        <div id="about">
+          <h1 class="footer-items">ABOUT THE AUTHOR</h1>
+          <p class="footer-items">Hi, I am <strong>Piyush Kaushik</strong> a.k.a  <em>kaushikDev</em>. I love web development and writing informative blog posts about it gives me a sense of satisfaction. I also enjoy writing about my challenges and struggles as a beginner web developer.
+            <br>
+          You are welcome to check my portfolio below.
+          </p>
+          <a
+          class="footer-items"
+          href="https://kaushikdev.com"
+          target="_blank"
+          >Developer Portfolio</a
+        >
+        </div>
+        
+        <div id="contact">
+          <h1 class="footer-items">SAY HELLO</h1>
+          <div class="footer-items">
+            <a
+              class="social-media-icons"
+              href="https://github.com/KaushikDev/"
+              target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://www.linkedin.com/in/piyush-kaushik-61166a22/"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://twitter.com/kaushikDev_"
+              target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="mailto:piyush.kaushik02@gmail.com?subject=Portfolio-Feedback&body=Hi Piyush,"
+              ><i class="far fa-envelope"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://www.youtube.com/channel/UC3uwdZ9kqFhz5CrDyGNsOZQ/"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+          <p class="footer-items">
+            Piyush Kaushik &copy;2020. All rights reserved.
+          </p>
+        </div>
+        
+      </footer>
+    </div>
+
+    <a id="back-to-top-btn" class="back-to-top hide">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+   
+
+    
+
+    <script src=".././assets/js/main.js" blogName="0002_UsingVariables"></script>
+  </body>
+</html>
