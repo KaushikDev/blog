@@ -18,7 +18,7 @@ body{
   padding: 1em;
   padding-bottom: 0;
   padding-top: 0;
-  box-shadow: 1px 1px 10px #ddd;
+  box-shadow: 1px 0 10px #ddd;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,7 +28,7 @@ body{
 
 /* Header CSS */
 header{
-  background: #000;
+  background: #01579B;
   width: 100%;
   padding:1em;
   display: flex;
@@ -38,7 +38,7 @@ header{
 }
 
 #brand-logo-div{
-  background: #eee;
+  background: #fff;
   height: 75px;
   width: 75px;
   border-radius: 50%;
@@ -55,16 +55,22 @@ header{
 
 #blog-series-title{
 font-size: 2em;
-color: #ddd;
-text-shadow: 1px 1px 5px #ddd;
+color: #fff;
+/* text-shadow: 1px 1px 5px #ddd; */
 }
+
+#blogs-home{
+  color: #fff;
+  font-size: 1em;
+  
+ }
 
 
 
 /* Section: blog-posts CSS */
 #blog-section{
   width: 100%;
-  background: #eee;
+  background: #fff;
   padding: 1em;
 }
 
@@ -77,12 +83,12 @@ text-shadow: 1px 1px 5px #ddd;
 }
 
 .grid-item{
-  background: #fff;
-  border: 10px solid#000;
+  background: #000;
+  border: 10px solid#01579B;
   text-decoration: none;
   box-shadow: 0 5px 10px #000;
-  text-shadow: 1px 1px 2px #000;
-  color: #555;
+  /* text-shadow: 1px 1px 2px #000; */
+  color: #ddd;
   font-size: 3em;
   overflow: hidden;
   display: flex;
@@ -93,10 +99,35 @@ text-shadow: 1px 1px 5px #ddd;
   }
 
 
+#share-blog{
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  color: #01579B;
+  font-size: 1em;
+}
+
+.share-blog-items{
+  margin: 1em;
+  color: #01579B;
+  font-size: 1em;
+  transition: all 0.25s ease-in-out;
+}
+
+.share-blog-items:hover{
+  color: #fff;
+  padding: 1em;
+  background: #01579B;
+  border-radius: 50%;
+}
+
+
 /* Footer CSS */
 
 footer{
-  background: #000;
+  background: #01579B;
   width: 100%;
   padding:1em;
   display: flex;
@@ -107,12 +138,12 @@ footer{
 
 .footer-items{
   margin: 1em;
-  color: #ddd;
+  color: #fff;
 }
 
 
 footer > #about{
-  background: #111;
+  background: transparent;
   padding: 1em;
   width: 50%;
   display: flex;
@@ -122,7 +153,7 @@ footer > #about{
 }
 
 footer > #contact{
-  background: #000;
+  background: transparent;
   padding: 1em;
   width: 50%;
   display: flex;
@@ -134,48 +165,25 @@ footer > #contact{
 .social-media-icons{
   margin: 1em;
   font-size: 1em;
-  color: #ddd;
+  color: #fff;
   transition: all 0.25s ease-in-out;
 }
 
 .social-media-icons:hover{
-  color: #000;
+  color: #01579B;
   padding: 1em;
-  background: #eee;
+  background: #fff;
   border-radius: 50%;
 }
 
-/* Share Blog CSS*/
-#share-blog{
-  top:1em;
-  left: 1em;
-   width: auto;
-  position: fixed;
-  color: #ddd;
-  font-size: 1em;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-}
 
-.share-blog-items{
-  color: #ddd;
-  font-size: 1em;
-  transition: all 0.25s ease-in-out;
-}
-
-.share-blog-items:hover{
-  color: #000;
-  padding: 1em;
-  background: #eee;
-  border-radius: 50%;
-}
 
 /* Back-To-Top CSS */
 
 .back-to-top {
   cursor: pointer;
   transition: all 0.25s ease-in-out;
-  color: #ddd;
+  color: #fff;
   position: fixed;
   bottom: 1em;
   right: 1em;
@@ -183,9 +191,9 @@ footer > #contact{
 }
 
 .back-to-top:hover{
-  color: #000;
-  padding: 1em;
-  background: #eee;
+  color: #01579B;
+  padding: 0.5em;
+  background: #fff;
   border-radius: 50%;
 }
 
@@ -203,7 +211,7 @@ footer > #contact{
 @media screen and (min-width: 300px) and (max-width:728px){
    
   .container{
-    width: 80vw;
+    width: 90vw;
     height: auto;
     padding: 1em;
     padding-bottom: 0;
@@ -218,12 +226,12 @@ footer > #contact{
   
   /* Header CSS */
   header{
-    background: #000;
+    background: #01579B;
     width: 100%;
     padding:1em;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
   }
   
@@ -245,9 +253,15 @@ footer > #contact{
   
   #blog-series-title{
   font-size: 0.75em;
-  color: #ddd;
-  text-shadow: 1px 1px 5px #ddd;
+  color: #fff;
+  /* text-shadow: 1px 1px 5px #ddd; */
   }
+
+  #blogs-home{
+    color: #fff;
+    font-size: 1em;
+    }
+  
   
   /* Section: blog-posts CSS */
   #blog-section{
@@ -265,12 +279,12 @@ footer > #contact{
   }
   
   .grid-item{
-    background: #fff;
-    border: 10px solid#000;
+    background: #000;
+    border: 10px solid#01579B;
     text-decoration: none;
     box-shadow: 0 5px 10px #000;
-    text-shadow: 1px 1px 2px #000;
-    color: #555;
+    /* text-shadow: 1px 1px 2px #000; */
+    color: #ddd;
     font-size: 2.5em;
     overflow: hidden;
     display: flex;
@@ -280,12 +294,34 @@ footer > #contact{
     transition: all 0.25s ease-in-out;
     }
   
-  
+    #share-blog{
+      padding: 1em;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items:center;
+      color: #01579B;
+      font-size: 0.9em;
+    }
+    
+    .share-blog-items{
+      margin: 0.5em;
+      color: #01579B;
+      font-size: 1em;
+      transition: all 0.25s ease-in-out;
+    }
+    
+    .share-blog-items:hover{
+      color: #fff;
+      padding: 0.5em;
+      background: #01579B;
+      border-radius: 50%;
+    }
   
   /* Footer CSS */
   
   footer{
-    background: #000;
+    background: #01579B;
     width: 100%;
     padding:1em;
     display: flex;
@@ -297,12 +333,12 @@ footer > #contact{
   
   .footer-items{
     margin: 1em;
-    color: #ddd;
+    color: #fff;
   }
   
   
   footer > #about{
-    background: #111;
+    background: transparent;
     padding: 1em;
     width: 100%;
     display: flex;
@@ -312,7 +348,7 @@ footer > #contact{
   }
   
   footer > #contact{
-    background: #000;
+    background: transparent;
     padding: 1em;
     width: 100%;
     display: flex;
@@ -329,43 +365,20 @@ footer > #contact{
   }
   
   .social-media-icons:hover{
-    color: #000;
+    color: #01579B;
     padding: 1em;
-    background: #eee;
+    background: #fff;
     border-radius: 50%;
   }
   
-  /* Share Blog CSS*/
-  #share-blog{
-    top:1em;
-    left: 0;
-    width: auto;
-    position: fixed;
-    color: #ddd;
-    font-size: 0.75em;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-  }
-  
-  .share-blog-items{
-    color: #ddd;
-    font-size: 1em;
-    transition: all 0.25s ease-in-out;
-  }
-  
-  .share-blog-items:hover{
-    color: #000;
-    padding: 1em;
-    background: #eee;
-    border-radius: 50%;
-  }
+
   
   /* Back-To-Top CSS */
   
   .back-to-top {
     cursor: pointer;
     transition: all 0.25s ease-in-out;
-    color: #ddd;
+    color: #fff;
     position: fixed;
     bottom: 1em;
     right: 0;
@@ -373,9 +386,9 @@ footer > #contact{
   }
   
   .back-to-top:hover{
-    color: #000;
-    padding: 1em;
-    background: #eee;
+    color: #01579B;
+    padding: 0.5em;
+    background: #fff;
     border-radius: 50%;
   }
   
@@ -410,7 +423,7 @@ footer > #contact{
   
   /* Header CSS */
   header{
-    background: #000;
+    background: #01579B;
     width: 100%;
     padding:1em;
     display: flex;
@@ -437,9 +450,15 @@ footer > #contact{
   
   #blog-series-title{
   font-size: 1em;
-  color: #ddd;
-  text-shadow: 1px 1px 5px #ddd;
+  color: #fff;
+  /* text-shadow: 1px 1px 5px #ddd; */
   }
+  
+  #blogs-home{
+    color: #fff;
+    font-size: 1em;
+    
+   }
   
   
   
@@ -459,12 +478,12 @@ footer > #contact{
   }
   
   .grid-item{
-    background: #fff;
-    border: 10px solid#000;
+    background: #000;
+    border: 10px solid#01579B;
     text-decoration: none;
     box-shadow: 0 5px 10px #000;
-    text-shadow: 1px 1px 2px #000;
-    color: #555;
+    /* text-shadow: 1px 1px 2px #000; */
+    color: #ddd;
     font-size: 2em;
     overflow: hidden;
     display: flex;
@@ -474,12 +493,34 @@ footer > #contact{
     transition: all 0.25s ease-in-out;
     }
   
- 
+    #share-blog{
+      padding: 1em;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items:center;
+       color: #01579B;
+      font-size: 1em;
+    }
+    
+    .share-blog-items{
+      margin: 1em;
+      color: #01579B;
+      font-size: 1em;
+      transition: all 0.25s ease-in-out;
+    }
+    
+    .share-blog-items:hover{
+      color: #fff;
+      padding: 0.75em;
+      background: #01579B;
+      border-radius: 50%;
+    }
   
   /* Footer CSS */
   
   footer{
-    background: #000;
+    background: #01579B;
     width: 100%;
     padding:1em;
     display: flex;
@@ -491,12 +532,12 @@ footer > #contact{
   
   .footer-items{
     margin: 1em;
-    color: #ddd;
+    color: #fff;
   }
   
   
   footer > #about{
-    background: #111;
+    background: transparent;
     padding: 1em;
     width: 50%;
     display: flex;
@@ -506,7 +547,7 @@ footer > #contact{
   }
   
   footer > #contact{
-    background: #000;
+    background: transparent;
     padding: 1em;
     width: 50%;
     display: flex;
@@ -518,48 +559,25 @@ footer > #contact{
   .social-media-icons{
     margin: 1em;
     font-size: 1em;
-    color: #ddd;
+    color: #fff;
     transition: all 0.25s ease-in-out;
   }
   
   .social-media-icons:hover{
-    color: #000;
+    color: #01579B;
     padding: 1em;
-    background: #eee;
+    background: #fff;
     border-radius: 50%;
   }
   
-  /* Share Blog CSS*/
-  #share-blog{
-    top:1em;
-    left: 1em;
-     width: auto;
-    position: fixed;
-    color: #ddd;
-    font-size: 1em;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-  }
-  
-  .share-blog-items{
-    color: #ddd;
-    font-size: 1em;
-    transition: all 0.25s ease-in-out;
-  }
-  
-  .share-blog-items:hover{
-    color: #000;
-    padding: 1em;
-    background: #eee;
-    border-radius: 50%;
-  }
+ 
   
   /* Back-To-Top CSS */
   
   .back-to-top {
     cursor: pointer;
     transition: all 0.25s ease-in-out;
-    color: #ddd;
+    color: #fff;
     position: fixed;
     bottom: 1em;
     right: 1em;
@@ -567,9 +585,9 @@ footer > #contact{
   }
   
   .back-to-top:hover{
-    color: #000;
-    padding: 1em;
-    background: #eee;
+    color: #01579B;
+    padding: 0.5em;
+    background: #fff;
     border-radius: 50%;
   }
   

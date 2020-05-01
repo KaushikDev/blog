@@ -17,7 +17,7 @@
   }
 
 #blog-container{
-    background: #eee;
+    background: #fff;
     width: 100%;
     padding: 1em;
     display: flex;
@@ -74,14 +74,14 @@
 
 .input-items{
     width: 100%;
-    border: 1px solid #000;
+    border: 1px solid #01579B;
     padding: 1em;
     font-size: 1em;
 }
 
 .btn{
-    background: #000;
-    color: #ddd;
+    background: #01579B;
+    color: #fff;
 }
 
 
@@ -108,7 +108,7 @@
     width: 80%;
     padding: 1em;
     margin: 1em;
-    background: #ddd;
+    background: #E1F5FE;
     display : flex;
     flex-direction : column;
     justify-content : center;
@@ -124,28 +124,11 @@
 }
 
 
-/* blogs-home CSS */
-#blogs-home{
-    top:1em;
-    right: 1em;
-    width: auto;
-    position: fixed;
-    color: #ddd;
-    font-size: 1em;
-    transition: all 0.25s ease-in-out;
-   }
-
-  #blogs-home:hover{
-    color: #000;
-    padding: 1em;
-    background: #eee;
-    border-radius: 50%;
-  }
 
   @media screen and (min-width: 300px) and (max-width:728px) {
 
     #blog-container{
-        background: #eee;
+        background: #fff;
         width: 100%;
         padding: 1em;
         display: flex;
@@ -202,14 +185,14 @@
     
     .input-items{
         width: 100%;
-        border: 1px solid #000;
+        border: 1px solid #01579B;
         padding: 1em;
         font-size: 0.75em;
     }
     
     .btn{
-        background: #000;
-        color: #ddd;
+        background: #01579B;
+        color: #fff;
     }
     
     
@@ -236,7 +219,7 @@
         width: 80%;
         padding: 1em;
         margin: 1em;
-        background: #ddd;
+        background: #E1F5FE;
         display : flex;
         flex-direction : column;
         justify-content : center;
@@ -252,21 +235,119 @@
     }
     
     
-    /* blogs-home CSS */
-    #blogs-home{
-        top:1em;
-        right: 0;
-        width: auto;
-        position: fixed;
-        color: #ddd;
-        font-size: 0.75em;
-        transition: all 0.25s ease-in-out;
-       }
-    
-      #blogs-home:hover{
-        color: #000;
+
+  }
+
+
+  @media screen and (min-width: 729px) and (max-width:1400px) {
+
+    #blog-container{
+        background: #fff;
+        width: 100%;
         padding: 1em;
-        background: #eee;
-        border-radius: 50%;
-      }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    /* blog-post CSS */
+    #blog-post{
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .main-heading{
+        font-size: var(--blog-main-heading-font-size);
+        color: var(--blog-main-heading-color);
+        margin: 1em auto; 
+    }
+    
+    .sub-heading{
+        font-size: var(--blog-sub-heading-font-size);
+        color: var(--blog-sub-heading-color);
+        margin: 1em auto;
+        text-decoration: underline;
+    }
+    
+    .text{
+        font-size: var(--blog-text-font-size);
+        color: var(--blog-text-color);
+        margin: 1em 1em; 
+    }
+    
+    
+    /* blog-post-comment CSS */
+    
+    #blog-post-comment{
+        width: 100%;
+        padding: 1em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #blog-comment-form{
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .input-items{
+        width: 100%;
+        border: 1px solid #01579B;
+        padding: 1em;
+        font-size: 0.75em;
+    }
+    
+    .btn{
+        background: #01579B;
+        color: #fff;
+    }
+    
+    
+    /* comments-retrieved-area CSS */
+    #comments-retrieved-area{
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #commentsList{
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .comments{
+        width: 80%;
+        padding: 1em;
+        margin: 1em;
+        background: #E1F5FE;
+        display : flex;
+        flex-direction : column;
+        justify-content : center;
+        align-items : flex-start;
+    }
+    
+    .comment-items{
+        margin: 1em;
+    }
+    
+    .comment-items p{
+        font-size: 1em;
+    }
+    
+    
+
   }
