@@ -1,0 +1,186 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Learning Web Development : A Blog Series by Piyush Kaushik</title>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src=".././assets/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href=".././assets/font-awesome/css/all.css" />
+    <link rel="stylesheet" href=".././assets/css/main.css" />
+    <link rel="stylesheet" href=".././assets/css/style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div id="brand-logo-div">
+          <img
+            id="brand-logo-img"
+            src=".././assets/images/BrandLogo.png"
+            alt="Brand Logo"
+          />
+        </div>
+
+        <div>
+          <p id="blog-series-title">
+            LEARNING WEB DEVELOPMENT : A BLOG SERIES
+          </p>
+        </div>  
+
+        <div>
+          <a id="blogs-home" href="https://kaushikdev.github.io/blog/" target="_blank"><i
+            class="fas fa-home"></i></a>
+        </div>
+      </header>
+
+      <section id="blog-container">
+        
+        <!-- Write blog posts below. You won't need to add css if you dont make change(add) to the markup -->
+        <div id="blog-post">
+          <h1 class="main-heading">Arithmetic Operators</h1>
+    
+          <h2 class="sub-heading">Introduction</h2>
+          <p class="text">A simple arithemtic operation would look like <strong>3 + 4</strong> or <strong>7 * 8</strong> or <strong>1 / 4 - 6</strong> . Here, <strong>+  - * /</strong> are the arithmetic operators. <br>
+           <strong>+</strong>  is used for addition, <strong>-</strong> for substraction, <strong>*</strong> for multiplication and <strong>/</strong> for division.
+          </p>
+    
+            
+          <h2 class="sub-heading">Special Arithmetic Operator</h2>
+          <p class="text">There is also a special arithmetic operator <strong>%</strong>. This operator is often termed as 'modulo'. <br> The operation X % Y  calculates the remainder when X is divided by Y. <strong>8 % 5</strong> will result in 3. Also, <strong>%</strong> operator has the same precedence as <strong>*</strong> and <strong>/</strong>. </p>
+    
+          <h2 class="sub-heading">Precedence and Order of calculation</h2>
+          <p class="text"> + operator has same precedence as - operator and  * operator has same precedence as / operator. <br> * and / have higher precedence than + and - .  Which means in an operation like 5 + 3 * 7, 3 * 7 will be calculated first and the result will then be added to 5. Also any operation enclosed between () like (3 + 4) * 7 is given a higher precedence. That is  3 + 4 will be calculated first and the result will then be multiplied with 7. In an operation with operators of same precedence, the calculation is done from left to right.</p>
+    
+          <h2 class="sub-heading">Let's code!</h2>
+          <p class="text">Let's code our simplest javascript calculation program. Open the Chrome browser console window and type the following: </p>
+          <code>let x = 15;<br>let y = 10;<br>console.log("Result of x + y is  : "+ x + y);<br>console.log("Result of x - y is  : "+ x - y); <br>console.log("Result of x * y is  : " + x * y);<br>console.log("Result of x / y is  : "+ x / y);<br>console.log("Result of x % y is  : " + x % y);</code>
+
+          <h2 class="sub-heading">Output</h2>
+          <p>Hit enter key and see what happens. Wait something is wrong. The results for  addition and substraction don't seem right. Right? 15+10 should 25 and not 1510. Also, 15-10 should be 5 and not NaN. The reason is we have a string within dounle quotes and whenever we have a string, the whole operation is converted to string so basically what we did was 'concatenating' "15" and "10" and not adding those. To fix it, we could have written </p><code>console.log("Result of x + y is  : "+ (x + y));</code><p> and output would be fine. Reason is () has higher precedence, so operation between parenthesis was performed first and later converted to string. Similarly, the output of x - y operation is NaN(Not a Number) because + and - operators have same precedence so basically what we're trying to do is subtracting a number from a string which doesn't make much sense. Hence NaN. Again, we could fix it by writing </p><code>console.log("Result of x - y is  : "+ (x - y));</code><p> and the result would be 5, which is correct. Rest operations produce correct output as operators <strong>* / %</strong> have higher precedence than + operator.</p>
+
+          <h2 class="sub-heading">Conclusion</h2>
+          <p>Phew, that was some information. But we did it. By now, we have a good understanding of Arithmetic Operators. We will be using these a lot in future examples. Try these on your own. Observe the ouputs. We will make these operations more dynamic in the future, and not hard coding like we did in the above example. Untill next time. Happy coding.</p>
+        </div>
+        <!-- Write blog posts above. You won't need to add css if you dont make change(add) to the markup -->
+        <div id="blog-post-comment">
+          <form id="blog-comment-form">
+            <input class="input-items" type="text" id="commentBox"
+              placeholder="Have a feedback? Comment here" />
+            <input class="input-items" type="text" id="nameBox" placeholder="Your name or we will call you 'Anonymous'" />
+            <button class="input-items btn" id="post">Post Comment</button>
+          </form>
+        </div>
+
+        <div id="comments-retrieved-area">
+          <ul id="commentsList">
+
+          </ul>
+          
+        </div>
+        <!-- UPDATE THESE LINK TO GET THE CORRECT URL FOR THE PAGE -->
+        <div id="share-blog">
+          SHARE THE PAGE
+          <a
+            class="share-blog-items"
+            href="https://www.facebook.com/sharer/sharer.php?u=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="share-blog-items"
+            href="https://twitter.com/share?url=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
+            target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+    
+          <a
+            class="share-blog-items"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            class="share-blog-items"
+            href="whatsapp://send?text=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+      </section>
+
+    
+    
+    
+      
+
+      <footer>
+        <div id="about">
+          <h1 class="footer-items">ABOUT THE AUTHOR</h1>
+          <p class="footer-items">Hi, I am <strong>Piyush Kaushik</strong> a.k.a  <em>kaushikDev</em>. I love web development and writing informative blog posts about it gives me a sense of satisfaction. I also enjoy writing about my challenges and struggles as a beginner web developer.
+            <br>
+          You are welcome to check my portfolio below.
+          </p>
+          <a
+          class="footer-items"
+          href="https://kaushikdev.com"
+          target="_blank"
+          >Developer Portfolio</a
+        >
+        </div>
+        
+        <div id="contact">
+          <h1 class="footer-items">SAY HELLO</h1>
+          <div class="footer-items">
+            <a
+              class="social-media-icons"
+              href="https://github.com/KaushikDev/"
+              target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://www.linkedin.com/in/piyush-kaushik-61166a22/"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://twitter.com/kaushikDev_"
+              target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="mailto:piyush.kaushik02@gmail.com?subject=Portfolio-Feedback&body=Hi Piyush,"
+              ><i class="far fa-envelope"></i
+            ></a>
+  
+            <a
+              class="social-media-icons"
+              href="https://www.youtube.com/channel/UC3uwdZ9kqFhz5CrDyGNsOZQ/"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+          <p class="footer-items">
+            Piyush Kaushik &copy;2020. All rights reserved.
+          </p>
+        </div>
+        
+      </footer>
+    </div>
+
+    <a id="back-to-top-btn" class="back-to-top hide">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+   
+
+    
+
+    <script src=".././assets/js/main.js" blogName="0003_ArithmeticOperators"></script>
+  </body>
+</html>
