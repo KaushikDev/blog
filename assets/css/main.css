@@ -1,3 +1,16 @@
+@font-face {
+  src: url("./../assets/fonts/Montserrat-Regular.ttf");
+  font-family: "Montserrat", sans-serif;
+}
+@font-face {
+  src: url("./../assets/fonts/Roboto-Regular.ttf");
+  font-family: "Roboto", sans-serif;
+}
+@font-face {
+  src: url("./../assets/fonts/Inconsolata-Regular.ttf");
+  font-family: "Inconsolata", monospace;
+}
+
 *{
   margin: 0;
   padding: 0;

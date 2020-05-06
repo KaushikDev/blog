@@ -38,29 +38,59 @@
         
         <!-- Write blog posts below. You won't need to add css if you dont make change(add) to the markup -->
         <div id="blog-post">
-          <h1 class="main-heading">Arithmetic Operators</h1>
+          <h1 class="main-heading">Assignment Operators</h1>
     
           <h2 class="sub-heading">Introduction</h2>
-          <p class="text">A simple arithemtic operation would look like <strong>3 + 4</strong> or <strong>7 * 8</strong> or <strong>1 / 4 - 6</strong> . Here, <strong>+  - * /</strong> are the arithmetic operators. <br>
-           <strong>+</strong>  is used for addition, <strong>-</strong> for substraction, <strong>*</strong> for multiplication and <strong>/</strong> for division.
-          </p>
-    
+          <p class="text">An assignment operator is used to assign value to a variable. The value to the right side of the assignment operator is assigned to the variable on the left side. Assignment operator is denoted by single '=' sign.
+          Few examples of assignment operation are :</p>
+          <code>let y = 5; <span>//assigning 5 to variable y</span></code>
+          <code>let x = y; <span>//assigning the value of variable y to variable x</span></code>
+          <code>let z = 5 * 2 + 9; <span>// assigning the value of expression to variable z</span></code>
+          <code>const myName = "kaushikDev"; <span>// assigning a string "kaushikDev" to variable 'myName'</span></code>
+          <code>let myCollection = ["Star Wars Memorabilia", 5]; <span>//assigning an array to variable 'myCollection'</span></code>
+
             
-          <h2 class="sub-heading">Special Arithmetic Operator</h2>
-          <p class="text">There is also a special arithmetic operator <strong>%</strong>. This operator is often termed as 'modulo'. <br> The operation X % Y  calculates the remainder when X is divided by Y. <strong>8 % 5</strong> will result in 3. Also, <strong>%</strong> operator has the same precedence as <strong>*</strong> and <strong>/</strong>. </p>
-    
-          <h2 class="sub-heading">Precedence and Order of calculation</h2>
-          <p class="text"> + operator has same precedence as - operator and  * operator has same precedence as / operator. <br> * and / have higher precedence than + and - .  Which means in an operation like 5 + 3 * 7, 3 * 7 will be calculated first and the result will then be added to 5. Also any operation enclosed between () like (3 + 4) * 7 is given a higher precedence. That is  3 + 4 will be calculated first and the result will then be multiplied with 7. In an operation with operators of same precedence, the calculation is done from left to right.</p>
-    
-          <h2 class="sub-heading">Let's code!</h2>
-          <p class="text">Let's code our simplest javascript calculation program. Open the Chrome browser console window and type the following: </p>
-          <code>let x = 15;</code><code>let y = 10;</code><code>console.log("Result of x + y is  : "+ x + y);</code><code>console.log("Result of x - y is  : "+ x - y);</code><code>console.log("Result of x * y is  : " + x * y);</code><code>console.log("Result of x / y is  : "+ x / y);</code><code>console.log("Result of x % y is  : " + x % y);</code>
+          <h2 class="sub-heading">Compound Assignment Operators</h2>
+          <p class="text">Compound Assignment Operators are generally the combination of two types of operators of which one is assignment operator and other is generally(there are others as well but most frequently used are arithmetic ones.) an arithmetic operator. Examples of Compound Assignment Operators are : </p>
+
+          <code> x += y <span>//which literally means x = x + y</span> </code>
+          <code> x -= y <span>//which literally means x = x - y</span> </code>
+          <code> x *= y <span>//which literally means x = x * y</span> </code>
+          <code> x /= y <span>//which literally means x = x / y</span> </code>
+          <code> x **= y <span>//which literally means x = x ** y</span> </code>
+          
+
+          <h2 class="sub-heading">Ok, let's code now!</h2>
+          <p class="text">Let's code a simple javascript program. Open the Chrome browser console window and type the following: </p>
+          <code>let y = 5;</code>
+          <code>console.log("The value of y is : " + y);</code>
+          <code>let x = y;</code>
+          <code>console.log("The value of x is : " + x);</code>
+          <code> y += y;</code>
+          <code>console.log("The value of y is : " + y);</code>
+          <code>x -= 3;</code>
+          <code>console.log("The value of x is : " + x);</code>
+          <code>x *= y;</code>
+          <code>console.log("The value of x is : " + x);</code>
+          <code>x /= y;</code>
+          <code>console.log("The value of x is : " + x);</code>
+          <code>x **= x</code>
+          <code>console.log("The value of x is : " + x);</code>
+
+         
 
           <h2 class="sub-heading">Output</h2>
-          <p>Hit enter key and see what happens. Wait something is wrong. The results for  addition and substraction don't seem right. Right? 15+10 should 25 and not 1510. Also, 15-10 should be 5 and not NaN. The reason is we have a string within dounle quotes and whenever we have a string, the whole operation is converted to string so basically what we did was 'concatenating' "15" and "10" and not adding those. To fix it, we could have written </p><code>console.log("Result of x + y is  : "+ (x + y));</code><p> and output would be fine. Reason is () has higher precedence, so operation between parenthesis was performed first and later converted to string. Similarly, the output of x - y operation is NaN(Not a Number) because + and - operators have same precedence so basically what we're trying to do is subtracting a number from a string which doesn't make much sense. Hence NaN. Again, we could fix it by writing </p><code>console.log("Result of x - y is  : "+ (x - y));</code><p> and the result would be 5, which is correct. Rest operations produce correct output as operators <strong>* / %</strong> have higher precedence than + operator.</p>
+          <p>Hit enter key and observe the output. It looks like : </p>
+          <p>The value of y is : 5 <span>//because we assigned integer 5 to variable 'y'.</span>
+            <br> The value of x is : 5 <span>//because we assigned value of variable 'y' to variable 'x'.</span>
+            <br>The value of y is : 10 <span>//because we assigned value of variable 'y' to variable 'y' i.e. y = y + y = 5 + 5 = 10.</span>
+            <br>The value of x is : 2 <span>//because we subtracted 3 from the value of varibale 'x' i.e. x = x - 3 = 5 - 5 = 2 and assigned to x.</span>
+            <br>The value of x is : 20<span>//because we multiplied values of variables 'x' and 'y' and assigned it to variable 'x'.</span>
+            <br>The value of x is : 2<span>//because we divided value of variable 'x' by value of variable 'y' ans assigned it to variable 'x'.</span>
+            <br>The value of x is : 4<span>//because we 'exponentiated' the value of variable 'x' and assigned it to variable 'x'.</span></p>
 
           <h2 class="sub-heading">Conclusion</h2>
-          <p>Phew, that was some information. But we did it. By now, we have a good understanding of Arithmetic Operators. We will be using these a lot in future examples. Try these on your own. Observe the ouputs. We will make these operations more dynamic in the future, and not hard coding like we did in the above example. Untill next time. Happy coding.</p>
+          <p>I am confident that by now you have a fair understanding of assignment operators. Try to play with it and observe what you get. Hope this was somewhat helpful to you. Happy Coding.</p>
         </div>
         <!-- Write blog posts above. You won't need to add css if you dont make change(add) to the markup -->
         <div id="blog-post-comment">
@@ -83,26 +113,26 @@
           SHARE THE PAGE
           <a
             class="share-blog-items"
-            href="https://www.facebook.com/sharer/sharer.php?u=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html"
+            href="https://www.facebook.com/sharer/sharer.php?u=https://blog.kaushikdev.com/BlogPosts/0004_AssignmentOperators.html"
             target="_blank"
             ><i class="fab fa-facebook-f"></i
           ></a>
           <a
             class="share-blog-items"
-            href="https://twitter.com/share?url=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
+            href="https://twitter.com/share?url=https://blog.kaushikdev.com/BlogPosts/0004_AssignmentOperators.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
             target="_blank"
             ><i class="fab fa-twitter"></i
           ></a>
     
           <a
             class="share-blog-items"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.kaushikdev.com/BlogPosts/0004_AssignmentOperators.html"
             target="_blank"
             ><i class="fab fa-linkedin-in"></i
           ></a>
           <a
             class="share-blog-items"
-            href="whatsapp://send?text=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html"
+            href="whatsapp://send?text=https://blog.kaushikdev.com/BlogPosts/0004_AssignmentOperators.html"
             ><i class="fab fa-whatsapp"></i
           ></a>
         </div>
@@ -181,6 +211,6 @@
 
     
 
-    <script src=".././assets/js/main.js" blogName="0003_ArithmeticOperators"></script>
+    <script src=".././assets/js/main.js" blogName="0004_AssignmentOperators"></script>
   </body>
 </html>

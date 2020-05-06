@@ -1,12 +1,18 @@
+
 :root{
-    
+    --blog-font-family :  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --blog-main-heading-color : #333;
     --blog-main-heading-font-size : 3em;
+    --blog-sub-heading-font-family :  "Montserrat", sans-serif;
     --blog-sub-heading-color : #444;
     --blog-sub-heading-font-size : 2em;
+    --blog-text-font-family : "Roboto", sans-serif;
     --blog-text-color : #555;
     --blog-text-font-size : 1em;
-    --blog-font-family :  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --blog-code-font-family : "Inconsolata", monospace;
+    --blog-code-color : #fff;
+    --blog-span-color : #43A047;
+    
 
     --comment-input-background-color : #fff;
     --comment-input-font-size : 1.5em;
@@ -42,17 +48,36 @@
 
 .sub-heading{
     font-size: var(--blog-sub-heading-font-size);
+    font-family: var(--blog-sub-heading-font-family);
     color: var(--blog-sub-heading-color);
     margin: 1em auto;
     text-decoration: underline;
 }
 
-.text{
+.text,p{
     font-size: var(--blog-text-font-size);
+    font-family: var(--blog-text-font-family);
     color: var(--blog-text-color);
     margin: 1em 1em; 
 }
 
+code{
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.75);
+    font-size: var(--blog-text-font-size);
+    font-family: var(--blog-code-font-family);
+    color: var(--blog-code-color);
+    margin: 0 1em; 
+}
+
+span{
+    background: transparent;
+    font-size: var(--blog-text-font-size);
+    font-family: var(--blog-text-font-family);
+    color: var(--blog-span-color);
+    margin: 1em 1em;
+}
 
 /* blog-post-comment CSS */
 

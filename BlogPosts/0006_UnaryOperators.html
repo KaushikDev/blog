@@ -54,7 +54,7 @@
     
           <h2 class="sub-heading">Let's code!</h2>
           <p class="text">Let's code our simplest javascript calculation program. Open the Chrome browser console window and type the following: </p>
-          <code>let x = 15;</code><code>let y = 10;</code><code>console.log("Result of x + y is  : "+ x + y);</code><code>console.log("Result of x - y is  : "+ x - y);</code><code>console.log("Result of x * y is  : " + x * y);</code><code>console.log("Result of x / y is  : "+ x / y);</code><code>console.log("Result of x % y is  : " + x % y);</code>
+          <code>let x = 15;<br>let y = 10;<br>console.log("Result of x + y is  : "+ x + y);<br>console.log("Result of x - y is  : "+ x - y); <br>console.log("Result of x * y is  : " + x * y);<br>console.log("Result of x / y is  : "+ x / y);<br>console.log("Result of x % y is  : " + x % y);</code>
 
           <h2 class="sub-heading">Output</h2>
           <p>Hit enter key and see what happens. Wait something is wrong. The results for  addition and substraction don't seem right. Right? 15+10 should 25 and not 1510. Also, 15-10 should be 5 and not NaN. The reason is we have a string within dounle quotes and whenever we have a string, the whole operation is converted to string so basically what we did was 'concatenating' "15" and "10" and not adding those. To fix it, we could have written </p><code>console.log("Result of x + y is  : "+ (x + y));</code><p> and output would be fine. Reason is () has higher precedence, so operation between parenthesis was performed first and later converted to string. Similarly, the output of x - y operation is NaN(Not a Number) because + and - operators have same precedence so basically what we're trying to do is subtracting a number from a string which doesn't make much sense. Hence NaN. Again, we could fix it by writing </p><code>console.log("Result of x - y is  : "+ (x - y));</code><p> and the result would be 5, which is correct. Rest operations produce correct output as operators <strong>* / %</strong> have higher precedence than + operator.</p>
@@ -83,26 +83,26 @@
           SHARE THE PAGE
           <a
             class="share-blog-items"
-            href="https://www.facebook.com/sharer/sharer.php?u=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html"
+            href="https://www.facebook.com/sharer/sharer.php?u=https://blog.kaushikdev.com/BlogPosts/0006_UnaryOperators.html"
             target="_blank"
             ><i class="fab fa-facebook-f"></i
           ></a>
           <a
             class="share-blog-items"
-            href="https://twitter.com/share?url=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
+            href="https://twitter.com/share?url=https://blog.kaushikdev.com/BlogPosts/0006_UnaryOperators.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
             target="_blank"
             ><i class="fab fa-twitter"></i
           ></a>
     
           <a
             class="share-blog-items"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.kaushikdev.com/BlogPosts/0006_UnaryOperators.html"
             target="_blank"
             ><i class="fab fa-linkedin-in"></i
           ></a>
           <a
             class="share-blog-items"
-            href="whatsapp://send?text=https://blog.kaushikdev.com/BlogPosts/0003_ArithmeticOperators.html"
+            href="whatsapp://send?text=https://blog.kaushikdev.com/BlogPosts/0006_UnaryOperators.html"
             ><i class="fab fa-whatsapp"></i
           ></a>
         </div>
@@ -181,6 +181,6 @@
 
     
 
-    <script src=".././assets/js/main.js" blogName="0003_ArithmeticOperators"></script>
+    <script src=".././assets/js/main.js" blogName="0006_UnaryOperators"></script>
   </body>
 </html>
