@@ -88,7 +88,7 @@ color: #fff;
 }
 
 #grid-container{
-  padding: 3em;
+  padding: 2em;
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
   grid-auto-rows: minmax(200px, 1fr);
@@ -107,7 +107,7 @@ color: #fff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 0.25s ease-in-out;
+  /* transition: all 0.25s ease-in-out; */
   }
 
 
@@ -285,8 +285,8 @@ footer > #contact{
   #grid-container{
     padding: 1em;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    grid-auto-rows: minmax(100px, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: minmax(200px, 1fr);
     gap: 1em;
   }
   
@@ -302,7 +302,7 @@ footer > #contact{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 0.25s ease-in-out;
+    /* transition: all 0.25s ease-in-out; */
     }
   
     #share-blog{
@@ -481,11 +481,11 @@ footer > #contact{
   }
   
   #grid-container{
-    padding: 3em;
+    padding: 2em;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-auto-rows: minmax(150px, 1fr);
-    gap: 3em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: minmax(200px, 1fr);
+    gap: 2em;
   }
   
   .grid-item{
@@ -500,7 +500,7 @@ footer > #contact{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 0.25s ease-in-out;
+    /* transition: all 0.25s ease-in-out; */
     }
   
     #share-blog{
