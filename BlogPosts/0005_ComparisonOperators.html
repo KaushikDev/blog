@@ -38,29 +38,54 @@
         
         <!-- Write blog posts below. You won't need to add css if you dont make change(add) to the markup -->
         <div id="blog-post">
-          <h1 class="main-heading">Arithmetic Operators</h1>
+          <h1 class="main-heading">Comparison Operators</h1>
     
           <h2 class="sub-heading">Introduction</h2>
-          <p class="text">A simple arithemtic operation would look like <strong>3 + 4</strong> or <strong>7 * 8</strong> or <strong>1 / 4 - 6</strong> . Here, <strong>+  - * /</strong> are the arithmetic operators. <br>
-           <strong>+</strong>  is used for addition, <strong>-</strong> for substraction, <strong>*</strong> for multiplication and <strong>/</strong> for division.
-          </p>
+          <p class="text">A comparison operator compares its operands and returns the logical value based on whether the comparison is true. Generally, the operands are of same type and if not, Javscript tries to convert them to same type.A comparison operator can compare the Numerical values, Strings, Objects or logical values. </p>
     
             
-          <h2 class="sub-heading">Special Arithmetic Operator</h2>
-          <p class="text">There is also a special arithmetic operator <strong>%</strong>. This operator is often termed as 'modulo'. <br> The operation X % Y  calculates the remainder when X is divided by Y. <strong>8 % 5</strong> will result in 3. Also, <strong>%</strong> operator has the same precedence as <strong>*</strong> and <strong>/</strong>. </p>
-    
-          <h2 class="sub-heading">Precedence and Order of calculation</h2>
-          <p class="text"> + operator has same precedence as - operator and  * operator has same precedence as / operator. <br> * and / have higher precedence than + and - .  Which means in an operation like 5 + 3 * 7, 3 * 7 will be calculated first and the result will then be added to 5. Also any operation enclosed between () like (3 + 4) * 7 is given a higher precedence. That is  3 + 4 will be calculated first and the result will then be multiplied with 7. In an operation with operators of same precedence, the calculation is done from left to right.</p>
-    
+          <h2 class="sub-heading">Types of Comparison Operators</h2>
+          <p class="text">There are following types of Comparison operators :</p>
+          <code>Equal(==) <span>//Return true if operands are equal</span></code>
+          <code>Not equal(!=) <span>//Return true if operands are not equal</span></code>
+          <code>Strict equal(===) <span>//Return true if operands are equal and of the same type</span></code>
+          <code>Strict not equal(!==) <span>//Return true if operands are equal but of different type or are not equal butof same type.</span></code>
+          <code>Greater than(&gt;) <span>//Return true if left operand is greater than the right operand</span></code>
+          <code>Greater than or equal(&gt;=) <span>//Return true if left operand is greater than or equal to the right operand</span></code>
+          <code>Less than(&lt;) <span>//Return true if left operand is less than the right operand</span></code>
+          <code>Less than or equal(&lt;=) <span>//Return true if left operand is less than or equal to the right operand</span></code>
+
+       
           <h2 class="sub-heading">Let's code!</h2>
-          <p class="text">Let's code our simplest javascript calculation program. Open the Chrome browser console window and type the following: </p>
-          <code>let x = 15;<br>let y = 10;<br>console.log("Result of x + y is  : "+ x + y);<br>console.log("Result of x - y is  : "+ x - y); <br>console.log("Result of x * y is  : " + x * y);<br>console.log("Result of x / y is  : "+ x / y);<br>console.log("Result of x % y is  : " + x % y);</code>
+          <p class="text">Let's see each type of comparison operator in action. Open the Chrome browser console window and type the following: </p>
+          <code>let variableOne = 5;</code>
+          <code>let variableTwo = 10;</code>
+          <code>console.log(5 == variableOne); <span>//Will return true</span></code>
+          <code>console.log("5" == variableOne); <span>//Will return true</span></code>
+          <code>console.log(5 == '5'); <span>//Will return true</span></code>
+          <code>console.log(5 != variableTwo); <span>//Will return true</span></code>
+          <code>console.log(10 != variableOne); <span>//Will return true</span></code>
+          <code>console.log(variableTwo != 5); <span>//Will return true</span></code>
+          <code>console.log(variableOne != "10"); <span>//Will return true</span></code>
+          <code>console.log(5 === variableOne); <span>//Will return true</span></code>
+          <code>console.log('5' !== 5); <span>//Will return true</span></code>
+          <code>console.log(variableOne !== '5'); <span>//Will return true</span></code>
+          <code>console.log(variableTwo > variableOne); <span>//Will return true</span></code>
+          <code>console.log("6" > variableOne); <span>//Will return true</span></code>
+          <code>console.log("6" >= variableOne); <span>//Will return true</span></code>
+          <code>console.log(variableTwo >= 8); <span>//Will return true</span></code>
+          <code>console.log(variableTwo >= variableOne); <span>//Will return true</span></code>
+          <code>console.log(variableOne &lt; variableTwo); <span>//Will return true</span></code>
+          <code>console.log("6" &lt; variableTwo); <span>//Will return true</span></code>
+          <code>console.log("6" &lt;= variableTwo); <span>//Will return true</span></code>
+          <code>console.log(variableOne &lt;= 8); <span>//Will return true</span></code>
+          <code>console.log(variableOne &lt;= variableTwo); <span>//Will return true</span></code>
+          
+          
 
           <h2 class="sub-heading">Output</h2>
-          <p>Hit enter key and see what happens. Wait something is wrong. The results for  addition and substraction don't seem right. Right? 15+10 should 25 and not 1510. Also, 15-10 should be 5 and not NaN. The reason is we have a string within dounle quotes and whenever we have a string, the whole operation is converted to string so basically what we did was 'concatenating' "15" and "10" and not adding those. To fix it, we could have written </p><code>console.log("Result of x + y is  : "+ (x + y));</code><p> and output would be fine. Reason is () has higher precedence, so operation between parenthesis was performed first and later converted to string. Similarly, the output of x - y operation is NaN(Not a Number) because + and - operators have same precedence so basically what we're trying to do is subtracting a number from a string which doesn't make much sense. Hence NaN. Again, we could fix it by writing </p><code>console.log("Result of x - y is  : "+ (x - y));</code><p> and the result would be 5, which is correct. Rest operations produce correct output as operators <strong>* / %</strong> have higher precedence than + operator.</p>
-
-          <h2 class="sub-heading">Conclusion</h2>
-          <p>Phew, that was some information. But we did it. By now, we have a good understanding of Arithmetic Operators. We will be using these a lot in future examples. Try these on your own. Observe the ouputs. We will make these operations more dynamic in the future, and not hard coding like we did in the above example. Untill next time. Happy coding.</p>
+          <p>Now hit enter and see if you get the desired output. Observe how sometimes strings and numbers were compared and still you got the output. That's where type conversion was done. Type conversion does not happen however with strict equality operator(===) and strict inequality operator(!==) and these perform strict equality and inequality comparisons.</p>
+          <p>By now, we have a good understanding of Comparison Operators. Comparison operators are life of javscript programming and are used more often than not. Hope you enjoyed this blog. Until next time. Happy coding.</p>
         </div>
         <!-- Write blog posts above. You won't need to add css if you dont make change(add) to the markup -->
         <div id="blog-post-comment">
