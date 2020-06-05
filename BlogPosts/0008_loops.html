@@ -41,93 +41,26 @@
           <h1 class="main-heading">Unary Operators</h1>
     
           <h2 class="sub-heading">Introduction</h2>
-          <p class="text">A Unary Operator is an operator that works with a single operand or in other words, a unary operation is performed with just one operand. Most commonly used Unary operators are, Unary plus(+), Unary negation(-), Logical not(!), typeof, delete, void, Bitwise NOT operator(~). Here in this blog, we will discuss some of the important ones. </p>
-    
-            
-          <h2 class="sub-heading">Unary plus(+)</h2>
-          <p class="text">The Unary plus operator precedes its oprand and tries to convert it into a number if it isn't already.
-            It is the fastest way to convert something into a number. If it cannot evaluate something it returns NaN. Let's see it in action in your browser's console window.
+          <p class="text">A simple arithemtic operation would look like <strong>3 + 4</strong> or <strong>7 * 8</strong> or <strong>1 / 4 - 6</strong> . Here, <strong>+  - * /</strong> are the arithmetic operators. <br>
+           <strong>+</strong>  is used for addition, <strong>-</strong> for substraction, <strong>*</strong> for multiplication and <strong>/</strong> for division.
           </p>
-          <code>+3 <span>// return 3</span></code>
-          <code>+'3' <span>// return 3</span></code>
-          <code>+true <span>// return 1</span></code>
-          <code>+false <span>// return 0</span></code>
-          <code>+null <span>// return 0</span></code>
-          <code>+"kaushikDev" <span>// return NaN</span></code>
-          <code>+function(val){return val} <span>// return NaN</span></code>
     
-          <h2 class="sub-heading">Unary negation(-)</h2>
-          <p class="text">The Unary negation operator precedes it's operand and negates it. Let's see it in action.</p>
-          <code>-3 <span>// return -3</span></code>
-          <code>-'3' <span>// return -3</span></code>
-          <code>-true <span>// return -1</span></code>
-          <code>-false <span>// return -0</span></code>
-          <code>-null <span>// return -0</span></code>
-          <code>-"kaushikDev" <span>// return NaN</span></code>
-
-          <h2 class="sub-heading">Side  note: Truthy and Falsy.</h2>
-          <p>If a value can be converted to true, it is considered as truthy and if a value can be converted to false, it is considered as falsy.</p>
-
-
-          <h2 class="sub-heading">Logical not(!)</h2>
-          <p class="text">It returns false if single operand can be converted to true, otherwise returns true. Let's see the exmaples below:</p>
-          <code>!true <span>// returns false</span></code>
-          <code>!false <span>// returns true</span></code>
-          <code>!'' <span>// returns true</span></code>
-          <code>!"kaushikDev" <span>// returns false</span></code>
-          <code>!null <span>// returns true</span></code>
-          <code>!NaN <span>// returns true</span></code>
-          <code>!0 <span>// returns true</span></code>
-          <code>!1 <span>// returns false</span></code>
-          <code>!(1 > 0 || 8 > 0) <span>// returns false</span></code>
-
-         
-
-          <h2 class="sub-heading">typeof</h2>
-          <p>The typeof operator returns a string indicating the type of the unevaluated operand. The syntax is :</p>
-          <em> typeof operand</em>
-         <em> typeof(operand)</em>
-          <p>Let's see some examples.</p>
-          <code>typeof 37 <span>// returns "number"</span></code>
-          <code>typeof '42' <span>// returns "string"</span></code>
-          <code>typeof(9) <span>// returns "number"</span></code>
-          <code>typeof Math.PI <span>// returns "number"</span></code>
-          <code>typeof "kaushikDev" <span>// returns "string"</span></code>
-          <code>typeof {test: true} <span>// returns "object"</span></code>
-          <code>typeof [34, "developer"] <span>// returns "object"</span></code>
-          <code>typeof null <span>// returns "object"</span></code>
-          <code>typeof NaN <span>// returns "number"</span></code>
-          <code>typeof undefined <span>// returns "undefined"</span></code>
-          <code>typeof true <span>// returns "boolean"</span></code>
-          <code>typeof Date <span>// returns "function"</span></code>
-
-
-          <h2 class="sub-heading">delete</h2>
-          <p>Though we have not yet covered Objects, but just keep this is in mind that delete operator removes a property of an object. Consider the following example : </p>
-          <code>
-            const Employee = {
-              firstname: 'John',
-              lastname: 'Doe'
-            }; <span>// this is how you declare an object.</span>
-          </code>
-          <code>
             
-            console.log(Employee.firstname);
-            <span>// expected output: "John"</span>
-          </code>
-          <code>
-            delete Employee.firstname;
-          </code>
-          <code>  
-            console.log(Employee.firstname);
-            <span>// expected output: undefined</span>
-          </code>
+          <h2 class="sub-heading">Special Arithmetic Operator</h2>
+          <p class="text">There is also a special arithmetic operator <strong>%</strong>. This operator is often termed as 'modulo'. <br> The operation X % Y  calculates the remainder when X is divided by Y. <strong>8 % 5</strong> will result in 3. Also, <strong>%</strong> operator has the same precedence as <strong>*</strong> and <strong>/</strong>. </p>
+    
+          <h2 class="sub-heading">Precedence and Order of calculation</h2>
+          <p class="text"> + operator has same precedence as - operator and  * operator has same precedence as / operator. <br> * and / have higher precedence than + and - .  Which means in an operation like 5 + 3 * 7, 3 * 7 will be calculated first and the result will then be added to 5. Also any operation enclosed between () like (3 + 4) * 7 is given a higher precedence. That is  3 + 4 will be calculated first and the result will then be multiplied with 7. In an operation with operators of same precedence, the calculation is done from left to right.</p>
+    
+          <h2 class="sub-heading">Let's code!</h2>
+          <p class="text">Let's code our simplest javascript calculation program. Open the Chrome browser console window and type the following: </p>
+          <code>let x = 15;<br>let y = 10;<br>console.log("Result of x + y is  : "+ x + y);<br>console.log("Result of x - y is  : "+ x - y); <br>console.log("Result of x * y is  : " + x * y);<br>console.log("Result of x / y is  : "+ x / y);<br>console.log("Result of x % y is  : " + x % y);</code>
 
-          <h2 class="sub-heading">void</h2>
-          <p>The void operator evaluates the given expression and then returns undefined. If interested, you can read more about it <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void">here.</a></p>
+          <h2 class="sub-heading">Output</h2>
+          <p>Hit enter key and see what happens. Wait something is wrong. The results for  addition and substraction don't seem right. Right? 15+10 should 25 and not 1510. Also, 15-10 should be 5 and not NaN. The reason is we have a string within dounle quotes and whenever we have a string, the whole operation is converted to string so basically what we did was 'concatenating' "15" and "10" and not adding those. To fix it, we could have written </p><code>console.log("Result of x + y is  : "+ (x + y));</code><p> and output would be fine. Reason is () has higher precedence, so operation between parenthesis was performed first and later converted to string. Similarly, the output of x - y operation is NaN(Not a Number) because + and - operators have same precedence so basically what we're trying to do is subtracting a number from a string which doesn't make much sense. Hence NaN. Again, we could fix it by writing </p><code>console.log("Result of x - y is  : "+ (x - y));</code><p> and the result would be 5, which is correct. Rest operations produce correct output as operators <strong>* / %</strong> have higher precedence than + operator.</p>
 
           <h2 class="sub-heading">Conclusion</h2>
-          <p>Now we have a good understanding of Unary Operators. We will be using these a lot in future examples and blog posts. Like always try these on your own and observe the ouputs. Until next time. Happy coding.</p>
+          <p>Phew, that was some information. But we did it. By now, we have a good understanding of Arithmetic Operators. We will be using these a lot in future examples. Try these on your own. Observe the ouputs. We will make these operations more dynamic in the future, and not hard coding like we did in the above example. Untill next time. Happy coding.</p>
         </div>
         <!-- Write blog posts above. You won't need to add css if you dont make change(add) to the markup -->
         <div id="blog-post-comment">

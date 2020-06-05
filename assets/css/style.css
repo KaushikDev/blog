@@ -69,6 +69,7 @@ code{
     font-family: var(--blog-code-font-family);
     color: var(--blog-code-color);
     margin: 0 1em; 
+    padding: 0.2em;
 }
 
 span{
