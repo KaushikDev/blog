@@ -38,29 +38,33 @@
         
         <!-- Write blog posts below. You won't need to add css if you dont make change(add) to the markup -->
         <div id="blog-post">
-          <h1 class="main-heading">Unary Operators</h1>
+          <h1 class="main-heading">Comments</h1>
     
           <h2 class="sub-heading">Introduction</h2>
-          <p class="text">A simple arithemtic operation would look like <strong>3 + 4</strong> or <strong>7 * 8</strong> or <strong>1 / 4 - 6</strong> . Here, <strong>+  - * /</strong> are the arithmetic operators. <br>
-           <strong>+</strong>  is used for addition, <strong>-</strong> for substraction, <strong>*</strong> for multiplication and <strong>/</strong> for division.
-          </p>
+          <p class="text">Comments are used to add hints, notes, suggestions, or warnings to JavaScript code. To make other programmers(or even future self) aware of what a particular bit of code does, comment can be used in a variety of ways. Like adding a //ToDo for future feature request and etc. They can also be used to disable code to prevent it from being executed. They can prove a to be a valuable debugging tool. There are two ways of adding comments to your code. These are : </p>
     
             
-          <h2 class="sub-heading">Special Arithmetic Operator</h2>
-          <p class="text">There is also a special arithmetic operator <strong>%</strong>. This operator is often termed as 'modulo'. <br> The operation X % Y  calculates the remainder when X is divided by Y. <strong>8 % 5</strong> will result in 3. Also, <strong>%</strong> operator has the same precedence as <strong>*</strong> and <strong>/</strong>. </p>
+          <h2 class="sub-heading">Single Line Comment</h2>
+          <p class="text"> Single line comment can be made using two forward slashes or //. Any bit of code written after the // will be non-executable. E.g. </p>
+          <code><span>// This is a singe line comment.</span></code>
+          <code><span>// Following program returns the sum of two numbers.</span></code>
+          <code>function(a, b){ return a + b; }<span>//sum of a and b will be returned.</span></code>
     
-          <h2 class="sub-heading">Precedence and Order of calculation</h2>
-          <p class="text"> + operator has same precedence as - operator and  * operator has same precedence as / operator. <br> * and / have higher precedence than + and - .  Which means in an operation like 5 + 3 * 7, 3 * 7 will be calculated first and the result will then be added to 5. Also any operation enclosed between () like (3 + 4) * 7 is given a higher precedence. That is  3 + 4 will be calculated first and the result will then be multiplied with 7. In an operation with operators of same precedence, the calculation is done from left to right.</p>
+          <h2 class="sub-heading">Multi line comment</h2>
+          <p class="text">A multi-line comment can be made using the starting forward slash and asterisk i.e. /* and ending asterisk and forward slash i.e. */ . Any piece of information between /* and */ is considered non-executable. E.g.</p>
+          <code><span>/* This is a</span></code>
+          <code><span>multi-line comment</span></code>
+          <code><span>that goes on for four lines</span></code>
+          <code><span>of code.*/</span></code>
+          <p>Multi-line comment can also be used as a single line comment. E.g.</p>
+          <code><span>/* This is a single line comment too */</span></code>
+
+          <h2 class="sub-heading">VS Code(IDE): Comment Trick(windows)</h2>
+          <p class="text">To comment, use <em>ctrl+k+c</em> . To uncomment, use <em>ctrl+k+u</em> .</p>
     
-          <h2 class="sub-heading">Let's code!</h2>
-          <p class="text">Let's code our simplest javascript calculation program. Open the Chrome browser console window and type the following: </p>
-          <code>let x = 15;<br>let y = 10;<br>console.log("Result of x + y is  : "+ x + y);<br>console.log("Result of x - y is  : "+ x - y); <br>console.log("Result of x * y is  : " + x * y);<br>console.log("Result of x / y is  : "+ x / y);<br>console.log("Result of x % y is  : " + x % y);</code>
-
-          <h2 class="sub-heading">Output</h2>
-          <p>Hit enter key and see what happens. Wait something is wrong. The results for  addition and substraction don't seem right. Right? 15+10 should 25 and not 1510. Also, 15-10 should be 5 and not NaN. The reason is we have a string within dounle quotes and whenever we have a string, the whole operation is converted to string so basically what we did was 'concatenating' "15" and "10" and not adding those. To fix it, we could have written </p><code>console.log("Result of x + y is  : "+ (x + y));</code><p> and output would be fine. Reason is () has higher precedence, so operation between parenthesis was performed first and later converted to string. Similarly, the output of x - y operation is NaN(Not a Number) because + and - operators have same precedence so basically what we're trying to do is subtracting a number from a string which doesn't make much sense. Hence NaN. Again, we could fix it by writing </p><code>console.log("Result of x - y is  : "+ (x - y));</code><p> and the result would be 5, which is correct. Rest operations produce correct output as operators <strong>* / %</strong> have higher precedence than + operator.</p>
-
+         
           <h2 class="sub-heading">Conclusion</h2>
-          <p>Phew, that was some information. But we did it. By now, we have a good understanding of Arithmetic Operators. We will be using these a lot in future examples. Try these on your own. Observe the ouputs. We will make these operations more dynamic in the future, and not hard coding like we did in the above example. Untill next time. Happy coding.</p>
+          <p>It is nice to know about these little tricks of the trade and comments are certainly one of these tricks. Try commenting your own piece of code and see whether it gets included or excluded in executionable code. Until next time. Happy coding.</p>
         </div>
         <!-- Write blog posts above. You won't need to add css if you dont make change(add) to the markup -->
         <div id="blog-post-comment">
@@ -83,26 +87,26 @@
           SHARE THE PAGE
           <a
             class="share-blog-items"
-            href="https://www.facebook.com/sharer/sharer.php?u=https://blog.kaushikdev.com/BlogPosts/0006_UnaryOperators.html"
+            href="https://www.facebook.com/sharer/sharer.php?u=https://blog.kaushikdev.com/BlogPosts/0007_Comments.html"
             target="_blank"
             ><i class="fab fa-facebook-f"></i
           ></a>
           <a
             class="share-blog-items"
-            href="https://twitter.com/share?url=https://blog.kaushikdev.com/BlogPosts/0006_UnaryOperators.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
+            href="https://twitter.com/share?url=https://blog.kaushikdev.com/BlogPosts/0007_Comments.html&amp;text=KaushikDev%20Blogs&amp;hashtags=kaushikDevBlogs"
             target="_blank"
             ><i class="fab fa-twitter"></i
           ></a>
     
           <a
             class="share-blog-items"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.kaushikdev.com/BlogPosts/0006_UnaryOperators.html"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.kaushikdev.com/BlogPosts/0007_Comments.html"
             target="_blank"
             ><i class="fab fa-linkedin-in"></i
           ></a>
           <a
             class="share-blog-items"
-            href="whatsapp://send?text=https://blog.kaushikdev.com/BlogPosts/0006_UnaryOperators.html"
+            href="whatsapp://send?text=https://blog.kaushikdev.com/BlogPosts/0007_Comments.html"
             ><i class="fab fa-whatsapp"></i
           ></a>
         </div>
@@ -181,6 +185,6 @@
 
     
 
-    <script src=".././assets/js/main.js" blogName="0006_UnaryOperators"></script>
+    <script src=".././assets/js/main.js" blogName="0007_Comments"></script>
   </body>
 </html>
